@@ -561,11 +561,12 @@ function processMenu(menuType) {
         menuPrice=49;
         price=49;
     }
+    price=price.toFixed(2);
     var $container=document.getElementById("menuPage");
     var head2=document.getElementById("menuName");
     head2.innerText=menuType;
     var head3=document.getElementById("menuPrice");
-    head3.innerText=price+"0EUR";
+    head3.innerText=price+"EUR";
     var $discription=document.getElementById("menuDescribe");
     $discription.innerText="  Wälen Sie "+b+" Beilage & "+h+" HauptGericht.";
     var $stepinfo=document.getElementById("steps");
