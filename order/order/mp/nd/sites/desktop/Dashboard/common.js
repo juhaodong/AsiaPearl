@@ -454,7 +454,7 @@ function showItems(wagens) {
 }//账单中生成订单详情
 var beilageNo;
 
-
+var familyFest=false;
 function processMenu(menuType) {
     $('#addonVorspeise').empty();
     $('#addOngetranke').empty();
@@ -560,6 +560,7 @@ function processMenu(menuType) {
     if(menuType=="Familienfest"){
         menuPrice=49;
         price=49;
+        familyFest=true;
     }
     price=price.toFixed(2);
     var $container=document.getElementById("menuPage");
@@ -597,16 +598,17 @@ function processMenu(menuType) {
         $beilage.appendChild($leftimg);
         $beilage.appendChild($rightimg);
         $stepinfo.appendChild($beilage);
+      //  $beilage.appendChild(name);
         if(h+b>1){
             var $add=document.createElement("div");
             $add.setAttribute("class","add");
-
             $stepinfo.appendChild($add);
         }
 
     }
     beilageNo=b;
     menuProcess("beilag");
+
     nextStep();
 
 
@@ -768,15 +770,16 @@ function nextStep() {
         document.getElementById("currentType").innerText="Beilage";
         document.getElementById("currentInfo").innerText=
             "Bitte wählen Sie eine full order zwei halbe.";
-
+        familyFest = document.getElementById("menuName").innerText == "Familienfest";
         menuProcess("beilag");
+        familyFest=false;
     }
 
 
 }//Order流程，下一步
 function menuProcess(Type) {
     var m;
-    if(Type=="hauptgericht"){
+    if(Type=="hauptgericht"||familyFest){
         m="full";
     }
     $("#menuItems").empty();
@@ -784,8 +787,6 @@ function menuProcess(Type) {
         for(k in menuData){
             var item=menuData[k];
             if (item.type==Type){
-
-
                 newItem(item.name,item.img,m,"menuItems",item);
             }
         }

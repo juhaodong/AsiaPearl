@@ -325,8 +325,6 @@ function SinglemenuProcess(Type) {
             ti5.setAttribute("style","width:100%");
             s.appendChild(ti5);
             f.appendChild(s);
-
-
         }
         if(Type!="end"){
             for(k in menuData){
