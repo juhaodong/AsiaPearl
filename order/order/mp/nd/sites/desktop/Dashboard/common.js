@@ -1075,12 +1075,20 @@ function zukasse() {
 
 
 
-}//打开付款页
+}//
+function compare(property){
+    return function(obj1,obj2){
+        var value1 = obj1[property];
+        var value2 = obj2[property];
+        return value1 > value2;     // 升序
+    }
+}
 function sendOrder(){
     orderInfo.payment=document.getElementById("payment").value;
 
     console.log(orderInfo);
-
+    orderInfo.orders=orderInfo.orders.sort(compare("name"));
+    console.log(orderInfo.orders);
     $.ajax({
         url:'../../../../../../../php/orders.php',
         method:'POST',
