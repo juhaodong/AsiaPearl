@@ -14,7 +14,6 @@ var stepIndex=1;
 var finishStep=0;
 var menuPrice=0;
 var menuData;
-
 var username="";
 var ordertime=new Object();
 var logged=false;
@@ -340,10 +339,7 @@ function detialShowItems(target) {
             wagen.appendChild(row1);
         }
     }
-
     return priceAll;
-
-
 }
 
 
@@ -1006,7 +1002,7 @@ function login() {
         document.getElementById("welcomeWord").remove();
     }
 
-    document.getElementById("gastName").value=username;
+    document.getElementById("gastName").placeholder=username;
     document.getElementById("username").innerText=username;
     startTime();
 }//登陆成功后打开时间页
