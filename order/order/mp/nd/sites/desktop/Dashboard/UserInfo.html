@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Userinfo-Asia Pearl</title>
+    <script src="../../../../../../../bootrap/js/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- 引入 Bootstrap -->
+
+    <link rel="stylesheet" href="../../../../../../../bootrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="../../../../../../../html/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            getUserInfo();
+
+        })
+    </script>
+
+    <link rel="stylesheet" href="Info.css">
+
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <![endif]-->
+</head>
+<body>
+<nav class="nav-fill"><img onclick="location.href='http://asia-pearl-express.com'" src="../../../../../../../yxj/logo 设计2 (1).png" style="width: 100px" /></nav>
+<div class="w3-container" >
+    <h2>User Info</h2>
+
+
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">BaseInfo</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">OrderRecord</button>
+        <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Address</button>
+    </div>
+
+    <div id="London" class="w3-container w3-border city">
+        <h2>BaseInfo</h2>
+        <div class="Container">
+            <div class="block">
+                <div class="title-container" id="Usn">Username:</div>
+            </div>
+            <div class="block">
+                <div class="title-container" id="Psw">Password:</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Paris" class="w3-container w3-border city" style="display:none">
+        <h2>Recent Order</h2>
+        <div class="Container" id="order">
+            <div id="end2">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="Tokyo" class="w3-container w3-border city" style="display:none">
+        <h2>Address</h2>
+        <div class="Container">
+            <div id="address" class="block">
+
+                <div id="end" ></div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    function getUserInfo() {
+        var username=getQueryString("Username");
+        $.ajax({
+            type:"GET",
+            url:"http://asia-pearl-express.com/php/UserInfo.php?_ijt=s74tuub2s2icg989ugbsl8nbm2",
+            data:{
+                q:"juhaodong"
+            },
+            success:function (res) {
+                console.log(res);
+                var a=res.base;
+                document.getElementById("Usn").innerText+=a[0];
+                document.getElementById("Psw").innerText+=a[1];
+                var b=res.address;
+
+                for(var k in b){
+                    writeHtml(b[k]);
+                }
+                var c=res.orders;
+                for(var x in c){
+                    writeHtml2(c[x]);
+                }
+            }
+
+
+        })
+
+    }
+    function writeHtml2(value) {
+        var tmpStr=value.Detail.toString();
+        var Speise=tmpStr.split(",");
+        var newDiv=document.createElement("div");
+            newDiv.setAttribute("class","block");
+        var time=document.createElement("div");
+            time.setAttribute("class","title-container");
+            time.innerHTML="Order Time:"+value.Time;
+        var btnC=document.createElement("div");
+            btnC.setAttribute("class","floatRight");
+            var btn=document.createElement("button");
+                btn.setAttribute("onclick","showDetail(this,event)");
+                btn.innerText="+";
+        var title=document.createElement("div");
+            title.setAttribute("class","title-container underline");
+            title.innerText="Order Detail";
+        var detial=document.createElement("div");
+            detial.setAttribute("class","detial");
+            detial.setAttribute("style","display:none");
+            var type=document.createElement("div");
+                type.setAttribute("class","title-container");
+                type.innerText="Type:";
+            var speise=document.createElement("div");
+                speise.setAttribute("class","title-container");
+                speise.innerText="Speise:"+Speise[0]+"\n"+Speise[1];
+            var Beilage=document.createElement("div");
+                Beilage.setAttribute("class","title-container");
+                Beilage.innerText=Speise[2];
+            var Anderes=document.createElement("div");
+                Anderes.setAttribute("class","title-container underline");
+                Anderes.innerText="Anderes:";
+        var cost=document.createElement("div");
+        cost.setAttribute("class","title-container");
+        cost.innerText="Cost:";
+        detial.appendChild(type);
+        detial.appendChild(speise);
+        detial.appendChild(Beilage);
+        detial.appendChild(Anderes);
+        btnC.appendChild(btn);
+        newDiv.appendChild(time);
+        newDiv.appendChild(btnC);
+        newDiv.appendChild(title);
+        newDiv.appendChild(detial);
+        newDiv.appendChild(cost);
+
+
+
+
+        document.getElementById("order").insertBefore(newDiv,document.getElementById("end2"));
+
+    }
+
+    function writeHtml(value) {
+
+        var newDiv=document.createElement("div");
+        newDiv.setAttribute("class","title-container");
+        newDiv.innerText=value;
+        document.getElementById("address").insertBefore(newDiv,document.getElementById("end"));
+
+    }
+
+    function showDetail(id,e) {
+
+        console.log(e);
+        if(e.path[2].childNodes[3].style.display=="block"){
+            id.innerHTML="+";
+            e.path[2].childNodes[3].style.display="none";
+
+        }
+        else{
+            id.innerHTML="x";
+            e.path[2].childNodes[3].style.display="block";
+
+        }
+    }
+
+    function openCity(evt, cityName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " w3-red";
+    }
+</script>
+<footer class="footer">
+
+
+                <div style="display: flex;width: 100%;justify-content: center">
+                    <nav class="footer-sub-menu">
+                        <div>
+                            <a class="" href="">Contakt</a>
+                            <a class="" href="">Inpresaum</a>
+                            <a class="" href="">Datenschutz</a>
+                        </div>
+
+                        <div class="marker">
+                            <span >Asia Pearl Gmbh</span>
+                        </div>
+                    </nav>
+                </div>
+
+
+
+
+</footer>
+</body>
+</>

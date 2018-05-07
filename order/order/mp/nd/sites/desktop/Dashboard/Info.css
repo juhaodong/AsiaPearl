@@ -1,0 +1,46 @@
+.title-container{
+    padding: 10px;
+    background: #eee;
+}
+.block{
+    margin: 10px;
+    width: 70%;
+    background: #ddd;
+}
+.container{
+    padding: 20px;
+    background: red;
+
+}
+.underline{
+    border-bottom: 1px solid black;
+}
+.floatRight{
+   float: right;
+
+
+    padding: 5px;
+}
+.floatRight button{
+    background: transparent;
+    border: none;
+}
+.nav-fill{
+    background: orangered;
+    height: 90px;
+}
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: orangered;
+    padding: 10px;
+}
+.footer-sub-menu{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.marker{
+    color:black;
+}

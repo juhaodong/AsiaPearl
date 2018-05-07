@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#contentContainer {
+    position: relative;
+    margin: 12px auto 0 auto;
+    width: 948px;
+    height: 500px;
+}
+
+#locatorTitleBar {
+    color: #ffffff;
+    /*
+    height: 125px;
+    */
+}
+
+#locatorTitleBar h1 {
+    font-size: 130%;
+    font-weight: bold;
+    color: #413f7a
+}
+
+
+#searchForm {
+    /*
+    position: absolute;
+    display: block;
+    top: 47px;
+    left: 677px;
+    width: 344px;
+    */
+}
+
+#searchForm label {
+    /*
+    display: none;
+    */
+    color: #413f7a;
+}
+
+#searchBox {
+    /*
+    margin: 0;
+    padding: 0 30px 0 3px;
+    width: 323px;
+    height: 20px;
+    border: 0 none;
+    */
+}
+
+#submit  {
+    /*
+    position: absolute;
+    top: 2px;
+    right: -4px;
+    */
+}
+
+#resultsContainer {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    height: 415px;
+    width: 280px;
+
+    overflow-y: auto;
+
+    background: #dbcbbe;
+    color: #ffffff;
+}
+
+.restaurantbox {
+    position: relative;
+    padding: 5px;
+    overflow: hidden;
+
+    background: #765eae;
+    background: -webkit-gradient(linear, left top, left bottom, from(#765eae), to(#43417d));
+    background: -webkit-linear-gradient(top, #765eae, #43417d);
+    background: -moz-linear-gradient(top, #765eae, #43417d);
+    background: -ms-linear-gradient(top, #765eae, #43417d);
+    background: -o-linear-gradient(top, #765eae, #43417d);
+ 
+    font-size: 12px;
+    /*
+    white-space: nowrap;
+    */
+}
+
+
+.selected {
+    background: #A60D34;
+}
+
+.infoWindow {
+    font-size: 75%;
+}
+
+.infoWindow .actions {
+    margin-top: 10px;
+}
+
+.infoWindow .actions li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.infoWindow .callToOrder {
+    margin-top: 5px;
+}
+
+.infoWindow .callToOrderHighlighted {
+    background-color: #ff8;
+}
+
+.infoWindow .disabledStartOrder {
+    color: #666;
+}
+
+.restaurantbox .message {
+    white-space: normal;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+.restaurantbox .message p {
+    margin-bottom: 10px;
+}
+
+.restaurantbox .name, .infoWindow .name {
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.restaurantbox .hours, .restaurantbox .services, .restaurantbox .viewmenu {
+    margin-top: 3px;
+}
+
+.restaurantbox .services {
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.restaurantbox .viewmenu a, .restaurantbox .viewmenu a:visited {
+    color: #000000;
+}
+
+.selected .viewmenu a, .selected .viewmenu a:visited {
+    color: #000000;
+}
+
+.restaurantbox .badge {
+    float: right;
+    clear: right;
+    margin-top: 3px;
+}
+
+
+.restaurantbox .ordernow {
+   
+   
+    background: url("../images_menus/PX_button.png") no-repeat scroll center center transparent;
+ 
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+    
+
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+
+
+
+}
+
+.restaurantbox .hours, .restaurantbox .services, .restaurantbox .viewmenu {
+    margin-top: 3px;
+    padding-bottom: 5px;
+}
+
+
+.restaurantbox .ordernow a, .restaurantbox .ordernow a:visited {
+    color: #9d2f28;
+}
+
+.restaurantbox .callToOrder {
+    margin-top: 5px;
+}
+
+#mapContainer {
+    position: absolute;
+    top: 75px;
+    left: 280px;
+    height: 415px;
+    width: 668px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+#findpanda #findform {
+    background: 
+    border-bottom: 1px solid #e0d3c8;
+    padding: 15px 26px 0;
+}

@@ -1,0 +1,82 @@
+div.field {/* all container divs of an input (like input, textarea, etc) these will be displayed side by side*/
+	float: left;
+	display: inline;
+}
+/*form div.field-vertical { Like form div.field but elements will be split vertically along br
+}*/
+
+div.column {/* represents vertically arranged divs */
+	float: left;
+}
+
+div.width-33 {/*short cut for 33% width*/
+	width: 33%;
+}
+
+div.width-50 {/*shortcut for 50% width*/
+	width: 50%;
+}
+
+div.width-25 {/*shortcut for 25% width*/
+	width: 25%;
+}
+
+div.field-row{/*makes a row for hroziontally arranged divs*/
+	clear:both;
+}
+
+div.field-row div, div.column div.field-row div{
+	clear: none;
+}
+
+div.field {
+	clear: left;
+	width: 100%;
+}
+
+div.field label {
+	float: left;
+	margin-right: 5px;
+	text-align: right;
+	width: 40%;
+}
+
+div.column div{
+	clear: both;
+}
+
+fieldset div{/**/
+	clear: both;
+}
+
+.infomsg {/* a informational message*/
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('information.png');
+}
+.sucmsg {/* a success message */
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('success.png');
+}
+.warnmsg {/* a warning message */
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('warning.png');
+}
+.errmsg {/* an error message */
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('error.png');
+}
+
+.errmsg, .sucmsg, .warnmsg, .infomsg {/* visible message boxes*/
+	display: inline;
+	clear: none;
+	border: 1px solid;
+	padding:1px 10px 1px 25px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	visibility: visible;
+}
+

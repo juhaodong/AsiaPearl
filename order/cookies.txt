@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+orders.pandaexpress.com	TRUE	/	FALSE	1999999999	ROUTE_ID	.atl-app-15-prod-04
+orders.pandaexpress.com	TRUE	/	FALSE	1999999999	nd_layout_id	deleted"
+orders.pandaexpress.com	TRUE	/	FALSE	1999999999	NovaDine.session	c38d28799cecf3c8bc6f200a341ceb52fffd9b6810583e14f3bd40faab95670a6deb9258"
+.bing.com	TRUE	/	FALSE	1999999999	MUID	14503E78F1AA6FC026FA3501F5AA6C8B
+bat.bing.com	TRUE	/	FALSE	1999999999	MUIDB	1DCB373D230B656400AE3C44227964A9
+.quantserve.com	TRUE	/	FALSE	1999999999	d	EAwBBgHmGQIYoIOMA7qghgwYwpSN
+.quantserve.com	TRUE	/	FALSE	1999999999	mc	5a5dcdbe-a9642-777ab-d1ab2
+.doubleclick.net	TRUE	/	FALSE	1999999999	test_cookie	CheckForPermission
+mxptint.net	TRUE	/	FALSE	1999999999	mxpim	R35CAA_9E8A5144_12E4DF5.1.0000000000000000000000000000000000000000000000000000000000000000000000005A5DCDFD
+.dotomi.com	TRUE	/	FALSE	1999999999	DotomiUser	121944784469688070$3$42
+

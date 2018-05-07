@@ -1,0 +1,8 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.pandaexpress.com	TRUE	/	FALSE	1999999999	AWSELB	395B19F11CAC5AA2374A60D3D67FA1E171E9FB7FC9867A91BA74A725B94A806B2B38E65C4601822DBB7CD7079BFD451A6C1837DA2470985B7A6557E40A91E5B929302A4B4C
+.quantserve.com	TRUE	/	FALSE	1999999999	d	ECMBBgHDGQIYoIOMA4mcgwwYwpSN
+.quantserve.com	TRUE	/	FALSE	1999999999	mc	5a304a1d-22541-e6833-d5e16
+www.pandaexpress.com	TRUE	/	FALSE	1999999999	loc	lat=52.27264&lng=8.0498
+www.pandaexpress.com	TRUE	/	FALSE	1999999999	guestRelationsEmail	GuestService@pandarg.com
+

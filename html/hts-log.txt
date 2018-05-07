@@ -1,0 +1,30 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 12 Dec 2017 22:28:50 at https://www.pandaexpress.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "zh, en, *" https://www.pandaexpress.com/ -O1 "J:\webpage\pandaexpress" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+22:30:38	Error: 	"Bad Request" (400) at link www.googletagmanager.com/gtm.js?id= (from https://www.pandaexpress.com/)
+22:36:48	Error: 	"Bad Request" (400) at link https://www.pandaexpress.com/content/site/.https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/bamboo.png (from https://www.pandaexpress.com/content/site/frontend-css?v=C4aOCUaSMq39OXjzRv53a9ugRzO49mZxUJhj4x5CCaA1)
+22:36:48	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/ (from connect.facebook.net/en_US/sdk.js)
+22:36:48	Error: 	"Bad Request" (400) at link https://www.pandaexpress.com/^([^:/? (from connect.facebook.net/en_US/sdk.js)
+22:36:48	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/restserver.php (from connect.facebook.net/en_US/sdk.js)
+22:36:48	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/dialog/ (from connect.facebook.net/en_US/sdk.js)
+22:37:06	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/about (from https://www.pandaexpress.com/sitemap)
+22:37:10	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/balance (from https://www.pandaexpress.com/sitemap)
+22:37:10	Error: 	"Bad Request" (400) at link https://www.pandaexpress.com/Legal#PrivacyPolicy (from https://www.pandaexpress.com/sitemap)
+22:37:11	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/meal/print (from https://www.pandaexpress.com/menu/entrees)
+22:37:32	Error: 	"Bad Request" (400) at link https://www.pandaexpress.com/fundraiserlogin#/index (from https://www.pandaexpress.com/fundraiser-landing)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/mykindacomfort-terms-conditions (from https://www.pandaexpress.com/wong-fu)
+22:37:33	Error: 	"Bad Request" (400) at link https://www.pandaexpress.com/%s/profile.php?id=%s (from https://connect.facebook.net/en_US/all.js)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.eot (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.eot? (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.woff2 (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.woff (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.ttf (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+22:37:33	Error: 	"Not Found" (404) at link https://www.pandaexpress.com/american-chinese/fonts/glyphicons-halflings-regular.svg (from https://www.pandaexpress.com/american-chinese/css/bootstrap.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 8 minutes 53 seconds : 509 links scanned, 489 files written (81077520 bytes overall) [80516806 bytes received at 151063 bytes/sec], 2256001 bytes transferred using HTTP compression in 18 files, ratio 25%, 2.2 requests per connection
+(19 errors, 0 warnings, 0 messages)

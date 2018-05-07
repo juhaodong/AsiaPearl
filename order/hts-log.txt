@@ -1,0 +1,46 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 16 Jan 2018 11:02:27 at https://orders.pandaexpress.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qiC2t%Pns0%s%u%I0H0%kf2A250000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "zh, en, *" https://orders.pandaexpress.com/ -O1 "J:\webpage\order" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:02:28	Warning: 	Moved Temporarily for https://orders.pandaexpress.com/
+11:02:28	Warning: 	File has moved from https://orders.pandaexpress.com/ to /mp/nd/sites/desktop/Dashboard/
+11:03:43	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/call_center/ (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:04:55	Warning: 	Retry after error 500 (Internal Server Error) at link https://orders.pandaexpress.com/mp/common/contactus (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:04:55	Warning: 	Retry after error -4 (No data (connection closed)) at link bat.bing.com/action/0?ti=5441872&Ver=2 (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:04:55	Warning: 	Found for https://mpp.mxptint.net/2/12592/?rnd=120979029
+11:04:55	Warning: 	File has moved from https://mpp.mxptint.net/2/12592/?rnd=120979029 to https://idsync.rlcdn.com/387026.gif?partner_uid=R35CAA_9E8A5144_12E4DF5
+11:04:55	Warning: 	Found for googleads.g.doubleclick.net/pagead/viewthroughconversion/975964673/?value=0&guid=ON&script=0
+11:04:55	Warning: 	File has moved from googleads.g.doubleclick.net/pagead/viewthroughconversion/975964673/?value=0&guid=ON&script=0 to http://www.google.com/ads/user-lists/975964673/?value=0&guid=ON&script=0&cdct=2&is_vtc=1&random=3450915064
+11:04:55	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/layouts/1000/images/error.png (from https://orders.pandaexpress.com/mp/layouts/L1000/base_css/index.css)
+11:04:55	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/layouts/L1000/images/bullet_toggle_plus.png (from https://orders.pandaexpress.com/mp/layouts/L1000/base_css/index.css)
+11:04:55	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/layouts/L1000/images/bullet_toggle_minus.png (from https://orders.pandaexpress.com/mp/layouts/L1000/base_css/index.css)
+11:04:55	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/layouts/L1000/base_css/close.png (from https://orders.pandaexpress.com/mp/layouts/L1000/base_css/index.css)
+11:04:55	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/layouts/L1000/base_css/spinner.gif (from https://orders.pandaexpress.com/mp/layouts/L1000/base_css/index.css)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/img/misc/email/bg-top.png (from https://orders.pandaexpress.com/local/style.css?_serial=2017121700)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/img/misc/email/bg-repeater.png (from https://orders.pandaexpress.com/local/style.css?_serial=2017121700)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/img/misc/email/bg-footer.png (from https://orders.pandaexpress.com/local/style.css?_serial=2017121700)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/img/misc/email/embellishment.png (from https://orders.pandaexpress.com/local/style.css?_serial=2017121700)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/images/border.png (from https://orders.pandaexpress.com/local/style.css?_serial=2017121700)
+11:04:56	Error: 	"Not Found" (404) at link https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/this.baseParams (from https://orders.pandaexpress.com/mp/include/ExtJS/standalone)
+11:04:56	Error: 	"Not Found" (404) at link swfobject.googlecode.com/svn/trunk/swfobject/expressInstall.swf (from https://orders.pandaexpress.com/mp/include/ExtJS/standalone)
+11:04:56	Error: 	"Not Found" (404) at link yui.yahooapis.com/2.8.0/build/charts/assets/charts.swf (from https://orders.pandaexpress.com/mp/include/ExtJS/standalone)
+11:06:02	Warning: 	Retry after error 500 (Internal Server Error) at link https://orders.pandaexpress.com/login/forgottenPassword (from https://orders.pandaexpress.com/login/login_py)
+11:06:04	Warning: 	Retry after error -5 (Unable to open local file) at link file:///C:/Users/sparker/Desktop/3-10-2014 9-21-29 PM.png (from https://orders.pandaexpress.com/mp/nd/views/faqs)
+11:06:04	Warning: 	Retry after error 500 (Internal Server Error) at link https://orders.pandaexpress.com/mp/common/contactus (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:06:04	Warning: 	Retry after error -4 (No data (connection closed)) at link bat.bing.com/action/0?ti=5441872&Ver=2 (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:07:11	Warning: 	Retry after error 500 (Internal Server Error) at link https://orders.pandaexpress.com/login/forgottenPassword (from https://orders.pandaexpress.com/login/login_py)
+11:07:11	Warning: 	Retry after error -5 (Unable to open local file) at link file:///C:/Users/sparker/Desktop/3-10-2014 9-21-29 PM.png (from https://orders.pandaexpress.com/mp/nd/views/faqs)
+11:07:11	Error: 	"Internal Server Error" (500) after 2 retries at link https://orders.pandaexpress.com/mp/common/contactus (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:07:11	Error: 	"No data (connection closed)" (-4) after 2 retries at link bat.bing.com/action/0?ti=5441872&Ver=2 (from https://orders.pandaexpress.com/mp/nd/sites/desktop/Dashboard/)
+11:07:43	Warning: 	Found for orders.pandaexpress.com/mp/fpSearchBox/OrderNow/
+11:07:43	Warning: 	Redirected link is identical because of 'URL Hack' option: orders.pandaexpress.com/mp/fpSearchBox/OrderNow/ and https://orders.pandaexpress.com/mp/fpSearchBox/OrderNow/
+11:07:43	Warning: 	File has moved from orders.pandaexpress.com/mp/fpSearchBox/OrderNow/ to https://orders.pandaexpress.com/mp/fpSearchBox/OrderNow/
+11:07:43	Error: 	"Internal Server Error" (500) after 2 retries at link https://orders.pandaexpress.com/login/forgottenPassword (from https://orders.pandaexpress.com/login/login_py)
+11:07:43	Error: 	"Unable to open local file" (-5) after 2 retries at link file:///C:/Users/sparker/Desktop/3-10-2014 9-21-29 PM.png (from https://orders.pandaexpress.com/mp/nd/views/faqs)
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 minutes 16 seconds : 476 links scanned, 446 files written (6905029 bytes overall), 446 files updated [5484848 bytes received at 17357 bytes/sec], 2191244 bytes transferred using HTTP compression in 14 files, ratio 25%, 8.5 requests per connection
+(18 errors, 17 warnings, 0 messages)
