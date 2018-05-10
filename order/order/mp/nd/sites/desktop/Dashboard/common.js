@@ -219,8 +219,10 @@ function sendUserAddress() {
             a.replace(/[\r\n]/g,"");
             console.log(a);
             if(a=='reg ok'){
+                username=address.Username.value;
                 setCookie("Username",address.Username.value,3);
                 window.location.href='Orders.html?Username='+address.Username.value;
+
             }
             else{
 
@@ -660,16 +662,13 @@ function RecordOrder(amount,name) {
     if(totalAmount+number>2){
         console.log(orderMenu);
         console.log(name);
-       if(lastHalf==name){
-            removeSpecificStep(stepIndex);
-            totalAmount=0;
+        removeSpecificStep(stepIndex);
+        totalAmount = 0;
+        RecordOrder('full', name);
+        lastHalf = "";
+        half=true;
 
-            RecordOrder('full',name);
-            lastHalf="";
 
-            return;
-        }
-        alert("Cant add a half and a full.");
         return;
     }
     orderItem.step=stepIndex;
@@ -946,6 +945,8 @@ function initial() {
         }else if(pageNames=="over"){
             console.log(true);
             return;
+        }else if(pageNames=="f1"&&logged){
+            showRecip("");
         }
         if(pageNames=="timePage"){
             showRecip("");

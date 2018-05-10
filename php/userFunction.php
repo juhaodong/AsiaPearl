@@ -17,7 +17,7 @@ if($_POST['q']==0){
 }
 if($_POST['q']==1){
     echo'reg ';
-    $Username=$_POST['MobiNr'];
+    $Username=$_POST['Emailaddress'];
     $Password=$_POST['Password'];
 
     if(file_exists("Users/".$Username)){
