@@ -936,6 +936,24 @@ function initial() {
         }
 
     }
+    $("#buttonH").click(function () {
+
+        console.log(pageNames);
+        if(pageNames=="f1"&&!logged){
+            showRecip('none');
+        }else if(pageNames=="LoginPage"){
+            showRecip('none');
+        }else if(pageNames=="over"){
+            console.log(true);
+            return;
+        }
+        if(pageNames=="timePage"){
+            showRecip("");
+        }
+        console.log("run");
+        showPages(pageNames);
+
+    });
     //console.log(pages);
     //document.getElementById("buttonH").style.visibility="hidden";
     //document.getElementById("buttonF").innerText="Start Order";
@@ -957,12 +975,11 @@ function initial() {
 /**/
 
 }//起始流程
+var pageNames="";
 function backIndex(pageName){
-    $("#buttonH").click(function () {
-        showPages(pageName);
-        showRecip('');
-    })
+   pageNames=pageName
 }
+
 function startOrder(event) {
      if(logged){
          OrderType=event.target.children[0].children[0].children[0].innerText;
@@ -1097,6 +1114,7 @@ function sendOrder(){
             showRecip("none");
             showPages("dankePage");
             $("[data-order-step=4]").addClass("done");
+            backIndex("over");
         }
     })
 }

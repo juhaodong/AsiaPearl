@@ -4,19 +4,16 @@
 
 <head>
     <title>Userinfo-Asia Pearl</title>
-    <script src="../../../../../../../bootrap/js/bootstrap.js"></script>
+   <!-- <script src="../../../../../../../bootrap/js/bootstrap.js"></script>> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- 引入 Bootstrap -->
 
     <link rel="stylesheet" href="../../../../../../../bootrap/css/bootstrap.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="../../../../../../../html/jquery-3.2.1.min.js"></script>
+    <script src="../../../../../../../html/cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function () {
-            getUserInfo();
 
-        })
     </script>
 
     <link rel="stylesheet" href="Info.css">
@@ -37,7 +34,7 @@
         <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Tokyo')">Address</button>
     </div>
 
-    <div id="London" class="w3-container w3-border city">
+    <div id="London" class="w3-container w3-border city" style="min-height:760px;">
         <h2>BaseInfo</h2>
         <div class="Container">
             <div class="block">
@@ -49,7 +46,7 @@
         </div>
     </div>
 
-    <div id="Paris" class="w3-container w3-border city" style="display:none">
+    <div id="Paris" class="w3-container w3-border city" style="min-height:760px;display:none">
         <h2>Recent Order</h2>
         <div class="Container" id="order">
             <div id="end2">
@@ -58,7 +55,7 @@
         </div>
     </div>
 
-    <div id="Tokyo" class="w3-container w3-border city" style="display:none">
+    <div id="Tokyo" class="w3-container w3-border city" style="min-height:760px;display:none">
         <h2>Address</h2>
         <div class="Container">
             <div id="address" class="block">
@@ -72,6 +69,10 @@
 </div>
 
 <script>
+    $(document).ready(function () {
+        getUserInfo();
+
+    });
     function getQueryString(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
@@ -79,10 +80,11 @@
     }
 
     function getUserInfo() {
+
         var username=getQueryString("Username");
         $.ajax({
-            type:"GET",
-            url:"http://asia-pearl-express.com/php/UserInfo.php?_ijt=s74tuub2s2icg989ugbsl8nbm2",
+            type:"POST",
+            url:"http://asia-pearl-express.com/php/UserInfo.php",
             data:{
                 q:"juhaodong"
             },
@@ -100,7 +102,16 @@
                 for(var x in c){
                     writeHtml2(c[x]);
                 }
+            },
+            fail:function (res) {
+                console.log(res);
+
+
+            },
+            complete:function (res) {
+                console.log(res);
             }
+
 
 
         })

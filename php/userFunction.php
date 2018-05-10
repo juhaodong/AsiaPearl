@@ -17,8 +17,9 @@ if($_POST['q']==0){
 }
 if($_POST['q']==1){
     echo'reg ';
-    $Username=$_POST['Username'];
+    $Username=$_POST['MobiNr'];
     $Password=$_POST['Password'];
+
     if(file_exists("Users/".$Username)){
         echo 'Username Used';
         return;
@@ -27,6 +28,11 @@ if($_POST['q']==1){
         mkdir("Users/".$Username);
     }
     $myfile = fopen("Users/".$Username."/".$Username.".txt", "w") or die( 'Invalid Username');
+
+
+
+
+
     fwrite($myfile,$Password);
     echo "ok";
     return;

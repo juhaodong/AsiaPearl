@@ -2,10 +2,12 @@
 
 
 header('Content-type: application/json');
+header("Access-Control-Allow-Origin: *");
 $msg="good";
 $Username=$_POST['q'];
 $orderPath="Users/".$Username."/order/";
 $files=scandir($orderPath);
+//echo "run";
 array_splice($files,0,2);
 $orderDetial=array();
 foreach($files as $value){

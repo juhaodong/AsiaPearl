@@ -23,7 +23,7 @@ function generateOrderInfo($method,$order){
         if(!empty($value->gastName)){
             $s.= "Name:\t".$value->gastName."\n";
         }else{
-            $s.="\n";
+            $s.="";
         }
         $s.= "\t".$value->amount."x "."\n";
         $tmp="";

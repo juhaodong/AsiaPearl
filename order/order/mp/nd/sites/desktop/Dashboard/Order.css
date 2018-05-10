@@ -558,3 +558,7 @@ span.title{
         justify-content: left;
     }
 }
+#wagen td{
+    width: 150px;
+    overflow:hidden;
+}

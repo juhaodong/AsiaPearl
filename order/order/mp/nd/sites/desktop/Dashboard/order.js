@@ -164,8 +164,11 @@ function recordSingleItemOrder(name,amount) {
     if(name.indexOf("Klein ")!=-1){
         name=name.slice(6);
     }
+    document.getElementById("menuName").innerText=name;
+
    // console.log(name);
     var item=findDataByName(name,isCart);
+
   //  console.log(item);
    // console.log(item);
     orderItem=new Object();
@@ -195,6 +198,7 @@ function recordSingleItemOrder(name,amount) {
         orderItem.amount="Klein";
        // orderItem.name="Groß "+item.name;
     }
+    document.getElementById("menuPrice").innerText="€"+menuPrice;
     orderMenu=new Array();
     orderMenu.push(orderItem);
     showPic(item.name,0);
@@ -235,15 +239,17 @@ function singleOrderMenuProcess(type) {
         }break;
     }
     var $container=document.getElementById("menuPage");
-    var head2=document.getElementById("menuName");
+    var menun=document.getElementById("menuName");
+    menun.innerText="";
+    var head2=document.getElementById("currentType");
     head2.innerText=type;
     var head3=document.getElementById("menuPrice");
-    // head3.innerText=price+"0EUR";
+     head3.innerText="";
     var $discription=document.getElementById("menuDescribe");
     //  $discription.innerText="  Wälen Sie "+b+" Beilage & "+h+" HauptGericht.";
     var $stepinfo=document.getElementById("steps");
-    head2.style.display="none";
-    head3.style.display="none";
+     head2.style.display="";
+  //  head3.style.display="none";
     $discription.style.display="none";
     $stepinfo.style.display="";
     $("#steps").empty();
@@ -284,7 +290,7 @@ function SinglemenuProcess(Type) {
             h.setAttribute("class","container2");
             h.setAttribute("style","justify-content: space-between");
             h.setAttribute("id","h");
-            var ti=document.createElement("h1");
+            var ti=document.createElement("h4");
             ti.innerText="hauptgericht";
             ti.setAttribute("style","width:100%");
             h.appendChild(ti);
@@ -293,7 +299,7 @@ function SinglemenuProcess(Type) {
             b.setAttribute("class","container2");
             b.setAttribute("style","justify-content: space-between");
             b.setAttribute("id","b");
-            var ti2=document.createElement("h1");
+            var ti2=document.createElement("h4");
             ti2.innerText="Beilage";
             ti2.setAttribute("style","width:100%");
             b.appendChild(ti2);
@@ -302,7 +308,7 @@ function SinglemenuProcess(Type) {
             v.setAttribute("class","container2");
             v.setAttribute("style","justify-content: space-between");
             v.setAttribute("id","v");
-            var ti3=document.createElement("h1");
+            var ti3=document.createElement("h4");
             ti3.innerText="Vorspeisen";
             ti3.setAttribute("style","width:100%");
             v.appendChild(ti3);
@@ -311,7 +317,7 @@ function SinglemenuProcess(Type) {
             g.setAttribute("class","container2");
             g.setAttribute("style","justify-content: space-between");
             g.setAttribute("id","g");
-            var ti4=document.createElement("h1");
+            var ti4=document.createElement("h4");
             ti4.innerText="Getränk";
             ti4.setAttribute("style","width:100%");
             g.appendChild(ti4);
@@ -320,7 +326,7 @@ function SinglemenuProcess(Type) {
             s.setAttribute("class","container2");
             s.setAttribute("style","justify-content: space-between");
             s.setAttribute("id","s");
-            var ti5=document.createElement("h1");
+            var ti5=document.createElement("h4");
             ti5.innerText="Sauce";
             ti5.setAttribute("style","width:100%");
             s.appendChild(ti5);
