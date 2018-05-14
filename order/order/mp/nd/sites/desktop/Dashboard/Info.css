@@ -2,6 +2,9 @@
     padding: 10px;
     background: #eee;
 }
+input:focus{
+    border: 1px solid black !important;
+}
 .block{
     margin: 10px;
     width: 70%;

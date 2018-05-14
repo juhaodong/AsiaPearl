@@ -206,6 +206,7 @@ h3{
 
 }
 .jhMenuItemContainer{
+    cursor: pointer;
     background: red;
     display: flex;
     align-items: flex-end;

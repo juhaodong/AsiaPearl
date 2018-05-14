@@ -2,6 +2,8 @@
 
 /************全局变量****************/
 var orderInfo=new Object();//记录全部Order信息，即购物车
+const PHPROOT="../../../../../../../php/";
+var UserID="";
 orderInfo.orders=new Array();
 orderInfo.time="";
 orderInfo.address="";
@@ -171,21 +173,29 @@ function getMenuData() {
 function sendUserinfo() {
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/userFunction.php",
-        data : {q:0,Username:userInfo.Username.value,Password:userInfo.Password.value},
+        url: "http://asia-pearl-express.com/php/DataBaseJ?q=getUser",
+        data : {q:0,Username:userInfo.Username.value},
         success: function(msg) {
-            var a=msg.toString();
+            info=JSON.parse(msg);
+            console.log(info);
+            if(info.Password==userInfo.Password.value){
+                username=info.Name;
+                UserID=info.UserID;
+                login();
+            }else{
+                alert("Falsch Passwort");
+            }
+          /*  var a=msg.toString();
             a.replace(/[\r\n]/g,"");
             console.log(a);
 
             if(a=='loginok'){
-                username=userInfo.Username.value;
-                login();
+
 
             }
             else{
                 alert('Falsch Passwort');
-            }
+            }*/
         }
     });
 
@@ -200,19 +210,51 @@ function sendUserAddress() {
     }
     jQuery.ajax({
         type: "POST",
+        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
+        data : {
+
+            UserName:address.Username.value,
+            Password:address.Password.value,
+            Name:address.Name.value,
+            FamileName:address.famileName.value,
+            Strasse:address.StrasseName.value,
+            HausNr:address.HausNr.value,
+            PLZ:address.Plz.value,
+            Stadt:address.Stadt.value,
+            MobiNr:address.MobiNr.value,
+            EmailAddress:address.Emailaddress.value
+        },
+        success: function(msg) {
+            var a=msg.toString();
+            a.replace(/[\r\n]/g,"");
+            console.log(a);
+            if(a=='good'){
+                username=address.Username.value;
+                setCookie("Username",address.Username.value,3);
+                window.location.href='Orders.html?Username='+address.Username.value;
+
+            }
+            else{
+                alert("a");
+            }
+        }
+    });
+
+   /* jQuery.ajax({
+        type: "POST",
         url: "http://asia-pearl-express.com/php/Save.php",
         data : {
             q:1,
-            Username:address.Username.value,
+            UserName:address.Username.value,
             Password:address.Password.value,
-            a:address.Name.value,
-            b:address.famileName.value,
-            c:address.StrasseName.value,
-            d:address.HausNr.value,
-            e:address.Plz.value,
-            f:address.Stadt.value,
-            g:address.MobiNr.value,
-            h:address.Emailaddress.value
+            Name:address.Name.value,
+            FamileName:address.famileName.value,
+            Strasse:address.StrasseName.value,
+            "HausNr.":address.HausNr.value,
+            PLZ:address.Plz.value,
+            Stadt:address.Stadt.value,
+            "MobiNr.":address.MobiNr.value,
+            "EmailAddress":address.Emailaddress.value
         },
         success: function(msg) {
             var a=msg.toString();
@@ -228,21 +270,21 @@ function sendUserAddress() {
 
             }
         }
-    });
+    });*/
     return false;
 }//注册
 
 function getUserAddress() {
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/UserInfo.php",
-        data : {q:username},
+        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=getUserByID",
+        data : {
+        UserID:UserID},
         success: function(msg) {
             console.log(msg);
-            newRow("Daten:",msg.address[0]+"<br>"+msg.address[2]+" "+msg.address[3].slice(7)+"<br> "+msg.address[4]+"<br>"+msg.address[6])
-
-           var add=msg.address;
-            orderInfo.address="\\b"+add[0].slice(5)+add[2].slice(0,-2)+add[3].slice(7)+add[4].slice(4,-2)+" \t"+add[5].slice(6)+add[6];
+            msg=JSON.parse(msg);
+            newRow("Daten:",msg.Name+"<br>"+msg.Strasse+msg.HausNr+" Etage: "+msg.Etage+"<br>"+msg.Plz+" \t"+msg.Stadt+"<br>"+msg.MobiNr);
+            orderInfo.address="\\b"+msg.Name+"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
         }
     });
 
@@ -295,7 +337,7 @@ function detialShowItems(target) {
         var amount=document.createElement("td");
         amount.innerText=orderInfo.orders[i].amount;
         var preis=document.createElement("td");
-        preis.innerHTML="‎€"+orderInfo.orders[i].price+
+        preis.innerHTML="‎€"+orderInfo.orders[i].price.toFixed(2)+
             "<button menuIndex='"+i+"' class='smallButton' onclick='removeItem(event)'></button>";;
         priceAll+=orderInfo.orders[i].price*orderInfo.orders[i].amount;
         row.appendChild(bf);
@@ -369,7 +411,7 @@ function showItems(wagens) {
         "            </tr>";
     wagen.style.display="";
     var priceAll=0;
-    var first=true;
+
     for(var i=0;i<orderInfo.orders.length;i++){
         var row=document.createElement("tr");
         var name=document.createElement("td");
@@ -378,13 +420,14 @@ function showItems(wagens) {
         var amount=document.createElement("td");
         amount.innerText=orderInfo.orders[i].amount;
         var preis=document.createElement("td");
-        preis.innerHTML="‎€"+orderInfo.orders[i].price+
+        preis.innerHTML="‎€"+orderInfo.orders[i].price.toFixed(2)+
         "<button menuIndex='"+i+"' class='smallButton' onclick='removeItem(event)'></button>";
         priceAll+=orderInfo.orders[i].price*orderInfo.orders[i].amount;
         row.appendChild(name);
         row.appendChild(amount);
         row.appendChild(preis);
         wagen.appendChild(row);
+        var first=true;
         for(var t=0;t<orderInfo.orders[i].info.length;t++){
             var row1=document.createElement("tr");
             var name1=document.createElement("td");
@@ -397,7 +440,7 @@ function showItems(wagens) {
                 amount1.innerText="half";
             }else if(orderInfo.orders[i].info[t].step=="addOn"){
                 if(first){
-                    name1.innerText="AddOn";
+                    name1.innerText="Zusatzt Speisen";
                     t--;
                     first=false;
                 }
@@ -504,9 +547,9 @@ function processMenu(menuType) {
                 for(i in infos.info){
                    // console.log(infos.info);
                     if(infos.info[i].step=="addOn"){
-                        var amount='full';
-                        if(infos.info[i].amount=="small"){
-                            amount='half';
+                        var amount='Groß';
+                        if(infos.info[i].amount=="Klein"){
+                            amount='Klein';
                         }
                         recordAddOnOrder(amount,infos.info[i].name);
                         continue;
@@ -525,9 +568,9 @@ function processMenu(menuType) {
 
             for(i in infos.info){
                 if(infos.info[i].step=="addOn"){
-                         amount='full';
-                    if(infos.info[i].amount=="small"){
-                        amount='half';
+                    var amount='Groß';
+                    if(infos.info[i].amount=="Klein"){
+                        amount='Klein';
                     }
                     recordAddOnOrder(amount,infos.info[i].name);
                     continue;
@@ -565,7 +608,7 @@ function processMenu(menuType) {
     var head2=document.getElementById("menuName");
     head2.innerText=menuType;
     var head3=document.getElementById("menuPrice");
-    head3.innerText=price+"EUR";
+    head3.innerText="€"+price;
     var $discription=document.getElementById("menuDescribe");
     $discription.innerText="  Wälen Sie "+b+" Beilage & "+h+" HauptGericht.";
     var $stepinfo=document.getElementById("steps");
@@ -835,9 +878,8 @@ function newItem(itemName,itemImg,method,where,item){
 }//菜单页中生成并插入菜单栏物品
 
 var returnTo=0;
-function ToStepsMenu(target) {
-    singleOrderMenuProcess(menuName);
-}
+
+
 
 function ToSteps(target) {
     var step=target.getAttribute("data-step-index");
@@ -861,12 +903,15 @@ function findStepIndex(step) {
 }
 function removeSpecificStep(step) {
     console.log(step);
-    step=findStepIndex(step);
-    orderMenu.splice(step,1);
+    while(findStepIndex(step)){
+        var  del=findStepIndex(step);
+        orderMenu.splice(del,1);
+    }
+
     console.log(orderMenu);
 }//配合ToSteps使用，删除指定step中的内容
 function bestellung() {
-    console.log(orderMenu);
+  //  console.log(orderMenu);
     var tmp=new Object();
     tmp.amount=document.getElementById("menge").value;
     tmp.gastName=gastName.value;
@@ -874,11 +919,17 @@ function bestellung() {
     orderMenu.sort(function (a, b) {
         var step1=a.step;
         var step2=b.step;
+        if(step1=="addOn"){
+            return 1;
+        }
+        if(step2=="addOn"){
+            return -1;
+        }
         if(step1<step2) return -1;
         if(step1>step2) return 1;
         return 0;
     });
-    console.log(orderMenu);
+   // console.log(orderMenu);
     tmp.info=orderMenu;
     tmp.price=menuPrice;
     orderInfo.orders.push(tmp);
@@ -896,7 +947,7 @@ function showPic(name,pos) {
         $("[data-step-index="+stepIndex+"]")[0].children[0].children[0].src="";
         return;
     }
-    console.log(name+"位置"+pos+"**在步骤"+stepIndex);
+  //  console.log(name+"位置"+pos+"**在步骤"+stepIndex);
     var imgpath=findDataByName(name).img;
     $("[data-step-index="+stepIndex+"]")[0].children[pos].children[0].src="../yxj"+imgpath;
 }//填充step中的图片
@@ -947,10 +998,12 @@ function initial() {
             return;
         }else if(pageNames=="f1"&&logged){
             showRecip("");
+            document.getElementById("kasseButton").setAttribute("onclick","kasse()");
         }
         if(pageNames=="timePage"){
             showRecip("");
         }
+
         console.log("run");
         showPages(pageNames);
 
@@ -982,6 +1035,7 @@ function backIndex(pageName){
 }
 
 function startOrder(event) {
+    document.getElementById("gastName").value="";
      if(logged){
          OrderType=event.target.children[0].children[0].children[0].innerText;
          BeginOrder(OrderType);
@@ -1049,7 +1103,7 @@ function sendOrdertime() {
     $("[data-order-step=2]").addClass("done");
     showPages("f1");
     orderInfo.time=ordertime;
-    newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a onclick='showPages(\"timePage\")'>ändern</a>");
+    newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
     backIndex("timePage");
     return false;
 }//完成时间页并返回首页
@@ -1105,6 +1159,18 @@ function sendOrder(){
     orderInfo.orders=orderInfo.orders.sort(compare("name"));
     console.log(orderInfo.orders);
     $.ajax({
+        url:PHPROOT+"DataBaseJ.php?q=saveOrder",
+        method:"POST",
+        data:({
+            UserID:UserID,
+            Amount:orderInfo.finalPrice,
+            Address:orderInfo.address
+        }),
+        success:function (res) {
+           console.log(res);
+        }
+    });
+    $.ajax({
         url:'../../../../../../../php/orders.php',
         method:'POST',
         data:({
@@ -1138,13 +1204,97 @@ function showAddOn(Type){
 
 function editItem(event) {
     var index=event.target.attributes[0].nodeValue;
-    console.log(event.target.attributes[0].nodeValue);
+   // console.log(event.target.attributes[0].nodeValue);
     processMenu(index);
     showRecip("none");
     showPages("menuPage");
     backIndex("f1");
 }
+function ToStepsMenu(target) {
+    console.log("TOSTEPSMENU*******************************************");
+  //  bestellung();
+    //console.log(orderInfo);
+  //  var index=orderInfo.orders.length-1;
+    //processMenu(index);
+    //showRecip('none');
 
+    document.getElementById("currentType").style.display="none";
+    document.getElementById("resultPage").style.display="none";
+    document.getElementById("addOns").style.display="none";
+    finishStep=0;
+    stepIndex=0;
+    isCart=false;
+    //console.log(orderMenu);
+    for(var i in orderMenu){
+      //  console.log(orderMenu[i]);
+        if(orderMenu[i].step==0){
+            orderMenu.splice(i,1);
+        }
+    }
+   // console.log(orderMenu);
+    var tmp=orderMenu;
+    orderItem={};
+    switch (menuName){
+        case "Unsere Favoriten":{
+            menuPrice=0;
+            SinglemenuProcess('menu');
+        }break;
+        case "Vorspeisen":{
+            menuPrice=0;
+            SinglemenuProcess('vorspeisen');
+        }break;
+        case "Getränke":{
+            menuPrice=0;
+            SinglemenuProcess('getranke');
+        }break;
+        case "A LA Carte":{
+            menuPrice=0;
+            isCart=true;
+            SinglemenuProcess('carte');
+        }break;
+    }
+    var $container=document.getElementById("menuPage");
+    var menun=document.getElementById("menuName");
+    menun.innerText="";
+    var head2=document.getElementById("currentType");
+    head2.innerText=menuName;
+    var head3=document.getElementById("menuPrice");
+    head3.innerText="";
+    var $discription=document.getElementById("menuDescribe");
+    //  $discription.innerText="  Wälen Sie "+b+" Beilage & "+h+" HauptGericht.";
+    var $stepinfo=document.getElementById("steps");
+    head2.style.display="";
+    //  head3.style.display="none";
+    $discription.style.display="none";
+    $stepinfo.style.display="";
+    $("#steps").empty();
+    for(var i=0;i<1;){
+        var $beilage=document.createElement("div");
+        $beilage.setAttribute("class","step");
+        $beilage.setAttribute("data-step-index",i++);
+        $beilage.setAttribute("onclick","ToStepsMenu(this)");
+        var $leftimg=document.createElement("div");
+        $leftimg.setAttribute("class","leftImg makeUpImg");
+        var img1=document.createElement("img");
+        img1.setAttribute("class","makeUpImg");
+        var $rightimg=document.createElement("div");
+        $rightimg.setAttribute("class","rightImg makeUpImg");
+        var img2=document.createElement("img");
+        img2.setAttribute("class","makeUpImg");
+        $leftimg.appendChild(img1);
+        $rightimg.appendChild(img2);
+        $beilage.appendChild($leftimg);
+        $beilage.appendChild($rightimg);
+        $stepinfo.appendChild($beilage);
+    }
+
+    showRecip("none");
+    showPages("menuPage");
+    backIndex("f1");
+    orderMenu=tmp;
+    showAddOns();
+    console.log("TOSTEPSMENU*******************************************");
+}
 
 /************Var*****/
 /********UI*********/

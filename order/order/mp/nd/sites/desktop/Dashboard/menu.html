@@ -282,7 +282,7 @@
                 <div class="jhMenuItemContainer short" style="background: url('../yxj/menu/Menu1-1Haupt-1Beilage.jpg');background-size: 250px">
                     <div class="jhItemDetail red">
                         <div class="upperLine">
-                            <span style="display: inline-block">MENÜ 1</span><span style="display: inline-block;">9.9€</span>
+                            <span style="display: inline-block">MENÜ 1</span><span style="display: inline-block;">9.90€</span>
                         </div>
                         <div class="lowerLine">
                             Wählen Sie 1 Hauptgricht
@@ -388,40 +388,40 @@
     <div class="Container" id="LoginPage" style="display: none">
 
         <div class="formContainer">
-            <h2 class="page-title characters">Anmelden</h2>
+            <h2 class="page-title characters">Mein Account</h2>
             <div class="choice-container" id="choiceBlock">
                 <div class="block">
-                    <div class="labelText">Ich habe einen konto</div>
+                    <h3 style="width: 300px;text-align: center" class="">Einlogen</h3>
                     <form name="userInfo" onsubmit="return sendUserinfo()">
                         <div id="login">
-                            <input class="TextArea" name="Username" placeholder="User Name" type="text"/>
-                            <input class="TextArea" name="Password" placeholder="Passwort" type="password"/>
+                            <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail" type="text"/></label>
+                            <label>Password<input class="TextArea" name="Password" placeholder="Passwort" type="password"/></label>
                             <input class="TextArea" name="sub" type="submit" value="Anmelden"/>
                         </div>
                     </form>
-
+                    <a style="color:dimgrey;font-size: 10px">passwort vorgessen?</a>
                 </div>
                 <div class="block">
-                    <div class="labelText">NEUEN KONTO ERSTELLEN</div>
-                    <button style="margin-top: 95px" class="normal-button" onclick="popReg()">Erstellen</button>
+                    <h3 style="width: 300px;text-align: center" class="">Account Erstellen</h3>
+                    <button style="margin-top: 155px" class="normal-button" onclick="popReg()">Erstellen</button>
                 </div>
             </div>
             <div id="regs" class="form1" style="display: none">
 
                 <form name="address" onsubmit="return sendUserAddress()">
                     <div id="reg">
-                        <input required="required" class="TextArea" name="Username" placeholder="Username" type="text"/>
+                        <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address" type="text"/></label>
 
-                        <input required="required" class="TextArea" name="Password" placeholder="Passwort" type="text"/>
-                        <input required="required" class="TextArea" name="Password2" placeholder="Passwort Bestätigungs" type="text"/>
-                        <input required="required" class="TextArea" name="Name" placeholder="Vorname" type="text"/>
-                        <input required="required" class="TextArea" name="famileName" placeholder="FamilienName" type="text"/>
-                        <input required="required" class="TextArea" name="StrasseName" placeholder="Straße" type="text"/>
-                        <input required="required" class="TextArea" name="HausNr" placeholder="HausNummer" type="text"/>
-                        <input required="required" class="TextArea" name="Plz" placeholder="Plz" type="text"/>
-                        <input required="required" class="TextArea" name="Stadt" placeholder="Stadt" type="text"/>
-                        <input required="required" class="TextArea" name="MobiNr" placeholder="Mobi. Nr." type="text"/>
-                        <input required="required" class="TextArea" name="Emailaddress" placeholder="Email-address" type="text"/>
+                        <label>Password</label><input required="required" class="TextArea" name="Password" placeholder="Passwort" type="text"/>
+                        <label>Password Bestätigungs</label><input required="required" class="TextArea" name="Password2" placeholder="Passwort Bestätigungs" type="text"/>
+                        <label>Vorname</label><input required="required" class="TextArea" name="Name" placeholder="Vorname" type="text"/>
+                        <label>FamilienName</label><input required="required" class="TextArea" name="famileName" placeholder="FamilienName" type="text"/>
+                        <label>Staße</label><input required="required" class="TextArea" name="StrasseName" placeholder="Straße" type="text"/>
+                        <label>HausNummer</label><input required="required" class="TextArea" name="HausNr" placeholder="HausNummer" type="text"/>
+                        <label>Etage</label><input required="required" class="TextArea" name="Etage" placeholder="Etage -links/Rechts" type="text"/>
+                        <label>Plz</label><input required="required" class="TextArea" name="Plz" placeholder="Plz" type="text"/>
+                        <label>Stadt</label><input required="required" class="TextArea" name="Stadt" placeholder="Stadt" type="text"/>
+                        <label>Mobi. Nr.</label><input required="required" class="TextArea" name="MobiNr" placeholder="Mobi. Nr." type="text"/>
                         <input type="submit" class="TextArea" value="Zurück" onclick="popMainmenu()" />
                         <input class="TextArea" type="submit" value="Anmeldung">
                     </div>
@@ -480,7 +480,7 @@
                             jQuery(function() {
                                 $('input.timepicker').timepicker({
                                     timeFormat: 'HH:mm',
-                                    interval: 30,
+                                    interval: 60,
                                     minTime: '12',
                                     maxTime: '8:00pm',
                                     defaultTime: '12',

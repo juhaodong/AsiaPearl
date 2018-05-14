@@ -4,7 +4,7 @@ function newAddon(item,where){
     var _itemI=document.createElement("div");
     _itemI.setAttribute("class","itemImg");
     var _sI=document.createElement("img");
-    _sI.setAttribute("onclick","addOnOrder('half',this,1)");
+    _sI.setAttribute("onclick","addOnOrder('Klein',this,1)");
     _sI.setAttribute("class","smallImg");
     _sI.setAttribute("src","../yxj"+item.img);
     _itemI.appendChild(_sI);
@@ -19,15 +19,12 @@ function newAddon(item,where){
     if(item.bprice){
         var littleButtons=document.createElement("button");
         littleButtons.setAttribute("class","littleButtons");
-        littleButtons.setAttribute("onclick","addOnOrder('full',this,0)");
+        littleButtons.setAttribute("onclick","addOnOrder('Groß',this,0)");
         littleButtons.innerText="€"+item.bprice.toFixed(2);
         itemFunction.appendChild(littleButtons);
     }
-
-
-
     var littleButtons2=document.createElement("button");
-    littleButtons2.setAttribute("onclick","addOnOrder('half',this,0)");
+    littleButtons2.setAttribute("onclick","addOnOrder('Klein',this,0)");
     littleButtons2.setAttribute("class","littleButtons");
     littleButtons2.innerText="€"+item.sprice.toFixed(2);
     itemFunction.appendChild(littleButtons2);
@@ -41,7 +38,7 @@ function newAddon(item,where){
     document.getElementById(where).appendChild(_itemC)
 }//菜单页中生成并插入菜单栏物品
 function addOnOrder(amount,item,source) {
-    console.log('addOnItem');
+    //console.log('addOnItem');
     var name=item.parentElement.parentElement.children[1].children[0].innerHTML;
     recordAddOnOrder(amount,name);
 
@@ -59,7 +56,7 @@ function recordAddOnOrder(amount,name) {
    // console.log(amount+name);
     orderItem.type=findDataByName(name).type;
     var number=0;
-    if(amount=='half'){
+    if(amount=='Klein'){
         number=1;
         orderItem.amount='Klein';
         orderItem.price=findDataByName(name).sprice;
@@ -72,15 +69,15 @@ function recordAddOnOrder(amount,name) {
     orderItem.type=findDataByName(name).type;
     orderItem.name=name;
     // toggleFloat();
-    console.log(orderMenu);
-    console.log(orderItem);
+   // console.log(orderMenu);
+   // console.log(orderItem);
 
     orderMenu.push(orderItem);
     orderItem=new Object();
 }
 
 function toggleFloat() {
-    console.log("toggleFloat");
+   // console.log("toggleFloat");
    $('#float').toggle();
    showAddOns('addOns');
 }
@@ -110,7 +107,7 @@ function showAddOns(father) {
    // father.appendChild(generateNewRowContent('Add ons'));
     for(i in orderMenu){
         var tmp=orderMenu[i];
-
+        console.log(tmp);
         if(tmp.step=="addOn"){
             
             var c=tmp.name+" | "+tmp.amount+" | "+tmp.price;
@@ -148,13 +145,14 @@ function showCartOnMobile() {
     //$("#cart").toggleDisplay();
 }
 function singleItemOrder(item,amount) {
-    console.log(amount);
+    console.log("SingleOrdering:"+item+" : "+amount);
     //console.log(item.parentElement.parentElement.children[1].children[0].innerHTML);
     var tmp= findDataByName(item.parentElement.parentElement.children[1].children[0].innerHTML);
     recordSingleItemOrder(tmp.name,amount);
 }
 function recordSingleItemOrder(name,amount) {
-    console.log(amount);
+    console.log("Recording:"+amount+name);
+    console.log(orderMenu);
     if(name.indexOf("Groß")!=-1){
         name=name.slice(5);
     }
@@ -169,7 +167,7 @@ function recordSingleItemOrder(name,amount) {
    // console.log(name);
     var item=findDataByName(name,isCart);
 
-  //  console.log(item);
+    // console.log(item);
    // console.log(item);
     orderItem=new Object();
     orderItem.amount=2;
@@ -198,8 +196,8 @@ function recordSingleItemOrder(name,amount) {
         orderItem.amount="Klein";
        // orderItem.name="Groß "+item.name;
     }
-    document.getElementById("menuPrice").innerText="€"+menuPrice;
-    orderMenu=new Array();
+    document.getElementById("menuPrice").innerText="€"+menuPrice.toFixed(2);
+
     orderMenu.push(orderItem);
     showPic(item.name,0);
     showPic(item.name,1);
@@ -283,7 +281,7 @@ function singleOrderMenuProcess(type) {
 function SinglemenuProcess(Type) {
 
     $("#menuItems").empty();
-        console.log(Type);
+      //  console.log(Type);
         if(Type=="carte"){
             var f=document.getElementById("menuItems");
             var h=document.createElement("div");

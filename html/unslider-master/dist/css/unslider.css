@@ -307,7 +307,8 @@ width: 40px;background: #2b542c;
 #detialDiscribe{
     overflow: hidden;
     flex-shrink: 2;
-    font-size: xx-small;
+    font-size: medium;
+    line-height: 15px;
 }
 .menu-top-nav{
     height: 90px;

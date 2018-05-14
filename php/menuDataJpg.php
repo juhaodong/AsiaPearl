@@ -110,7 +110,7 @@ mit eine ausgewählt soße.',
         array(
             'name'=>'Glückskeks',
             'img'=>'/前餐/幸运饼.jpg',
-            'discibe'=>'süß-sauer-scharf mit paprika, champignons, bambus, hühnerfleisch, und eie.',
+            'discibe'=>'',
             'type'=>'vorspeisen',
             'sprice'=>1.95,
             'bprice'=>7.00,
