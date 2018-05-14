@@ -275,49 +275,49 @@ mit eine ausgewählt soße.',
             'img'=>'/套餐/R-OH.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>6.80
+            'sprice'=>9.90
         ),
         array(
             'name'=>'Knusprige Ente mit Mix-Gemüse',
             'img'=>'/套餐/TC-Bowl.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>8.00
+            'sprice'=>11.15
         ),
         array(
             'name'=>'Hähnchenbrust mit Bohnen und Reis',
             'img'=>'/套餐/R-H.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>6.80
+            'sprice'=>9.90
         ),
         array(
             'name'=>'Gong Bao Chicken mit gebr.Reis',
             'img'=>'/套餐/KPC-Bowl.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>6.80
+            'sprice'=>9.90
         ),
         array(
             'name'=>'Beijing Beef mit gebr.Nudeln',
             'img'=>'/套餐/BB-Bowl.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>6.80
+            'sprice'=>9.90
         ),
         array(
             'name'=>'Frische Champignons mit gebr.Nudeln',
             'img'=>'/套餐/HWS-Bowl.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>6.80
+            'sprice'=>9.90
         ),
         array(
             'name'=>'Orange Huhn mit gebr.Reis & Nudeln',
-            'img'=>'/套餐/OC-BB.png',
+            'img'=>'/套餐/OO-RN.png',
             'discibe'=>'',
             'type'=>'menu',
-            'sprice'=>9.90
+            'sprice'=>10.90
         ),
         array(
             'name'=>'Beef mit Chicken.gebr.Reis mix Gemüse',
@@ -522,8 +522,8 @@ mit eine ausgewählt soße.',
             'discibe'=>'crisp-golden butterflied garnelen.',
             'type'=>'carte',
             'subtype'=>'v',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 
@@ -533,8 +533,8 @@ mit eine ausgewählt soße.',
             'discibe'=>'kohl, karotten pilze, zwiebeln und hühnerfleisch in einer knusprigen wan-tan-wrapper.',
             'type'=>'carte',
             'subtype'=>'v',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 
@@ -544,8 +544,8 @@ mit eine ausgewählt soße.',
             'discibe'=>'kohl, sellerie, karotten, zwiebeln und chinesische nudeln in einem knusprigen wan-tan-wrapper.',
             'type'=>'carte',
             'subtype'=>'v',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 

@@ -204,8 +204,16 @@ function sendUserinfo() {
 
 }//登陆
 function sendUserAddress() {
-    if(!(address.Password.value==address.Password2.value)){
+    if(!(address.Password.value===address.Password2.value)){
         alert('two Password not same');
+        return false;
+    }
+
+
+    if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
+        alert(" In dieser Bereich\n" +
+            "        noch keine Lieferservice\n" +
+            "        Bitte Verstehen");
         return false;
     }
     jQuery.ajax({
@@ -225,7 +233,7 @@ function sendUserAddress() {
             EmailAddress:address.Emailaddress.value
         },
         success: function(msg) {
-            var a=msg.toString();
+            let a = msg.toString();
             a.replace(/[\r\n]/g,"");
             console.log(a);
             if(a=='good'){
@@ -235,7 +243,8 @@ function sendUserAddress() {
 
             }
             else{
-                alert("a");
+                alert("E-mail ist besetzt.");
+                return false;
             }
         }
     });
@@ -479,7 +488,7 @@ function showItems(wagens) {
         r.style.display="none";
     }else{
         var r=document.getElementById("rest");
-        rest.innerHTML="um den Mindestbestellwert zu erreichen:<span style='font-size: medium;font-style: oblique'>€"+(15-priceAll).toFixed(2)+"</span>";
+        rest.innerHTML="Benötigeter Betrag, um den Mindestbestellwert zu erreichen:<span style='font-size: medium;font-style: oblique'>€"+(15-priceAll).toFixed(2)+"</span>";
         r.style.display="";
 
     }
