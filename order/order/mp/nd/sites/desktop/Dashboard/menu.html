@@ -408,7 +408,7 @@
             </div>
             <div id="regs" class="form1" style="display: none">
 
-                <form name="address" onsubmit="return sendUserAddress()">
+                <form name="address">
                     <div id="reg">
                         <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address" type="text"/></label>
 
@@ -423,7 +423,7 @@
                         <label>Stadt</label><input required="required" class="TextArea" name="Stadt" placeholder="Stadt" type="text"/>
                         <label>Mobi. Nr.</label><input required="required" class="TextArea" name="MobiNr" placeholder="Mobi. Nr." type="text"/>
                         <input type="submit" class="TextArea" value="Zurück" onclick="popMainmenu()" />
-                        <input class="TextArea" type="submit" value="Anmeldung">
+                        <input type="button" class="TextArea"  onclick="return sendUserAddress()" value="Anmeldung">
                     </div>
 
 

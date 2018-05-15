@@ -178,13 +178,18 @@ function sendUserinfo() {
         success: function(msg) {
             info=JSON.parse(msg);
             console.log(info);
-            if(info.Password==userInfo.Password.value){
-                username=info.Name;
-                UserID=info.UserID;
-                login();
+            if(info){
+                if(info.Password==userInfo.Password.value){
+                    username=info.Name;
+                    UserID=info.UserID;
+                    login();
+                }else{
+                    alert("Falsch Passwort");
+                }
             }else{
-                alert("Falsch Passwort");
+                alert("User Nicht Exist.");
             }
+
           /*  var a=msg.toString();
             a.replace(/[\r\n]/g,"");
             console.log(a);
@@ -220,8 +225,7 @@ function sendUserAddress() {
         type: "POST",
         url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
         data : {
-
-            UserName:address.Username.value,
+            Etage:address.Etage.value,
             Password:address.Password.value,
             Name:address.Name.value,
             FamileName:address.famileName.value,
@@ -233,13 +237,14 @@ function sendUserAddress() {
             EmailAddress:address.Emailaddress.value
         },
         success: function(msg) {
-            let a = msg.toString();
-            a.replace(/[\r\n]/g,"");
+            let a = JSON.parse(msg);
             console.log(a);
-            if(a=='good'){
-                username=address.Username.value;
-                setCookie("Username",address.Username.value,3);
-                window.location.href='Orders.html?Username='+address.Username.value;
+            if(a[0]=='good'){
+                username=address.Name.value;
+                UserID=a[1];
+                alert("Erstellen Komplete.");
+                login();
+                return false;
 
             }
             else{
@@ -626,7 +631,6 @@ function processMenu(menuType) {
     $discription.style.display="";
     $stepinfo.style.display="";
     $("#steps").empty();
-
     for(var i=1;h+b>0;h--){
 
         var $beilage=document.createElement("div");

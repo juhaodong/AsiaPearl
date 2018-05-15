@@ -280,7 +280,7 @@ switch ($q_parameter) {
             $insertParam[$k]="'".$v."'";
         }
         $sql_insert=new SqlInsert($conn,'User',$insertParam);
-        echo common_execute_procedure($sql_insert);
+        echo json_encode([common_execute_procedure($sql_insert),"U".date("Ymd").$rs]);
 
         break;
 
