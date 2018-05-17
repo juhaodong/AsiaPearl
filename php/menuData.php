@@ -10,37 +10,30 @@ $response = array(
             'img'=>'/跟餐/白饭.png',
             'discibe'=>'weißer gedünsteter reis',
             'type'=>'beilag',
-
         ),
-
-
         array(
             'name'=>'gebr, nudeln',
             'img'=>'/跟餐/炒面.png',
             'discibe'=>'gebratene nudeln mit zwiebein, und kohl.',
             'type'=>'beilag',
-
         ),
         array(
             'name'=>'gemüse',
             'img'=>'/跟餐/蔬菜.png',
             'discibe'=>'eine gesunde medley aus brokkoli, zucchini, karotten, bohnen und kohl.',
             'type'=>'beilag',
-
         ),
         array(
             'name'=>'gebr, reis',
             'img'=>'/跟餐/炒饭.png',
             'discibe'=>'zubereitete gedünstete weiße reis mit sojasauce, eier, erbsen, karotten.',
             'type'=>'beilag',
-
         ),
         array(
             'name'=>'beijing beef',
             'img'=>'/主餐/洋葱niu.png',
             'discibe'=>'knusprige mariniertes rindfleisch, mit zwiebeln, rote paprika und einem berühmte sauce.',
             'type'=>'hauptgericht',
-
 
         ),
         array(
@@ -49,14 +42,12 @@ $response = array(
             'discibe'=>'unsere unterschrift gericht.
 süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'type'=>'hauptgericht',
-
         ),
         array(
             'name'=>'orange huhn würzig',
             'img'=>'/主餐/橙子鸡.png',
             'discibe'=>'knuspriges hähnchen in einer süß-scharfen-würzige orangensauce.',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -65,8 +56,7 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'img'=>'/主餐/长豆牛1.png',
             'discibe'=>'steaks mit frische bohnen, zwiebeln und champignons in einer würzigen sauce.',
             'type'=>'hauptgericht',
-            'addPrice'=>1.25,
-
+            'addPrice'=>1.25
         ),
 
 
@@ -75,7 +65,6 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'img'=>'/主餐/宫保鸡.png',
             'discibe'=>'ein sichuan-inspiriertes gericht mit huhn, und gemüse, verfeinert',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -84,7 +73,6 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'img'=>'/主餐/长豆鸡.png',
             'discibe'=>'hähnchenbrust,bohnen und zwiebeln in einer milden lngver-sojasauce würzen.',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -94,7 +82,6 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'discibe'=>'knusprige-goldene hähnchen streifen.
 mit eine ausgewählt soße.',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -103,7 +90,6 @@ mit eine ausgewählt soße.',
             'img'=>'/主餐/炸鸡胸1.png',
             'discibe'=>'gebratene-goldene hähnchenbrust, mit eine ausgewählt soße.',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -112,7 +98,6 @@ mit eine ausgewählt soße.',
             'img'=>'/主餐/毛菇.png',
             'discibe'=>'frische champignons knoblauch körner, mit austern-sauce.',
             'type'=>'hauptgericht',
-
         ),
 
 
@@ -121,8 +106,7 @@ mit eine ausgewählt soße.',
             'img'=>'/主餐/炸鸭.png',
             'discibe'=>'knusprige ente, mit verschidene gemüse und eine ausgewählt soße.',
             'type'=>'hauptgericht',
-            'addPrice'=>1.25,
-
+            'addPrice'=>1.25
         ),
 
 
@@ -133,8 +117,8 @@ mit eine ausgewählt soße.',
             'img'=>'/前餐/炸大虾.png',
             'discibe'=>'crisp-golden butterflied garnelen.',
             'type'=>'vorspeisen',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 
@@ -143,8 +127,8 @@ mit eine ausgewählt soße.',
             'img'=>'/前餐/肉卷.png',
             'discibe'=>'kohl, karotten pilze, zwiebeln und hühnerfleisch in einer knusprigen wan-tan-wrapper.',
             'type'=>'vorspeisen',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 
@@ -153,8 +137,8 @@ mit eine ausgewählt soße.',
             'img'=>'/前餐/蔬菜卷.png',
             'discibe'=>'kohl, sellerie, karotten, zwiebeln und chinesische nudeln in einem knusprigen wan-tan-wrapper.',
             'type'=>'vorspeisen',
-            'sprice'=>1.95,
-            'bprice'=>9.75,
+            'sprice'=>3.50,
+            'bprice'=>10.50,
         ),
 
 
@@ -500,7 +484,7 @@ mit eine ausgewählt soße.',
             'mprice'=>7,
             'bprice'=>10.5
         ),
-
+ 
 
         array(
             'name'=>'knusprige enten',
