@@ -484,7 +484,7 @@ mit eine ausgewählt soße.',
             'mprice'=>7,
             'bprice'=>10.5
         ),
- 
+
 
         array(
             'name'=>'knusprige enten',
