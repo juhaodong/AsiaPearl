@@ -160,7 +160,7 @@ function showRecip(t) {
 function getMenuData() {
     $.ajax({
         type: "POST",
-        url: "/php/menuData.php",
+        url: "../../../../../../../php/menuData.php",
         success: function(msg) {
             console.log(msg);
             menuData=msg.data;
@@ -299,7 +299,7 @@ function getUserAddress() {
             console.log(msg);
             msg=JSON.parse(msg);
             newRow("Daten:",msg.Name+"<br>"+msg.Strasse+msg.HausNr+" Etage: "+msg.Etage+"<br>"+msg.Plz+" \t"+msg.Stadt+"<br>"+msg.MobiNr);
-            orderInfo.address="\\b"+msg.Name+"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
+            orderInfo.address="\\b"+msg.Name + "   \\b"+msg.FamileName +"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
         }
     });
 
@@ -312,8 +312,6 @@ function newRow(title,word) {
     if(document.getElementById(title)!=undefined){
         document.getElementById(title).remove();
     }
-
-
     var $listrow=document.createElement("div");
     $listrow.setAttribute("id",title);
     $listrow.setAttribute("class","listRow");
@@ -1022,6 +1020,21 @@ function initial() {
         showPages(pageNames);
 
     });
+    let d = new Date().getHours();
+    let m= new Date().getMinutes();
+    console.log(d);
+
+    $('input.timepicker').timepicker({
+        timeFormat: 'HH:mm',
+        interval: 30,
+        minTime: '12',
+        maxTime: '8:00pm',
+        defaultTime: d,
+        startTime: d+":"+m,
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true
+    });
     //console.log(pages);
     //document.getElementById("buttonH").style.visibility="hidden";
     //document.getElementById("buttonF").innerText="Start Order";
@@ -1033,7 +1046,7 @@ function initial() {
     });
    // processMenu('MENÜ 1');
     //showPages("menuPage")
-    showPages("f1");
+    showPages("addressPage");
 
     //showPages('timePage');
     //showRecip('');

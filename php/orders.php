@@ -13,7 +13,7 @@ function sortCtype($a,$b){
 function generateOrderInfo($method,$order){
     $s="";
     foreach ($order->orders as $value){
-        $s.="==========".$value->name;
+        $s.="======".$value->name;
 
         if($method==1){
             $s.=  "   ".$value->price."€";
@@ -44,9 +44,9 @@ function generateOrderInfo($method,$order){
 
                 $s.=$w->name."  \t";
                 if($w->amount==1){
-                    $s.="half "."\n";
+                    $s.="halbe "."\n";
                 }else if ($w->amount==2){
-                    $s.="full"."\n";
+                    $s.="\n";
                 }else{
                     $s.=$w->amount."\n";
                 }
