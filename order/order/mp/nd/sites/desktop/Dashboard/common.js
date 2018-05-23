@@ -242,7 +242,8 @@ function sendUserAddress() {
             if(a[0]=='good'){
                 username=address.Name.value;
                 UserID=a[1];
-                alert("Erstellen Komplete.");
+                alert("Deine Account wurde erstellt. ");
+                window.scrollTo(0,0);
                 login();
                 return false;
 
