@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <base/>
 
 
@@ -331,8 +333,8 @@
                         </div>
                     </div>
                 </div>
-                <div  class="jhMenuItemContainer short"
-                     style="display:none; background: url('../yxj/menu/Familien-Menu2.jpg'); background-size: 250px">
+                <div onclick="showPartyPack()" class="partyButton short"
+                     style=" background: url('../yxj/menu/partypack.jpg'); background-size: 250px">
                     <div class="jhItemDetail red">
                         <div class="upperLine" style="height: 40px">
                             <span style="display: inline-block">Party Packs</span>
@@ -342,6 +344,55 @@
                         </div>
                     </div>
                 </div>
+
+                <div  class="jhMenuItemContainer short partypack"
+                      style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" >
+                            <span style="display: inline-block">12-16 Person</span>
+                            <span style="display: inline-block;">102.00€</span>
+                        </div>
+                        <div class="lowerLine">
+                            Wählen Sie 2 Groß Hauptgricht
+                            <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp 2 Groß Beilage.
+                        </div>
+                    </div>
+                </div>
+                <div  class="jhMenuItemContainer short partypack"
+                      style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine">
+                            <span style="display: inline-block">18-22 Person</span>
+                            <span style="display: inline-block;">143.00€</span>
+                        </div>
+                        <div class="lowerLine">
+                            Wählen Sie 3 Groß Hauptgricht
+                            <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp 3 Groß Beilage.
+                        </div>
+                    </div>
+                </div>
+                <div  class="jhMenuItemContainer short partypack"
+                      style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" >
+                            <span style="display: inline-block">26-30 Person</span>
+                            <span style="display: inline-block;">205.00€</span>
+                        </div>
+                        <div class="lowerLine">
+                            Wählen Sie 4 Groß Hauptgricht
+                            <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            &nbsp&nbsp&nbsp 4 Groß Beilage.
+                        </div>
+                    </div>
+                </div>
+
+
+
 
 
             </div>
@@ -392,39 +443,50 @@
         <h1 style="width: 100%">Auf geht's!</h1>
         <h2>Wohin soll Deine Bestellung geliefert werden?</h2>
         <div class="formC">
-            <form>
+            <form name="address" >
                 <div class="line">
                     <div class="halfline">
-                        <label>Address <input required class="TextArea" type="text"/></label>
+                        <label>Straße <input required class="TextArea" name="StrasseName" type="text"/></label>
                     </div>
                     <div class="quadline">
-                        <label>Postleitzahl <input required class="TextArea" type="text"/></label>
+                        <label>Haus Nr. <input required class="TextArea" name="HausNr" type="text"/></label>
                     </div>
                     <div class="quadline">
-                        <label>Stadt <input required class="TextArea" type="text"/></label>
+                        <label>Etage <input class="TextArea" name="Etage" type="text"/></label>
                     </div>
+                </div>
+
+                <div class="line">
+                    <div class="quadline">
+                        <label>Postleitzahl <input required class="TextArea" name="Plz" type="text"/></label>
+                    </div>
+
+
+
                 </div>
                 <div class="line">
                     <div class="halfline">
-                        <label>Etage <input class="TextArea" type="text"/></label>
+                        <label>Stadt <input required class="TextArea" name="Stadt" type="text"/></label>
                     </div>
-
                 </div>
                 <div class="line">
                     <h2>Wie können wir Dich erreichen?</h2>
 
                 </div>
                 <div class="line">
-                    <div class="halfline">
-                        <label>Name <input required class="TextArea" type="text"/></label>
+                    <div class="quadline">
+                        <label>Name <input required class="TextArea" name="Name" type="text"/></label>
+                    </div>
+                    <div class="quadline">
+                        <label>Famile Name <input required class="TextArea" name="famileName" type="text"/></label>
                     </div>
                     <div class="halfline">
-                        <label>E-mail <input required class="TextArea" type="text"/></label>
+                        <label>E-mail <input required class="TextArea" name="Email" type="text"/></label>
                     </div>
                 </div>
                 <div class="line">
                     <div class="halfline">
-                        <label>Telefonnummer <input required class="TextArea" type="text"/></label>
+                        <label>Telefonnummer <input required class="TextArea" name="MobiNr" type="text"/></label>
                     </div>
                     <div class="halfline">
                         <label>Firmenname <input required class="TextArea" type="text"/></label>
@@ -452,18 +514,16 @@
                 </div>
                 <div class="line">
                     <div class="halfline">
-                        <label>
-                            <select>
+                        <label for="payment">
+                            <select  id="payment">
                                 <option>Bar</option>
                                 <option>EC Karte</option>
                             </select>
 
                         </label>
-                    </div>
 
-                </div>
-                <div class="line">
-                    <input class="confirm" type="submit" value="Jetzt Kaufen"/>
+
+                    </div>
                 </div>
             </form>
 
@@ -476,60 +536,121 @@
             <h2 class="page-title characters">Mein Account</h2>
             <div class="choice-container" id="choiceBlock">
                 <div class="block">
-                    <h3 style="width: 300px;text-align: center" class="">Einlogen</h3>
-                    <form name="userInfo" onsubmit="return sendUserinfo()">
-                        <div id="login">
-                            <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail"
-                                                type="text"/></label>
-                            <label>Password<input class="TextArea" name="Password" placeholder="Passwort"
-                                                  type="password"/></label>
-                            <input class="TextArea" name="sub" type="submit" value="Anmelden"/>
+                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div style="background:url('../yxj/jpg/log.png')  center 30px no-repeat" class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Anmeldung</h2>
                         </div>
-                    </form>
-                    <a style="color:dimgrey;font-size: 10px">passwort vorgessen?</a>
+                        <div class="mdl-card__supporting-text">
+                            Anmeldung Sie mit Email und passwort
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a onclick="popLogin()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Los geht's
+                            </a>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">share</i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="block">
-                    <h3 style="width: 300px;text-align: center" class="">Account Erstellen</h3>
-                    <a href="#">
-                        <button style="margin-top: 155px" class="normal-button" onclick="popReg()">Erstellen</button>
-                    </a>
+                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div style="background:url('../yxj/jpg/rej.png')  center 30px no-repeat" class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Account Erstellung</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Erstellen Sie inhr Account so einfach.
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a onclick="popReg()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Los geht's
+                            </a>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button  class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">share</i>
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="block">
+                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                        <div style="background:url('../yxj/jpg/gast.png')  center 30px no-repeat" class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">Als Gast</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            Bestellen Sie als Gast so schnell wie möglich<br>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a onclick="gast()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Bestellung
+                            </a>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button  class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons">share</i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="regs" class="form1" style="display: none">
+            <div style="display: none" id="log">
+                <h3 style="width: 300px;text-align: center" class="">Einlogen</h3>
+                <div>
+                    <button onclick="popMainmenu(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                </div>
+                <form name="userInfo" onsubmit="return sendUserinfo()">
 
-                <form name="address">
-                    <div id="reg">
-                        <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
-                                           type="text"/></label>
+                    <div id="login">
+                        <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail"
+                                            type="text"/></label>
+                        <label>Password<input class="TextArea" name="Password" placeholder="Passwort"
+                                              type="password"/></label>
 
-                        <label>Password</label><input required="required" class="TextArea" name="Password"
-                                                      placeholder="Passwort" type="text"/>
-                        <label>Password Bestätigungs</label><input required="required" class="TextArea" name="Password2"
-                                                                   placeholder="Passwort Bestätigungs" type="text"/>
-                        <label>Vorname</label><input required="required" class="TextArea" name="Name"
-                                                     placeholder="Vorname" type="text"/>
-                        <label>FamilienName</label><input required="required" class="TextArea" name="famileName"
-                                                          placeholder="FamilienName" type="text"/>
-                        <label>Staße</label><input required="required" class="TextArea" name="StrasseName"
-                                                   placeholder="Straße" type="text"/>
-                        <label>HausNummer</label><input required="required" class="TextArea" name="HausNr"
-                                                        placeholder="HausNummer" type="text"/>
-                        <label>Etage</label><input required="required" class="TextArea" name="Etage"
-                                                   placeholder="Etage -links/Rechts" type="text"/>
-                        <label>Plz</label><input required="required" class="TextArea" name="Plz" placeholder="Plz"
-                                                 type="text"/>
-                        <label>Stadt</label><input required="required" class="TextArea" name="Stadt" placeholder="Stadt"
-                                                   type="text"/>
-                        <label>Mobi. Nr.</label><input required="required" class="TextArea" name="MobiNr"
-                                                       placeholder="Mobi. Nr." type="text"/>
-                        <input type="button" class="TextArea" value="Zurück" onclick="popMainmenu()"/>
-                        <input type="submit" class="TextArea" onclick="return sendUserAddress()" value="Anmeldung">
+                        <input class="TextArea" name="sub" type="submit" value="Anmelden"/>
+
                     </div>
+                </form>
+                <a style="color:dimgrey;font-size: 10px">passwort vorgessen?</a>
+            </div>
+            <div id="regs" class="form1" style="display: none">
+                <h3 style="width: 300px;text-align: center" class="">Account Erstellen</h3>
+                <div>
+                    <button onclick="popMainmenu(event)" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">arrow_back</i>
+                    </button>
+                </div>
+                <form name="reg">
+
+                        <div id="regss">
+                            <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
+                                               type="text"/></label>
+
+                            <label>Password</label><input required="required"  class="TextArea" name="Password"
+                                                          placeholder="Passwort" type="text"/>
+                            <label>Password Bestätigungs</label>
+                            <input required="required" class="TextArea" name="Password2"
+                                   placeholder="Passwort Bestätigungs" type="text"/>
+                            <input type="submit" class="TextArea" onclick="return sendUserAddress(event)" value="Anmeldung">
+
+
+                        </div>
 
 
                 </form>
             </div>
         </div>
+
+
+
+
     </div>
     <div class="Container" id="timePage">
         <div class="topWord" style="">
@@ -645,23 +766,7 @@
             Danke für ihre bestellung, ihre Essen ist jetzt unterweg.
         </div>
     </div>
-    <div class="Container" id="paymentPage">
-        <div style="width: 100%">
-            <h2>Zahlungsinformationen</h2>
-        </div>
-        <div style="width: 100%">
-            Bestellsumme:<span id="totalPrice"></span>
-        </div>
-        <label>
-            Bezahlung method:
-        </label>
-        <select id="payment" name="BezahlungMethod">
-            <option value="Barzahlung">Barzahlung</option>
-            <option value="Mit Pos zalung">Mit Pos zahlung</option>
 
-        </select>
-        <br>Darzeit ist nur bar zahlung möglich. Klicken Sie bitten bestästigen für die bestellung zu erfolden.
-    </div>
 
 
     <div class="Container" id="menuPage">

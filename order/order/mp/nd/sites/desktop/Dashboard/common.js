@@ -135,11 +135,18 @@ function showPages(index) {
 /****************生成和其他*******************/
 
 /******************界面控制器*************************/
+function popLogin() {
+    document.getElementById("choiceBlock").style.display="none";
+    document.getElementById("log").style.display="block";
+}
+
 function popReg() {
     document.getElementById("choiceBlock").style.display="none";
     document.getElementById("regs").style.display="block";
 }//弹出注册页面
-function popMainmenu() {
+function popMainmenu(event) {
+    event.preventDefault();
+    document.getElementById("log").style.display="none";
     document.getElementById("choiceBlock").style.display="flex";
     document.getElementById("regs").style.display="none";
 }//返回选择页面
@@ -169,7 +176,11 @@ function getMenuData() {
 
     });
 }//获取菜单数据并赋值给menuData
-
+function gast() {
+    username="Gast";
+    UserID="Gast";
+    login();
+}
 function sendUserinfo() {
     jQuery.ajax({
         type: "POST",
@@ -190,17 +201,17 @@ function sendUserinfo() {
                 alert("User Nicht Exist.");
             }
 
-          /*  var a=msg.toString();
-            a.replace(/[\r\n]/g,"");
-            console.log(a);
+            /*  var a=msg.toString();
+              a.replace(/[\r\n]/g,"");
+              console.log(a);
 
-            if(a=='loginok'){
+              if(a=='loginok'){
 
 
-            }
-            else{
-                alert('Falsch Passwort');
-            }*/
+              }
+              else{
+                  alert('Falsch Passwort');
+              }*/
         }
     });
 
@@ -208,39 +219,25 @@ function sendUserinfo() {
 
 
 }//登陆
-function sendUserAddress() {
-    if(!(address.Password.value===address.Password2.value)){
+function sendUserAddress(event) {
+    event.preventDefault();
+    console.log(reg);
+    if(!(reg.Password.value===reg.Password2.value)){
         alert('two Password not same');
-        return false;
-    }
-
-
-    if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
-        alert(" In dieser Bereich\n" +
-            "        noch keine Lieferservice\n" +
-            "        Bitte Verstehen");
         return false;
     }
     jQuery.ajax({
         type: "POST",
         url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
         data : {
-            Etage:address.Etage.value,
-            Password:address.Password.value,
-            Name:address.Name.value,
-            FamileName:address.famileName.value,
-            Strasse:address.StrasseName.value,
-            HausNr:address.HausNr.value,
-            PLZ:address.Plz.value,
-            Stadt:address.Stadt.value,
-            MobiNr:address.MobiNr.value,
-            EmailAddress:address.Emailaddress.value
+            Password:reg.Password.value,
+            EmailAddress:reg.Emailaddress.value
         },
         success: function(msg) {
             let a = JSON.parse(msg);
             console.log(a);
             if(a[0]=='good'){
-                username=address.Name.value;
+                username="";
                 UserID=a[1];
                 alert("Deine Account wurde erstellt. ");
                 window.scrollTo(0,0);
@@ -254,38 +251,6 @@ function sendUserAddress() {
             }
         }
     });
-
-   /* jQuery.ajax({
-        type: "POST",
-        url: "http://asia-pearl-express.com/php/Save.php",
-        data : {
-            q:1,
-            UserName:address.Username.value,
-            Password:address.Password.value,
-            Name:address.Name.value,
-            FamileName:address.famileName.value,
-            Strasse:address.StrasseName.value,
-            "HausNr.":address.HausNr.value,
-            PLZ:address.Plz.value,
-            Stadt:address.Stadt.value,
-            "MobiNr.":address.MobiNr.value,
-            "EmailAddress":address.Emailaddress.value
-        },
-        success: function(msg) {
-            var a=msg.toString();
-            a.replace(/[\r\n]/g,"");
-            console.log(a);
-            if(a=='reg ok'){
-                username=address.Username.value;
-                setCookie("Username",address.Username.value,3);
-                window.location.href='Orders.html?Username='+address.Username.value;
-
-            }
-            else{
-
-            }
-        }
-    });*/
     return false;
 }//注册
 
@@ -294,12 +259,15 @@ function getUserAddress() {
         type: "POST",
         url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=getUserByID",
         data : {
-        UserID:UserID},
+            UserID:UserID},
         success: function(msg) {
             console.log(msg);
             msg=JSON.parse(msg);
-            newRow("Daten:",msg.Name+"<br>"+msg.Strasse+msg.HausNr+" Etage: "+msg.Etage+"<br>"+msg.Plz+" \t"+msg.Stadt+"<br>"+msg.MobiNr);
-            orderInfo.address="\\b"+msg.Name + "   \\b"+msg.FamileName +"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
+            if(msg.Name){
+                newRow("Daten:",msg.Name+"<br>"+msg.Strasse+msg.HausNr+" Etage: "+msg.Etage+"<br>"+msg.Plz+" \t"+msg.Stadt+"<br>"+msg.MobiNr);
+                orderInfo.address="\\b"+msg.Name + "   \\b"+msg.FamileName +"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
+
+            }
         }
     });
 
@@ -407,14 +375,14 @@ function removeItem(event) {
     showItems('wagen');
 }
 function removeItemAt(i) {
-  //  console.log(orderInfo.orders.length);
-   // console.log("Ready "+"and removeIndex="+i);
-   orderInfo.orders.splice(i,1);
+    //  console.log(orderInfo.orders.length);
+    // console.log("Ready "+"and removeIndex="+i);
+    orderInfo.orders.splice(i,1);
 
 }
 
 function showItems(wagens) {
-   // console.log(orderInfo.orders.length);
+    // console.log(orderInfo.orders.length);
     var wagen=document.getElementById(wagens);
     $("#"+wagens).empty();
     wagen.innerHTML=" <tr>\n" +
@@ -434,7 +402,7 @@ function showItems(wagens) {
         amount.innerText=orderInfo.orders[i].amount;
         var preis=document.createElement("td");
         preis.innerHTML="‎€"+orderInfo.orders[i].price.toFixed(2)+
-        "<button menuIndex='"+i+"' class='smallButton' onclick='removeItem(event)'></button>";
+            "<button menuIndex='"+i+"' class='smallButton' onclick='removeItem(event)'></button>";
         priceAll+=orderInfo.orders[i].price*orderInfo.orders[i].amount;
         row.appendChild(name);
         row.appendChild(amount);
@@ -504,7 +472,7 @@ function showItems(wagens) {
     subTotal.appendChild(col2);
     subTotal.appendChild(col3);
     wagen.appendChild(subTotal);
-   // console.log("showitems");
+    // console.log("showitems");
 }//账单中生成订单详情
 var beilageNo;
 
@@ -534,7 +502,9 @@ function processMenu(menuType) {
         case "MENÜ 2":h=2;break;
         case "MENÜ 3":h=3;break;
         case "Familienfest":h=3;b=3;break;
-        case "Party Packs":h=5;break;
+        case "12-16 Person":h=2;b=2;break;
+        case "18-22 Person":h=3;b=3;break;
+        case "26-30 Person":h=4;b=4;break;
         case "Unsere Favoriten":{
             singleOrderMenuProcess(menuType);
             return;
@@ -558,7 +528,7 @@ function processMenu(menuType) {
                 processMenu(infos.name);
 
                 for(i in infos.info){
-                   // console.log(infos.info);
+                    // console.log(infos.info);
                     if(infos.info[i].step=="addOn"){
                         var amount='Groß';
                         if(infos.info[i].amount=="Klein"){
@@ -589,7 +559,7 @@ function processMenu(menuType) {
                     continue;
                 }
                 if(infos.info[i].name!="remove"){
-                         amount='full';
+                    amount='full';
                     if(infos.info[i].amount==1){
                         amount='half';
                     }
@@ -606,7 +576,6 @@ function processMenu(menuType) {
 
         }
     }
-
     finishStep=h+b;
     menuPrice=8.9+h;
     var price=8.9+h;
@@ -616,6 +585,23 @@ function processMenu(menuType) {
         price=49;
         familyFest=true;
     }
+    if(menuType=="12-16 Person"){
+        menuPrice=102;
+        price=102;
+        familyFest=true;
+    }
+    if(menuType=="26-30 Person"){
+        menuPrice=205;
+        price=205;
+        familyFest=true;
+    }
+    if(menuType=="18-22 Person"){
+        menuPrice=143;
+        price=143;
+        familyFest=true;
+    }
+
+
     price=price.toFixed(2);
     var $container=document.getElementById("menuPage");
     var head2=document.getElementById("menuName");
@@ -651,7 +637,7 @@ function processMenu(menuType) {
         $beilage.appendChild($leftimg);
         $beilage.appendChild($rightimg);
         $stepinfo.appendChild($beilage);
-      //  $beilage.appendChild(name);
+        //  $beilage.appendChild(name);
         if(h+b>1){
             var $add=document.createElement("div");
             $add.setAttribute("class","add");
@@ -774,11 +760,11 @@ function nextStep() {
     document.getElementById("resultPage").style.display="none";
 
     if($("[data-step-index]")!=undefined){
-       for(i in  $("[data-step-index]")) {
-           if( i<finishStep){
-               $("[data-step-index]")[i].style.background='url(../yxj/menu/emptyforeground.png) center no-repeat';
-           }
-       }
+        for(i in  $("[data-step-index]")) {
+            if( i<finishStep){
+                $("[data-step-index]")[i].style.background='url(../yxj/menu/emptyforeground.png) center no-repeat';
+            }
+        }
 
 
 
@@ -923,7 +909,7 @@ function removeSpecificStep(step) {
     console.log(orderMenu);
 }//配合ToSteps使用，删除指定step中的内容
 function bestellung() {
-  //  console.log(orderMenu);
+    //  console.log(orderMenu);
     var tmp=new Object();
     tmp.amount=document.getElementById("menge").value;
     tmp.gastName=gastName.value;
@@ -941,7 +927,7 @@ function bestellung() {
         if(step1>step2) return 1;
         return 0;
     });
-   // console.log(orderMenu);
+    // console.log(orderMenu);
     tmp.info=orderMenu;
     tmp.price=menuPrice;
     orderInfo.orders.push(tmp);
@@ -959,7 +945,7 @@ function showPic(name,pos) {
         $("[data-step-index="+stepIndex+"]")[0].children[0].children[0].src="";
         return;
     }
-  //  console.log(name+"位置"+pos+"**在步骤"+stepIndex);
+    //  console.log(name+"位置"+pos+"**在步骤"+stepIndex);
     var imgpath=findDataByName(name).img;
     $("[data-step-index="+stepIndex+"]")[0].children[pos].children[0].src="../yxj"+imgpath;
 }//填充step中的图片
@@ -1044,32 +1030,37 @@ function initial() {
     $(".jhMenuItemContainer").click(function (event) {
         startOrder(event);
     });
-   // processMenu('MENÜ 1');
+    // processMenu('MENÜ 1');
     //showPages("menuPage")
-    showPages("addressPage");
-
+    showPages("f1");
+    //  showPages("addressPage");
     //showPages('timePage');
     //showRecip('');
     //showPages("BestellungDetailPage");
-   //showPages("paymentPage");
-
-/**/
+    //showPages("paymentPage");
+    showPartyPack();
+    /**/
 
 }//起始流程
 var pageNames="";
+function showPartyPack() {
+    $(".partypack").toggle();
+}
+
+
 function backIndex(pageName){
-   pageNames=pageName
+    pageNames=pageName
 }
 
 function startOrder(event) {
     document.getElementById("gastName").value="";
-     if(logged){
-         OrderType=event.target.children[0].children[0].children[0].innerText;
-         BeginOrder(OrderType);
-         console.log(OrderType);
+    if(logged){
+        OrderType=event.target.children[0].children[0].children[0].innerText;
+        BeginOrder(OrderType);
+        console.log(OrderType);
     }else{
-         document.getElementById('controls').style.display='flex';
-       startLogin();
+        document.getElementById('controls').style.display='flex';
+        startLogin();
     }
 }//准备开始订单，未登陆时打开登陆页。
 function BeginOrder(OrderType) {
@@ -1141,7 +1132,7 @@ function kasse() {
 
     var price=detialShowItems("wagens");
     if(price<15){
-       // alert("Mindesten Total ist 15EUR");
+        // alert("Mindesten Total ist 15EUR");
         showItems("wagen");
         return;
     }
@@ -1162,8 +1153,8 @@ function kasse() {
 }//打开检视页
 
 function zukasse() {
-    document.getElementById("totalPrice").innerText="‎€"+(finalPrice).toFixed(2);
-    showPages("paymentPage");
+    //  document.getElementById("totalPrice").innerText="‎€"+(finalPrice).toFixed(2);
+    showPages("addressPage");
     var kasse= document.getElementById("kasseButton");
     kasse.innerText="Bestätigen";
     kasse.setAttribute("onclick","sendOrder()");
@@ -1180,37 +1171,76 @@ function compare(property){
     }
 }
 function sendOrder(){
-    orderInfo.payment=document.getElementById("payment").value;
-
-    console.log(orderInfo);
+     orderInfo.payment=document.getElementById("payment").value;
     orderInfo.orders=orderInfo.orders.sort(compare("name"));
-    console.log(orderInfo.orders);
-    $.ajax({
-        url:PHPROOT+"DataBaseJ.php?q=saveOrder",
-        method:"POST",
-        data:({
+    if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
+        alert(" In dieser Bereich\n" +
+            "        noch keine Lieferservice\n" +
+            "        Bitte Verstehen");
+        return false;
+    }
+    jQuery.ajax({
+        type: "POST",
+        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
+        data : {
+            Etage:address.Etage.value,
+            Name:address.Name.value,
+            FamileName:address.famileName.value,
+            Strasse:address.StrasseName.value,
+            HausNr:address.HausNr.value,
+            PLZ:address.Plz.value,
+            Stadt:address.Stadt.value,
+            MobiNr:address.MobiNr.value,
             UserID:UserID,
-            Amount:orderInfo.finalPrice,
-            Address:orderInfo.address
-        }),
-        success:function (res) {
-           console.log(res);
+        },
+        success: function(msg) {
+            let a = JSON.parse(msg);
+            console.log(a);
+            if(a[0]=='good'){
+
+
+                orderInfo.address="\\b"+address.Name.value +
+                    "   \\b"+address.famileName.value
+                    +"\n"+address.StrasseName.value
+                    +address.HausNr.value+"Etage: "+
+                    address.Etage.value+"\n"+
+                    address.Plz.value+" \t"+
+                    address.Stadt.value+"\n"+
+                    address.MobiNr.value+"\n";
+                $.ajax({
+                    url:PHPROOT+"DataBaseJ.php?q=saveOrder",
+                    method:"POST",
+                    data:({
+                        UserID:UserID,
+                        Amount:orderInfo.finalPrice,
+                        Address:orderInfo.address
+                    }),
+                    success:function (res) {
+                        console.log(res);
+                    }
+                });
+                $.ajax({
+                    url:'../../../../../../../php/orders.php',
+                    method:'POST',
+                    data:({
+                        order:JSON.stringify(orderInfo)
+                    }),
+                    success:function (res) {
+                        console.log(res);
+                        showRecip("none");
+                        showPages("dankePage");
+                        $("[data-order-step=4]").addClass("done");
+                        backIndex("over");
+                    }
+
+                });
+            }
         }
     });
-    $.ajax({
-        url:'../../../../../../../php/orders.php',
-        method:'POST',
-        data:({
-            order:JSON.stringify(orderInfo)
-        }),
-        success:function (res) {
-            console.log(res);
-            showRecip("none");
-            showPages("dankePage");
-            $("[data-order-step=4]").addClass("done");
-            backIndex("over");
-        }
-    })
+
+    return false;
+
+
 }
 
 function showAddOn(Type){
@@ -1231,7 +1261,7 @@ function showAddOn(Type){
 
 function editItem(event) {
     var index=event.target.attributes[0].nodeValue;
-   // console.log(event.target.attributes[0].nodeValue);
+    // console.log(event.target.attributes[0].nodeValue);
     processMenu(index);
     showRecip("none");
     showPages("menuPage");
@@ -1239,9 +1269,9 @@ function editItem(event) {
 }
 function ToStepsMenu(target) {
     console.log("TOSTEPSMENU*******************************************");
-  //  bestellung();
+    //  bestellung();
     //console.log(orderInfo);
-  //  var index=orderInfo.orders.length-1;
+    //  var index=orderInfo.orders.length-1;
     //processMenu(index);
     //showRecip('none');
 
@@ -1253,12 +1283,12 @@ function ToStepsMenu(target) {
     isCart=false;
     //console.log(orderMenu);
     for(var i in orderMenu){
-      //  console.log(orderMenu[i]);
+        //  console.log(orderMenu[i]);
         if(orderMenu[i].step==0){
             orderMenu.splice(i,1);
         }
     }
-   // console.log(orderMenu);
+    // console.log(orderMenu);
     var tmp=orderMenu;
     orderItem={};
     switch (menuName){
