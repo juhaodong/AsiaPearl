@@ -153,6 +153,7 @@
     <link rel="stylesheet" href="Order.css">
     <script src="common.js"></script>
     <script src="order.js"></script>
+    <script src="js/dist/jquery.validate.js"></script>
 </head>
 <body>
 <div class="floatlayers" id="float" style="display: none" onclick="toggleFloat()">
@@ -489,7 +490,7 @@
                         <label>Telefonnummer <input required class="TextArea" name="MobiNr" type="text"/></label>
                     </div>
                     <div class="halfline">
-                        <label>Firmenname <input required class="TextArea" type="text"/></label>
+                        <label>Firmenname <input  class="TextArea" type="text"/></label>
                     </div>
                 </div>
                 <div class="line">
@@ -497,13 +498,7 @@
 
                 </div>
                 <div class="line">
-                    <div class="halfline">
-                        <label>Gewünschte Lieferzeit
-                            <input class="TextArea timepicker"  id="Lieferzeit" type="text"/>
 
-
-                        </label>
-                    </div>
                     <div class="halfline">
                         <label>Annmerkungen für das Restaurant <input class="TextArea" type="text"/></label>
                     </div>
@@ -513,7 +508,13 @@
 
                 </div>
                 <div class="line">
+                        <p>zurzeit kann nur Bargeld bezahlt werden.
+                            <br>Vielen Dank für ihr Verständnis</p>
+
+                </div>
+                <div class="line">
                     <div class="halfline">
+
                         <label for="payment">
                             <select  id="payment">
                                 <option>Bar</option>

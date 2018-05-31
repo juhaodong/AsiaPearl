@@ -85,7 +85,7 @@ function removeAddOn(item) {
     var i=0;
     var aim=item.innerHTML.split('|')[0].replace(/\s+/g,"");
     for(i in orderMenu){
-        console.log(aim);
+       // console.log(aim);
         if(orderMenu[i].name==aim){
             break;
         }
@@ -94,7 +94,7 @@ function removeAddOn(item) {
 
 
     orderMenu.splice(i,1);
-    console.log(orderMenu);
+    //console.log(orderMenu);
     showAddOns();
 }
 function showAddOns(father) {
@@ -134,7 +134,7 @@ function showCartOnMobile() {
     //console.log("run");
     var cart=document.getElementById('cart');
     var display = cart.style.display;
-    console.log(display);
+   // console.log(display);
     if(display=='none'){
         cart.style.display='flex';
     }
@@ -145,14 +145,14 @@ function showCartOnMobile() {
     //$("#cart").toggleDisplay();
 }
 function singleItemOrder(item,amount) {
-    console.log("SingleOrdering:"+item+" : "+amount);
+  //  console.log("SingleOrdering:"+item+" : "+amount);
     //console.log(item.parentElement.parentElement.children[1].children[0].innerHTML);
     var tmp= findDataByName(item.parentElement.parentElement.children[1].children[0].innerHTML);
     recordSingleItemOrder(tmp.name,amount);
 }
 function recordSingleItemOrder(name,amount) {
-    console.log("Recording:"+amount+name);
-    console.log(orderMenu);
+   // console.log("Recording:"+amount+name);
+   // console.log(orderMenu);
     if(name.indexOf("Groß")!=-1){
         name=name.slice(5);
     }
@@ -201,7 +201,7 @@ function recordSingleItemOrder(name,amount) {
     orderMenu.push(orderItem);
     showPic(item.name,0);
     showPic(item.name,1);
-    console.log(orderMenu);
+    //console.log(orderMenu);
     orderItem=new Object();
     nextStep();
 }

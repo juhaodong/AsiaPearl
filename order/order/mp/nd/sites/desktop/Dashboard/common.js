@@ -169,7 +169,7 @@ function getMenuData() {
         type: "POST",
         url: "../../../../../../../php/menuData.php",
         success: function(msg) {
-            console.log(msg);
+          //  console.log(msg);
             menuData=msg.data;
 
         }
@@ -261,12 +261,27 @@ function getUserAddress() {
         data : {
             UserID:UserID},
         success: function(msg) {
-            console.log(msg);
-            msg=JSON.parse(msg);
-            if(msg.Name){
-                newRow("Daten:",msg.Name+"<br>"+msg.Strasse+msg.HausNr+" Etage: "+msg.Etage+"<br>"+msg.Plz+" \t"+msg.Stadt+"<br>"+msg.MobiNr);
-                orderInfo.address="\\b"+msg.Name + "   \\b"+msg.FamileName +"\n"+msg.Strasse+msg.HausNr+"Etage: "+msg.Etage+"\n"+msg.Plz+" \t"+msg.Stadt+"\n"+msg.MobiNr+"\n";
 
+           // console.log(msg);
+            msg=JSON.parse(msg);
+
+
+
+
+            if(msg.Name){
+                if(UserID!="Gast") {
+                    document.getElementsByName("Name")[0].value=msg.Name;
+                    document.getElementsByName("famileName")[0].value=msg.FamileName;
+                    document.getElementsByName("Email")[0].value=msg.EmailAddress;
+                    document.getElementsByName("MobiNr")[0].value=msg.MobiNr;
+                    document.getElementsByName("StrasseName")[0].value=msg.Strasse;
+                    document.getElementsByName("HausNr")[0].value=msg.HausNr;
+                    document.getElementsByName("Etage")[0].value=msg.Etage;
+                    document.getElementsByName("Plz")[0].value=msg.Plz;
+                    document.getElementsByName("Stadt")[0].value=msg.Stadt;
+                    newRow("Daten:", msg.Name + "<br>" + msg.Strasse + msg.HausNr + " Etage: " + msg.Etage + "<br>" + msg.Plz + " \t" + msg.Stadt + "<br>" + msg.MobiNr);
+                    orderInfo.address = "\\b" + msg.Name + "   \\b" + msg.FamileName + "\n" + msg.Strasse + msg.HausNr + "Etage: " + msg.Etage + "\n" + msg.Plz + " \t" + msg.Stadt + "\n" + msg.MobiNr + "\n";
+                }
             }
         }
     });
@@ -692,7 +707,7 @@ function RecordOrder(amount,name) {
     }
 
 
-    console.log("Order Origin:"+"Amount:"+amount+"Name:"+name+"Step:"+stepIndex);
+    //console.log("Order Origin:"+"Amount:"+amount+"Name:"+name+"Step:"+stepIndex);
     var number=0;
     if(amount=='half'){
         number=1;
@@ -738,7 +753,7 @@ function RecordOrder(amount,name) {
 
     orderMenu.push(orderItem);
 
-    console.log(orderMenu);
+    //console.log(orderMenu);
 
     orderItem=new Object();
 
@@ -931,7 +946,7 @@ function bestellung() {
     tmp.info=orderMenu;
     tmp.price=menuPrice;
     orderInfo.orders.push(tmp);
-    console.log(orderInfo);
+   // console.log(orderInfo);
     endOrder();
 }//Order流程结束
 
@@ -971,6 +986,7 @@ OrderDetailContainer
 function initial() {
     tick();
     getMenuData();
+    $("form").validate();
     var childrens=document.getElementById("main").children;
 
     for(x in childrens){
@@ -1002,13 +1018,13 @@ function initial() {
             showRecip("");
         }
 
-        console.log("run");
+        //console.log("run");
         showPages(pageNames);
 
     });
     let d = new Date().getHours();
     let m= new Date().getMinutes();
-    console.log(d);
+   // console.log(d);
 
     $('input.timepicker').timepicker({
         timeFormat: 'HH:mm',
@@ -1057,7 +1073,7 @@ function startOrder(event) {
     if(logged){
         OrderType=event.target.children[0].children[0].children[0].innerText;
         BeginOrder(OrderType);
-        console.log(OrderType);
+    //    console.log(OrderType);
     }else{
         document.getElementById('controls').style.display='flex';
         startLogin();
@@ -1117,7 +1133,7 @@ function sendOrdertime() {
     else{
         ordertime.time=timeNow();
     }
-    console.log(ordertime);
+   // console.log(ordertime);
     $("[data-order-step=2]").addClass("done");
     showPages("f1");
     orderInfo.time=ordertime;
@@ -1155,9 +1171,13 @@ function kasse() {
 function zukasse() {
     //  document.getElementById("totalPrice").innerText="‎€"+(finalPrice).toFixed(2);
     showPages("addressPage");
-    var kasse= document.getElementById("kasseButton");
+    var kasse= document.getElementById("kasseButton")
+    kasse.nodeName="input";
+
     kasse.innerText="Bestätigen";
+    kasse.setAttribute("type","submit");
     kasse.setAttribute("onclick","sendOrder()");
+    kasse.setAttribute("form","address");
     $("[data-order-step=4]").addClass("on");
 
 
@@ -1171,7 +1191,19 @@ function compare(property){
     }
 }
 function sendOrder(){
-     orderInfo.payment=document.getElementById("payment").value;
+    let form=document.address;
+    let children=form.getElementsByTagName("input");
+    orderInfo.time=timeNow();
+    for(let value of children ){
+       if(value.required){
+
+           if(!value.value){
+               alert("Bitte füllen Sie die vollständigen Formular aus");
+               return;
+           }
+       }
+    }
+    orderInfo.payment=document.getElementById("payment").value;
     orderInfo.orders=orderInfo.orders.sort(compare("name"));
     if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
         alert(" In dieser Bereich\n" +

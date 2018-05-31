@@ -12,5 +12,9 @@
     <orderEntry type="library" name="jquery.timepicker" level="application" />
     <orderEntry type="library" name="respond" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
+    <orderEntry type="library" name="index" level="application" />
+    <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="material" level="application" />
   </component>
 </module>

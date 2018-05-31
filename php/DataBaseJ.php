@@ -231,7 +231,11 @@ $USER_EVENT_RELATION_WANT_IN = 'wantIn';
 $q_parameter = $_GET['q'];
 
 switch ($q_parameter) {
-    case 'getAllData':
+    case 'getUserData':
+        $result= new SqlSelect($conn,array("*"),"User",array("UserID='".$_GET['UserID']."'"));
+        echo json_encode($result->execute_sql());
+        break;
+        case'getAllData':
         $result=new SqlSelect($conn,array("*"),$_GET['table']);
 
         //  echo $result->get_sql();
