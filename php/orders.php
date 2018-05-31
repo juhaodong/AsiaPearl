@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 function sortCtype($a,$b){
     if($a->step>$b->step){
         return -1;

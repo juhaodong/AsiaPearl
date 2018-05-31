@@ -1,4 +1,6 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
 /**
  * Created by PhpStorm.
  * User: uranu
@@ -232,7 +234,7 @@ switch ($q_parameter) {
     case 'getAllData':
         $result=new SqlSelect($conn,array("*"),$_GET['table']);
 
-      //  echo $result->get_sql();
+        //  echo $result->get_sql();
         $rs= $result->execute_sql();
         //var_dump($rs);
         echo json_encode($rs);
@@ -253,13 +255,24 @@ switch ($q_parameter) {
         $insertParam["OrderID"]="'".date("Ymd").$rs."'";
         foreach($_POST as $k=>$v){
 
-           $insertParam[$k]="'".$v."'";
+            $insertParam[$k]="'".$v."'";
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
         echo common_execute_procedure($sql_insert);
 
         break;
+    case "updateUser":
+        $updParam=[];
+        $ta=$_POST['UserID'];;
+        foreach($_POST as $k=>$v){
+            $updParam[$k]="'".$v."'";
+        }
+        $sql_insert=new SqlUpdate($conn,'User',$updParam,array("UserID="."'".$ta."'"));
+      //  echo $sql_insert->get_sql();
+        echo json_encode([common_execute_procedure($sql_insert),$ta]);
+        break;
+
     case 'saveUser':
         $insertParam=[];
 
@@ -269,7 +282,7 @@ switch ($q_parameter) {
         if($rs){
 
             $rs =((int)substr($rs[0]["max(UserID)"],-4,4))+1;
-         //   var_dump($rs);
+            //   var_dump($rs);
             $rs=str_pad($rs,4,"0",STR_PAD_LEFT);
 
         }else{
@@ -292,6 +305,8 @@ switch ($q_parameter) {
         //var_dump($rs);
         echo json_encode($rs[0]);
         break;
+
+
     case 'getUserByID':
         $result=new SqlSelect($conn,array("*"),"User",array(sprintf("UserID='%s'",$_POST['UserID'])));
         //echo $result->get_sql();

@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="e5c96cf3-a826-4b1f-9b58-8e7830727f1c" name="yxj" url="http://pearldaten.com/test">
-        <fileTransfer host="ftp.pearldaten.com" port="21" rootFolder="/test">
+      <webServer id="e5c96cf3-a826-4b1f-9b58-8e7830727f1c" name="yxj" url="http://asia-pearl-express.de">
+        <fileTransfer host="home719097211.1and1-data.host" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
-          <option name="port" value="21" />
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>
