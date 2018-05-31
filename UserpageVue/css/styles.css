@@ -54,3 +54,20 @@
 .mdl-layout{
     background: url("../img/backgroud.jpeg") center / cover;
 }
+.blur{
+    position: fixed;
+    width: 105%;
+    height:1080px;
+    background: url("../img/backgroud.jpeg") center / cover;
+    filter: blur(15px);
+}
+@keyframes showNav {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.mdl-layout__tab-panel.is-active{
+
+
+    animation: showNav 550ms ease-in-out both;
+
+}

@@ -1193,7 +1193,8 @@ function compare(property){
 function sendOrder(){
     let form=document.address;
     let children=form.getElementsByTagName("input");
-    orderInfo.time=timeNow();
+    console.log(orderInfo);
+    orderInfo.time.time=timeNow();
     for(let value of children ){
        if(value.required){
 
