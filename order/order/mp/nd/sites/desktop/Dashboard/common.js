@@ -1194,7 +1194,10 @@ function sendOrder(){
     let form=document.address;
     let children=form.getElementsByTagName("input");
     console.log(orderInfo);
-    orderInfo.time.time=timeNow();
+    if(orderInfo.time.type=="SBWM"){
+        orderInfo.time.time=timeNow();
+    }
+
     for(let value of children ){
        if(value.required){
 

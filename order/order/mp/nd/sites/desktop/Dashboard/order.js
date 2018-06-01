@@ -193,7 +193,7 @@ function recordSingleItemOrder(name,amount) {
     }
     if(amount=="b"){
         menuPrice=item.bprice;
-        orderItem.amount="Klein";
+        orderItem.amount="Groß";
        // orderItem.name="Groß "+item.name;
     }
     document.getElementById("menuPrice").innerText="€"+menuPrice.toFixed(2);
