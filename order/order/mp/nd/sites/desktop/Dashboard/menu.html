@@ -662,15 +662,15 @@
             </div>
         </div>
         <h4 class="characters titleSmall titleRed">Bestelloptionen</h4>
-        <div style="height: 340px;width: 95%" class="left whiteBackgroud">
+        <div style="height:420px;width: 95%" class="left whiteBackgroud">
             <div class="js-ready-time">
                 <h4 class="titleRed" style="font-size: x-large;">Wählen Sie Bestellzeit aus</h4>
 
                 <p class="important-instruction">
 
                     Die end gültige Bestell dauer kann sich je nach Auftragsumfang <br>
-                    Bestellens Zeit<br>
-                    Montag - Sonntag 11:30 - 14:30 Uhr danach 17:00 - 21:30 Uhr
+                    Bestellens Zeit:<br>
+                    Montag - Sonntag<br> 11:30 - 14:30 Uhr <br> 17:00 - 21:30 Uhr
                 </p>
                 <script>
 
@@ -679,7 +679,7 @@
                 <form name="time" class="panda-form left" target="jack">
                     <div class="form-row">
                         <label style="display: inline">
-                            <input onclick="unchange()" type="radio" name="ready_time_type" value="SBWM" checked>
+                            <input onclick="change()" id="sbwm" type="radio" name="ready_time_type" value="SBWM" checked>
                             So bald wie möglich.
                         </label>
                         <span id="timeNow" class="js-asap-time-display"></span>
@@ -693,17 +693,13 @@
                             Spetifische Datum und Uhrzeit.
                         </label>
                         <script>
-                            function unchange() {
 
-                                document.getElementsByName("times")[0].required = false;
-                                document.getElementsByName("date")[0].required = false;
-                            }
 
                             function change() {
-                                console.log("run");
-                                document.getElementsByName("times")[0].required = true;
-                                document.getElementsByName("date")[0].required = true;
-                            }
+
+                                $('.sdu').css("display",document.getElementById("sbwm").checked?"none":"inline");
+
+                                       }
 
                             jQuery(function () {
                                 $('input.timepicker').timepicker({
@@ -718,6 +714,7 @@
                                     scrollbar: true
 
 
+
                                 });
 
 
@@ -730,22 +727,26 @@
                                 );
                             });
                         </script>
-                        <input type="text" placeholder="DD/MM/YYYY" name="date" id="datepicker" size="15"
-                               style="display: inline; width: auto" aria-labelledby="ready_time_type"
-                               required="required">
-                        <!--
-                        <button type="button" class="js-show-datepicker btn">
-                          <i class="icon-calendar">C</i>
-                        </button>
-                        -->
 
-                        <input type="text" placeholder="HH:MM" name="times" class="timepicker" size="15"
-                               style="display: inline; width: auto" aria-labelledby="ready_time_type"
-                               autocomplete="off">
+                            <input class="sdu"   type="text" placeholder="DD/MM/YYYY" name="date" id="datepicker" size="15"
+                                     style="display: none; width: auto" aria-labelledby="ready_time_type"
+                                     required>
 
-                        <input style="color:white;width:200px;background:#ee9730; margin-top: 30px; margin-left: 35px; margin-bottom: 300px"
-                               type="submit" onclick="return sendOrdertime()" class="TextArea"
-                               value="Bestellung Starten"/>
+
+                            <!--
+                            <button type="button" class="js-show-datepicker btn">
+                              <i class="icon-calendar">C</i>
+                            </button>
+                            -->
+                            <input  type="text" placeholder="HH:MM" name="times" class="timepicker sdu" size="15"
+                                    style="display: none; width: auto" aria-labelledby="ready_time_type"
+                                    autocomplete="off" required>
+
+
+
+
+
+
 
                         <!--
                         <button type="button" class="js-show-timepicker btn">
@@ -753,7 +754,12 @@
                         </button>
                         -->
                     </div>
+                    <div class="form-row">
 
+                        <input  style="color:white;width:200px;background:#ee9730; margin-top: 30px; margin-left: 35px; margin-bottom: 300px"
+                                type="submit" onclick="return sendOrdertime()" class="TextArea"
+                                value="Bestellung Starten"/>
+                    </div>
 
                 </form>
             </div>

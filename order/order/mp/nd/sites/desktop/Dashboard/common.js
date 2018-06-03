@@ -1190,7 +1190,14 @@ function compare(property){
         return value1 > value2;     // 升序
     }
 }
+function timeChange() {
+    console.log("run");
+    console.log(document.getElementById("sbwm"));
+    document.getElementById("sbwm").checked="false";
+    document.getElementById("ready_time_type").checked="true";
+}
 function sendOrder(){
+    console.log("run");
     let form=document.address;
     let children=form.getElementsByTagName("input");
     console.log(orderInfo);
@@ -1234,7 +1241,6 @@ function sendOrder(){
             console.log(a);
             if(a[0]=='good'){
 
-
                 orderInfo.address="\\b"+address.Name.value +
                     "   \\b"+address.famileName.value
                     +"\n"+address.StrasseName.value
@@ -1249,7 +1255,8 @@ function sendOrder(){
                     data:({
                         UserID:UserID,
                         Amount:orderInfo.finalPrice,
-                        Address:orderInfo.address
+                        Address:orderInfo.address,
+                        detail:JSON.stringify(orderInfo)
                     }),
                     success:function (res) {
                         console.log(res);

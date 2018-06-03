@@ -1,6 +1,9 @@
 .formContainer{
 
 }
+.form-row{
+    width: 100%;
+}
 h2{
     font-size: medium;
 }
