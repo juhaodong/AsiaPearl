@@ -80,8 +80,10 @@ $payment="=============================\n"
     ."\bBetrag:".$order->finalPrice."€\n";
 $payment.="zahlung:".$order->payment."\n";
 $message.=$time.$s.$address.$payment;
+
 mail($email,$subject,$message);
 mail($email,$subject,$message);
+mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,$message);
 $message= "Zeit:".
     $order->time->time."\n";
 $s=generateOrderInfo(0,$order);
