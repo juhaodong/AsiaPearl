@@ -189,6 +189,9 @@ function sendUserinfo() {
         success: function(msg) {
             info=JSON.parse(msg);
             console.log(info);
+            if(info.UserName=="Gast"){
+                alert("bitte Email Eingabe.");
+            }
             if(info){
                 if(info.Password==userInfo.Password.value){
                     username=info.Name;
@@ -1222,6 +1225,8 @@ function sendOrder(){
             "        Bitte Verstehen");
         return false;
     }
+    orderInfo.emailAddress=address.Email.value;
+    console.log(orderInfo);
     jQuery.ajax({
         type: "POST",
         url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
@@ -1260,23 +1265,13 @@ function sendOrder(){
                     }),
                     success:function (res) {
                         console.log(res);
-                    }
-                });
-                $.ajax({
-                    url:'../../../../../../../php/orders.php',
-                    method:'POST',
-                    data:({
-                        order:JSON.stringify(orderInfo)
-                    }),
-                    success:function (res) {
-                        console.log(res);
                         showRecip("none");
                         showPages("dankePage");
                         $("[data-order-step=4]").addClass("done");
                         backIndex("over");
                     }
-
                 });
+
             }
         }
     });

@@ -71,3 +71,56 @@
     animation: showNav 550ms ease-in-out both;
 
 }
+#address{
+    color:snow;
+}
+@keyframes showCardDetail {
+    from{transform: translateY(0);}
+    to{transform: translateY(-100%);}
+}
+@keyframes hideCardDetail {
+    from{transform: translateY(100%);}
+    to{transform: translateY(0);}
+}
+.card-Detail{
+
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    overflow-y: auto;
+    left: 0;
+    top: 100%;
+    height: 100%;
+    z-index: 3;
+    display: none;
+}
+.card-Detail.show{
+    animation: showCardDetail 500ms ease-in-out both;
+    display: block;
+}
+.card-Detail.hide{
+    animation: hideCardDetail 500ms ease-in-out both;
+    display: none;
+}
+.detail-head{
+    display: flex;
+    justify-content: space-between;
+    font-size: large;
+    font-weight: 100;
+    line-height: 35px;
+    border-bottom: 1px solid lightgrey;
+}
+.detail-content{
+    padding: 2px;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+.content-col{
+    width: 25%;
+
+}
+.detailC{
+    padding: 14px;
+}

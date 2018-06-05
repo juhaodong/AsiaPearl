@@ -219,18 +219,125 @@ function common_execute_procedure(ISql $sql, $succeed = 'good', $failed = null)
     }
 }
 
-$EVENT_ARGS = array('id', 'EventID', 'CreatTimeStamp', 'Country', 'City', 'CreaterID', 'Latitude', 'Longitude',
-    'Address', 'EventName', 'EventSign', 'Type', 'Ginder', 'AvgCost', 'NeedPermission', 'ImagePath', 'EndTime', 'Avaliable',
-    'CreaterContact', 'needContact');
+header("Access-Control-Allow-Origin: *");
+function sortCtype($a,$b){
+    if($a->step>$b->step){
+        return -1;
+    }
+    if($a->step<$b->step){
+        return 1;
+    }
+    return 0;
+}
+function generateOrderInfo($method,$order){
+    $s="";
+    foreach ($order->orders as $value){
+        $s.="======".$value->name;
 
-$USER_EVENT_RELATION_MEMBER = 'member';
-$USER_EVENT_RELATION_CREATE = 'create';
-$USER_EVENT_RELATION_CHECKING = 'checking';
-$USER_EVENT_RELATION_WANT_IN = 'wantIn';
+        if($method==1){
+            $s.=  "   ".$value->price."€";
+        }
+        $s.="============\n";
+
+        if(!empty($value->gastName)){
+            $s.= "Name:\t".$value->gastName."\n";
+        }else{
+            $s.="";
+        }
+        $s.= "\t".$value->amount."x "."\n";
+        $tmp="";
+        $first=true;
+        uasort($value->info,'sortCtype');
+        //  echo json_encode($value->info);
+        foreach ($value->info as $w){
+            //  echo "run";
+            if(strcmp($w->step,"addOn")==0){
+                //  echo "true";
+                if($first){
+                    $s.="----------zusätzlich--------------\n";
+                    $first=false;
+
+                }
+                $s.=$w->amount." \t".$w->name."    +".$w->price."€\n";
+            }else{
+
+                $s.=$w->name."  \t";
+                if($w->amount==1){
+                    $s.="halbe "."\n";
+                }else if ($w->amount==2){
+                    $s.="\n";
+                }else{
+                    $s.=$w->amount."\n";
+                }
+
+            }
+        }
+    }
+    $s.="=============================\n";
+    return $s;
+
+}
+// echo 'order.';
+function bulidMail($method,$order){
+    if($method==1){
+        $message="\bAsia Pearl express\n";
+        $time="Zeit:".
+            $order->time->time."\n";
+
+        $address=$order->address;
+        $s=generateOrderInfo($method,$order);
+        $payment="=============================\n"
+            ."Netto Betrag = " .round($order->finalPrice*0.93,2)."€"."\n"
+            ."mit 7% MWST = " .round($order->finalPrice*0.07,2)."€"."\n"
+            ."\bBetrag:".$order->finalPrice."€\n";
+        $payment.="zahlung:".$order->payment."\n";
+        $message.=$time.$s.$address.$payment;
+    }else{
+        $message="Zeit:".
+            $order->time->time."\n";
+        $s=generateOrderInfo(0,$order);
+        $message.=$s."\b".explode("\n",$order->address)[0];
+    }
+
+    return $message;
+
+}
+function sendMail($param,$id){
+    $order=json_decode( $param);
+    $email="haodong.ju@asiagourment.de";
+    $subject=$id;
+    $message=bulidMail(1,$order);
+    $headers = 'From: Asia Pearl Express <asia-pearl@asiagourmet.de>';
+
+    mail($order->emailAddress,"Danke für Bestellung",str_replace("\\b","",$message),$headers);//send to the user for confirm
+
+    mail($email,$subject,$message,$headers);//send twice for save
+    mail($email,$subject,$message,$headers);
+
+
+    mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,$message,$headers);
+
+
+    $message= bulidMail(2,$order);
+    mail($email,$subject,$message);//send to the kitchen for make
+    $err=error_get_last();
+    echo $err['message']??"good";
+}
 
 $q_parameter = $_GET['q'];
 
 switch ($q_parameter) {
+    case 'finishOrder':
+        $updParam=[];
+        $ta=$_POST['OrderID'];;
+        foreach($_POST as $k=>$v){
+            $updParam[$k]="'".$v."'";
+        }
+        $sql_insert=new SqlUpdate($conn,'Orders',$updParam,array("OrderID="."'".$ta."'"));
+          //echo $sql_insert->get_sql();
+        $sql_insert->execute_sql();
+        echo "good";
+        break;
     case 'getUserData':
         $result= new SqlSelect($conn,array("*"),"User",array("UserID='".$_GET['UserID']."'"));
         echo json_encode($result->execute_sql());
@@ -263,6 +370,7 @@ switch ($q_parameter) {
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
+        sendMail($_POST['detail'],date("Ymd").$rs);
         echo common_execute_procedure($sql_insert);
 
         break;
@@ -301,7 +409,13 @@ switch ($q_parameter) {
 
         break;
 
-
+    case 'getDetailUser':
+        $result=new SqlSelect($conn,array("*"),"User",array(sprintf("UserID='%s'",$_POST['UserID'])));
+        //echo $result->get_sql();
+        $rs= $result->execute_sql();
+        $res=(new SqlSelect($conn,array("*"),"Orders",array(sprintf("UserID='%s'",$_POST['UserID']))))->execute_sql();
+        echo json_encode([$rs[0],$res]);
+        break;
     case 'getUser':
         $result=new SqlSelect($conn,array("*"),"User",array(sprintf("EmailAddress='%s'",$_POST['Username'])));
         //echo $result->get_sql();

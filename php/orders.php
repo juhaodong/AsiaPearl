@@ -9,8 +9,6 @@ function sortCtype($a,$b){
     }
     return 0;
 }
-
-
 function generateOrderInfo($method,$order){
     $s="";
     foreach ($order->orders as $value){
@@ -60,35 +58,51 @@ function generateOrderInfo($method,$order){
 
 }
 // echo 'order.';
+function bulidMail($method,$order){
+    if($method==1){
+        $message="\bAsia Pearl express\n";
+        $time="Zeit:".
+            $order->time->time."\n";
+
+        $address=$order->address;
+        $s=generateOrderInfo($method,$order);
+        $payment="=============================\n"
+            ."Netto Betrag = " .round($order->finalPrice*0.93,2)."€"."\n"
+            ."mit 7% MWST = " .round($order->finalPrice*0.07,2)."€"."\n"
+            ."\bBetrag:".$order->finalPrice."€\n";
+        $payment.="zahlung:".$order->payment."\n";
+        $message.=$time.$s.$address.$payment;
+    }else{
+        $message="Zeit:".
+        $order->time->time."\n";
+        $s=generateOrderInfo(0,$order);
+        $message.=$s."\b".explode("\n",$order->address)[0];
+    }
+
+    return $message;
+
+}
+function sendMail(){
+    $order=json_decode( $_POST['order']);
+    $email="haodong.ju@asiagourment.de";
+    $subject="print";
+    $message=bulidMail(1,$order);
 
 
+    mail($order->emailAddress,"Bestellungen".$order->time->time,str_replace("\\b","",$message));//send to the user for confirm
 
-$order=json_decode( $_POST['order']);
+    mail($email,$subject,$message);//send twice for save
+    mail($email,$subject,$message);
 
-$email="haodong.ju@asiagourment.de";
-$subject="print";
-$message="\bAsia Pearl express\n";
 
-$time="Zeit:".
-    $order->time->time."\n";
+    mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,str_replace("\\b","",$message));
 
-$address=$order->address;
-$s=generateOrderInfo(1,$order);
-$payment="=============================\n"
-    ."Netto Betrag = " .round($order->finalPrice*0.93,2)."€"."\n"
-    ."mit 7% MWST = " .round($order->finalPrice*0.07,2)."€"."\n"
-    ."\bBetrag:".$order->finalPrice."€\n";
-$payment.="zahlung:".$order->payment."\n";
-$message.=$time.$s.$address.$payment;
 
-mail($email,$subject,$message);
-mail($email,$subject,$message);
-mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,$message);
-$message= "Zeit:".
-    $order->time->time."\n";
-$s=generateOrderInfo(0,$order);
-$message.=$s."\b".explode("\n",$order->address)[0];
-mail($email,$subject,$message);
-$err=error_get_last();
-echo $err['message'];
+    $message= bulidMail(2,$order);
+    mail($email,$subject,$message);//send to the kitchen for make
+    $err=error_get_last();
+    echo $err['message'];
+}
+sendMail();
+
 

@@ -537,7 +537,7 @@
             <h2 class="page-title characters">Mein Account</h2>
             <div class="choice-container" id="choiceBlock">
                 <div class="block">
-                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div onclick="popLogin()"  class="  demo-card-wide mdl-card mdl-shadow--2dp">
                         <div style="background:url('../yxj/jpg/log.png')  center 30px no-repeat" class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Anmeldung</h2>
                         </div>
@@ -545,7 +545,7 @@
                             Anmeldung Sie mit Email und passwort
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <a onclick="popLogin()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                 Los geht's
                             </a>
                         </div>
@@ -557,7 +557,7 @@
                     </div>
                 </div>
                 <div class="block">
-                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div onclick="popReg()"  class="  demo-card-wide mdl-card mdl-shadow--2dp">
                         <div style="background:url('../yxj/jpg/rej.png')  center 30px no-repeat" class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Account Erstellung</h2>
                         </div>
@@ -565,7 +565,7 @@
                             Erstellen Sie inhr Account so einfach.
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <a onclick="popReg()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            <a  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                 Los geht's
                             </a>
                         </div>
@@ -580,7 +580,7 @@
 
                 </div>
                 <div class="block">
-                    <div  class="  demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div onclick="gast()"  class="  demo-card-wide mdl-card mdl-shadow--2dp">
                         <div style="background:url('../yxj/jpg/gast.png')  center 30px no-repeat" class="mdl-card__title">
                             <h2 class="mdl-card__title-text">Als Gast</h2>
                         </div>
@@ -588,7 +588,7 @@
                             Bestellen Sie als Gast so schnell wie möglich<br>
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <a onclick="gast()" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            <a  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                                 Bestellung
                             </a>
                         </div>
@@ -610,9 +610,9 @@
                 <form name="userInfo" onsubmit="return sendUserinfo()">
 
                     <div id="login">
-                        <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail"
+                        <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail" required
                                             type="text"/></label>
-                        <label>Password<input class="TextArea" name="Password" placeholder="Passwort"
+                        <label>Password<input class="TextArea" name="Password" placeholder="Passwort" required
                                               type="password"/></label>
 
                         <input class="TextArea" name="sub" type="submit" value="Anmelden"/>
