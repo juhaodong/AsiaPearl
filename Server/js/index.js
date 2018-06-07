@@ -64,11 +64,16 @@ function confirmOrder(t) {
 }
 
 function resendOrder(info) {
+    let data=info.dataset.info;
+
+
+   // console.log(data);
     $.ajax({
         url:PHPROOT+"orders.php",
         method:"POST",
         data:({
-            order:info.dataset.order
+            order:data,
+            resend:true
         }),
         success:function (res) {
             console.log(res);

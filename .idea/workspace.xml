@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b935fb0-d65c-4c00-92e1-d7d3a4d18046" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/Server/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,36 +17,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="orders.php" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/php/orders.php">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="716">
-                    <caret line="108" selection-start-line="108" selection-end-line="108" />
-                    <folding>
-                      <element signature="n#sortCtype#0;n#!!top" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5913431">
+    <splitter split-orientation="horizontal" split-proportion="0.47283128">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="DataBaseJ.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6048">
+                <state relative-caret-position="8100">
                   <caret line="450" column="12" selection-start-line="450" selection-start-column="12" selection-end-line="450" selection-end-column="12" />
                 </state>
               </provider>
@@ -58,11 +39,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/html/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="223">
-                  <caret line="105" column="18" lean-forward="true" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+                <state relative-caret-position="18">
+                  <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Server/js/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="421">
+                  <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
                 </state>
               </provider>
             </entry>
@@ -71,20 +61,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/js/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="745">
-                  <caret line="128" selection-start-line="128" selection-end-line="128" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="22806">
-                  <caret line="1267" column="19" selection-start-line="1267" selection-start-column="19" selection-end-line="1267" selection-end-column="19" />
+                <state relative-caret-position="22284">
+                  <caret line="1238" column="34" selection-start-line="1238" selection-start-column="34" selection-end-line="1238" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -98,11 +79,35 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="common.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/css/common.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="597">
+                <state relative-caret-position="1836">
                   <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8712">
+                  <caret line="484" column="53" selection-start-line="484" selection-start-column="53" selection-end-line="484" selection-end-column="53" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="orders.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/php/orders.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="497">
+                  <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+                  <folding>
+                    <element signature="n#sortCtype#0;n#!!top" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -134,6 +139,8 @@
       <find>getq</find>
       <find>sendOrder</find>
       <find>delete</find>
+      <find>vielen dank</find>
+      <find>email</find>
     </findStrings>
     <replaceStrings>
       <replace>1.95</replace>
@@ -154,16 +161,16 @@
         <option value="$PROJECT_DIR$/html/root/userlocation.html" />
         <option value="$PROJECT_DIR$/Server/js/AllOrders.js" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/Order.css" />
-        <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" />
         <option value="$PROJECT_DIR$/UserpageVue/index.html" />
         <option value="$PROJECT_DIR$/UserpageVue/js/index.js" />
-        <option value="$PROJECT_DIR$/php/orders.php" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" />
         <option value="$PROJECT_DIR$/php/DataBaseJ.php" />
         <option value="$PROJECT_DIR$/UserpageVue/css/styles.css" />
         <option value="$PROJECT_DIR$/Server/html/index.html" />
-        <option value="$PROJECT_DIR$/Server/js/index.js" />
         <option value="$PROJECT_DIR$/Server/css/common.css" />
+        <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" />
+        <option value="$PROJECT_DIR$/Server/js/index.js" />
+        <option value="$PROJECT_DIR$/php/orders.php" />
       </list>
     </option>
   </component>
@@ -180,8 +187,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="249" />
-    <option name="y" value="46" />
+    <option name="x" value="2342" />
+    <option name="y" value="400" />
     <option name="width" value="1813" />
     <option name="height" value="1017" />
   </component>
@@ -197,106 +204,89 @@
         <subPane>
           <expand>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="nd" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
-              <item name="nd" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="nd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
-              <item name="nd" type="462c0819:PsiDirectoryNode" />
-              <item name="sites" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="nd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="desktop" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
-              <item name="nd" type="462c0819:PsiDirectoryNode" />
-              <item name="sites" type="462c0819:PsiDirectoryNode" />
-              <item name="desktop" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="nd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sites" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="desktop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Dashboard" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
-              <item name="nd" type="462c0819:PsiDirectoryNode" />
-              <item name="sites" type="462c0819:PsiDirectoryNode" />
-              <item name="desktop" type="462c0819:PsiDirectoryNode" />
-              <item name="Dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="order" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="mp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="nd" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-              <item name="mp" type="462c0819:PsiDirectoryNode" />
-              <item name="nd" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="php" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Server" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project a2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project a2" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Server" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -353,29 +343,33 @@
       <workItem from="1528124573530" duration="612000" />
       <workItem from="1528188063654" duration="21498000" />
       <workItem from="1528225994458" duration="854000" />
+      <workItem from="1528274079805" duration="6000" />
+      <workItem from="1528394508862" duration="228000" />
+      <workItem from="1528395384254" duration="3728000" />
+      <workItem from="1528403972973" duration="2166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53323000" />
+    <option name="totallyTimeSpent" value="59451000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
+    <frame x="2552" y="-8" width="1874" height="1096" extended-state="6" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="3" visible="true" weight="0.019629225" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.3293348" />
+      <window_info anchor="bottom" id="File Transfer" order="3" visible="true" weight="0.018808777" />
       <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.3293348" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3293348" />
       <window_info anchor="right" id="Remote Host" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16375199" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16979052" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3293348" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -639,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="442" column="38" selection-start-line="442" selection-start-column="31" selection-end-line="442" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/root/userlocation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -690,15 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6048">
+        <state relative-caret-position="8100">
           <caret line="450" column="12" selection-start-line="450" selection-start-column="12" selection-end-line="450" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22806">
-          <caret line="1267" column="19" selection-start-line="1267" selection-start-column="19" selection-end-line="1267" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -709,34 +689,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/js/index.js">
+    <entry file="file://$PROJECT_DIR$/Server/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        <state relative-caret-position="1836">
+          <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/orders.php">
+    <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="716">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        <state relative-caret-position="8712">
+          <caret line="484" column="53" selection-start-line="484" selection-start-column="53" selection-end-line="484" selection-end-column="53" />
           <folding>
-            <element signature="n#sortCtype#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/css/common.css">
+    <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+        <state relative-caret-position="22284">
+          <caret line="1238" column="34" selection-start-line="1238" selection-start-column="34" selection-end-line="1238" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="105" column="18" lean-forward="true" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
+        <state relative-caret-position="18">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="75" column="23" selection-start-line="75" selection-start-column="23" selection-end-line="75" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="104" column="5" lean-forward="true" selection-start-line="104" selection-start-column="5" selection-end-line="104" selection-end-column="5" />
+          <folding>
+            <element signature="n#sortCtype#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

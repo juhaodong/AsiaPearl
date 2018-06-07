@@ -83,13 +83,26 @@ function bulidMail($method,$order){
 
 }
 function sendMail(){
-    $order=json_decode( $_POST['order']);
+    $resend=$_POST['resend'];
+    if($resend){
+        $_POST['order']=str_replace(PHP_EOL,"",$_POST['order']);
+        $_POST['order']=str_replace(PHP_EOL,"",$_POST['order']);
+        $_POST['order']=str_replace("\t","",$_POST['order']);
+        $_POST['order']=str_replace("\t","",$_POST['order']);
+        $_POST['order']=str_replace("\\b","",$_POST['order']);
+    }
+
+    $order=json_decode($_POST['order']);
+
+
     $email="haodong.ju@asiagourment.de";
     $subject="print";
     $message=bulidMail(1,$order);
 
+    if(!$resend){
+        mail($order->emailAddress,"Bestellungen".$order->time->time,str_replace("\\b","",$message));//send to the user for confirm
 
-    mail($order->emailAddress,"Bestellungen".$order->time->time,str_replace("\\b","",$message));//send to the user for confirm
+    }
 
     mail($email,$subject,$message);//send twice for save
     mail($email,$subject,$message);
