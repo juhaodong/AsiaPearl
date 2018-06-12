@@ -46,7 +46,21 @@ function refreshTable() {
 function newCard(item) {
     let div =document.createElement("div");
 }
+function ChangePayment(t,m) {
+    $.ajax({
+        url:"http://asia-pearl-express.com/php/DataBaseJ.php?q=updatePayment",
+        data:{
+            OrderID:t.dataset.id,
+            Payment:m
+        },
+        method:"POST",
+        success:function (res) {
+            console.log(res);
+            refreshTable();
+        }
+    })
 
+}
 function confirmOrder(t) {
     console.log(t.dataset);
     $.ajax({
@@ -73,6 +87,7 @@ function resendOrder(info) {
         method:"POST",
         data:({
             order:data,
+            id:info.dataset.id,
             resend:true
         }),
         success:function (res) {
@@ -101,7 +116,16 @@ function newRow(item) {
     te.innerHTML=item.Address;
     let tf=document.createElement("td");
     let resend=document.createElement("td");
-
+    let pay=document.createElement("td");
+    if(item.Payment==="EC"){
+        pay.innerHTML="<button onclick='ChangePayment(this,\"Bar\")' data-id='"+item.OrderID+"' class=\"mdl-chip \">\n" +
+            "    <span class=\"mdl-chip__text\">用卡结算</span>\n" +
+            "</button>";
+    }else{
+        pay.innerHTML="<button style='background-color: #0c5460' onclick='ChangePayment(this,\"EC\")' data-id='"+item.OrderID+"' class=\"mdl-chip \">\n" +
+            "    <span class=\"mdl-chip__text\">普通结算</span>\n" +
+            "</button>";
+    }
     if(item.recieved==="0"){
         tf.innerHTML="<button onclick='confirmOrder(this)' data-id='"+item.OrderID+"' class=\"mdl-chip \">\n" +
             "    <span class=\"mdl-chip__text\">确认订单</span>\n" +
@@ -113,7 +137,7 @@ function newRow(item) {
 
     if(!item.IsSend){
         r.setAttribute("class","warning");
-        resend.innerHTML="<button onclick='resendOrder(this)' data-info='"+item.detail+"' class=\"mdl-chip \">\n" +
+        resend.innerHTML="<button onclick='resendOrder(this)'data-id='"+item.OrderID+"' data-info='"+item.detail+"' class=\"mdl-chip \">\n" +
             "    <span class=\"mdl-chip__text\">重发订单</span>\n" +
             "</button>";
     }else {
@@ -123,6 +147,7 @@ function newRow(item) {
     r.appendChild(te);
     r.appendChild(tf);
     r.appendChild(resend);
+    r.appendChild(pay);
     r.appendChild(ta);
     r.appendChild(tb);
     r.appendChild(tc);

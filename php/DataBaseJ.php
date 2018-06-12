@@ -302,9 +302,10 @@ function bulidMail($method,$order){
     return $message;
 
 }
-function sendMail($param,$id){
+function sendMail($param,$id,$to){
     $order=json_decode( $param);
-    $email="haodong.ju@asiagourment.de";
+    $email=$to??"haodong.ju@asiagourment.de";
+
     $subject=$id;
     $message=bulidMail(1,$order);
     $headers = 'From: Asia Pearl Express <asia-pearl@asiagourmet.de>';
@@ -323,7 +324,74 @@ function sendMail($param,$id){
     $err=error_get_last();
     echo $err['message']??"good";
 }
+function get_predicate_by_day_count($day_count, $end_date = null)
+{
+    return sprintf("TimeStamp%s",
+        $day_count > 0
+            ? sprintf(" BETWEEN DATE_SUB('%s', INTERVAL %d DAY) AND '%s'",
+            ($end_date ?? date('Y-m-d')), $day_count, ($end_date ?? date('Y-m-d')))
+            : sprintf("='%s'", ($end_date ?? date('Y-m-d'))));
+}
+function MessageHead($nr,$limit){
+    echo date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d");
+    return "\bAsia Pearl China Restaurant\nKurt-Schumacher-Str. 93\n44532 lünen\nTel: 02306/143 10\n
+     "."====================================\n".
+    "TAGESABSCHLUSS vom\n"
+        .date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d")." \nErstellt am:\n".date('D d.m.Y h:i:s')."\n************************\nZBon Nr    :    ".$nr."\nUmsatzSt.-Nummer 31653392174\n";    ;
+}
+function getPrintInfo($conn,$limit){
+    $select=new SqlSelect($conn,array("*"),"`u809451557_order`.Orders",array("DateDiff(now(),TimeStamp)=".$limit));
 
+    $rs=$select->execute_sql();
+    $mailTo="haodong.ju@asiagourment.de";
+    $subject="print";
+    $message="";
+    $total=0;
+    $drink=0;
+    $bar=0;
+    $karte=0;
+    $Date_1=date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d");
+
+    $Date_2="2018-05-01";
+
+    $d1=strtotime($Date_1);
+    $d2=strtotime($Date_2);
+    $Days=round(($d1-$d2)/3600/24);
+    //   var_dump($rs);
+    foreach($rs as $v){
+
+        $total+=$v["Amount"];
+        $drink+=$v["drinkPrice"];
+        $v["Payment"]!="EC"?$bar+=$v["Amount"]:$karte+=$v["Amount"];
+    }
+    $nr=(new SqlSelect($conn,array("max(id)"),"Datas"))->execute_sql()[0]["max(id)"];
+
+    //   echo (new SqlSelect($conn,array("max(id)"),"Datas"))->get_sql();
+    $insertParam=[];
+
+    (new SqlInsert($conn,"Datas",$insertParam))->execute_sql();
+    $message.=MessageHead(str_pad($Days,4,"0",STR_PAD_LEFT),$limit);
+    $message.=str_repeat("=",24)."\nUmsaetze\n\\b Tagesumsatz        €".$total."\n".str_repeat("*",24)."\n"
+        . "7% Umsaetzesatz netto \t     :    €".($total-$drink-($total-$drink)*0.07).
+        "\nUmSt. 7% ist                      :    €".($total-$drink)*0.07.
+        "\n19% Umsaetzesatz netto   :    €".$drink*0.81.
+        "\nUmSt. 19% ist                    :    €".$drink*0.19."\n\nGetränke      ".round(($drink/$total)*100,2)."%      €".$drink.
+        "\nKüche      ".round((1-$drink/$total)*100,2)."%      €".($total-$drink);
+    $message.="\n\nUmsatz beinhaltet\n alle STORNO und RABATT summen!\n"."\n\n".
+        "\\bBAR----------------".$bar.
+        "\nEURO---------------0.00".
+        "\nVISA---------------0.00".
+        "\nAMEX---------------0.00".
+        "\nGutschein----------0.00".
+        "\nEC Karte-----------".$karte.
+        "\nEssenmarken--------0.00".
+        "\nUeberweisung-------0.00".
+        "\nZechpreller--------0.00".
+        "\nSonstiges----------0.00".
+        "\nKredit Card--------0.00";
+
+    mail($mailTo,$subject,$message);
+}
 $q_parameter = $_GET['q'];
 
 switch ($q_parameter) {
@@ -334,7 +402,18 @@ switch ($q_parameter) {
             $updParam[$k]="'".$v."'";
         }
         $sql_insert=new SqlUpdate($conn,'Orders',$updParam,array("OrderID="."'".$ta."'"));
-          //echo $sql_insert->get_sql();
+
+        $sql_insert->execute_sql();
+        echo "good";
+        break;
+    case 'updatePayment':
+        $updParam=[];
+        $ta=$_POST['OrderID'];;
+        foreach($_POST as $k=>$v){
+            $updParam[$k]="'".$v."'";
+        }
+        $sql_insert=new SqlUpdate($conn,'Orders',$updParam,array("OrderID="."'".$ta."'"));
+        echo $sql_insert->get_sql();
         $sql_insert->execute_sql();
         echo "good";
         break;
@@ -370,9 +449,15 @@ switch ($q_parameter) {
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
-        sendMail($_POST['detail'],date("Ymd").$rs);
+        sendMail($_POST['detail'],date("Ymd").$rs,$_POST['to']);
         echo common_execute_procedure($sql_insert);
 
+        break;
+    case "printToday":
+       /* for($i =0;$i<21;$i++){
+            getPrintInfo($conn,$i);
+        }*/
+        getPrintInfo($conn,0);
         break;
     case "updateUser":
         $updParam=[];

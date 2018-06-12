@@ -1200,12 +1200,27 @@ function timeChange() {
     document.getElementById("ready_time_type").checked="true";
 }
 function sendOrder(){
+    orderInfo.drinkPrice=0;
+    for(item of orderInfo.orders){
+        for(t of item.info){
+            if(t.type==="getranke"){
+                if(t.amount==="Klein"){
+                    orderInfo.drinkPrice+=1.5;
+                }else{
+                    orderInfo.drinkPrice+=2.5;
+                }
+            }
+        }
+
+    }
     console.log("run");
     let form=document.address;
     let children=form.getElementsByTagName("input");
     console.log(orderInfo);
     if(orderInfo.time.type=="SBWM"){
         orderInfo.time.time=timeNow();
+    }else{
+        orderInfo.time.time=["\\b",orderInfo.time.time,"\n"+timeNow()].join("");
     }
 
     for(let value of children ){
@@ -1219,11 +1234,17 @@ function sendOrder(){
     }
     orderInfo.payment=document.getElementById("payment").value;
     orderInfo.orders=orderInfo.orders.sort(compare("name"));
-    if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
+    if(['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879'].indexOf(address.Plz.value)<0){
         alert(" In dieser Bereich\n" +
             "        noch keine Lieferservice\n" +
             "        Bitte Verstehen");
         return false;
+    }else{
+        if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
+            orderInfo.to="gelsenkirchen@asiagourment.de";
+        }else{
+            orderInfo.to="haodong.ju@asiagourment.de";
+        }
     }
     orderInfo.emailAddress=address.Email.value;
     console.log(orderInfo);
@@ -1261,6 +1282,8 @@ function sendOrder(){
                         UserID:UserID,
                         Amount:orderInfo.finalPrice,
                         Address:orderInfo.address,
+                        to:orderInfo.to,
+                        drinkPrice:orderInfo.drinkPrice,
                         detail:JSON.stringify(orderInfo)
                     }),
                     success:function (res) {
