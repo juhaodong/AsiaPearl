@@ -449,7 +449,7 @@ switch ($q_parameter) {
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
-        sendMail($_POST['detail'],date("Ymd").$rs,$_POST['to']);
+        sendMail($_POST['detail'],date("Ymd").$rs,$_POST['goto']);
         echo common_execute_procedure($sql_insert);
 
         break;

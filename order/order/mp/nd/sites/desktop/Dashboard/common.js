@@ -1241,9 +1241,9 @@ function sendOrder(){
         return false;
     }else{
         if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
-            orderInfo.to="gelsenkirchen@asiagourment.de";
+            orderInfo.goto="gelsenkirchen@asiagourment.de";
         }else{
-            orderInfo.to="haodong.ju@asiagourment.de";
+            orderInfo.goto="haodong.ju@asiagourment.de";
         }
     }
     orderInfo.emailAddress=address.Email.value;
@@ -1282,7 +1282,7 @@ function sendOrder(){
                         UserID:UserID,
                         Amount:orderInfo.finalPrice,
                         Address:orderInfo.address,
-                        to:orderInfo.to,
+                        goto:orderInfo.goto,
                         drinkPrice:orderInfo.drinkPrice,
                         detail:JSON.stringify(orderInfo)
                     }),
