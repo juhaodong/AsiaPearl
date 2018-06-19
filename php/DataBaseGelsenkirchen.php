@@ -305,10 +305,6 @@ function bulidMail($method,$order){
 function sendMail($param,$id,$to){
     $order=json_decode( $param);
     $email=$to??"haodong.ju@asiagourment.de";
-    $confirm="asia-gourmet@outlook.com";
-    if($to=="gelsenkirchen@asiagourmet.de"){
-        $confirm="asia-gourmet-gelsenkirchen@outlook.com";
-    }
 
     $subject=$id;
     $message=bulidMail(1,$order);
@@ -320,7 +316,7 @@ function sendMail($param,$id,$to){
     mail($email,$subject,$message,$headers);
 
 
-    mail($confirm,"Bestellungen".$order->time->time,$message,$headers);
+    mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,$message,$headers);
 
 
     $message= bulidMail(2,$order);
@@ -340,7 +336,7 @@ function MessageHead($nr,$limit){
     echo date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d");
     return "\bAsia Pearl China Restaurant\nKurt-Schumacher-Str. 93\n44532 lünen\nTel: 02306/143 10\n
      "."====================================\n".
-    "TAGESABSCHLUSS vom\n"
+        "TAGESABSCHLUSS vom\n"
         .date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d")." \nErstellt am:\n".date('D d.m.Y h:i:s')."\n************************\nZBon Nr    :    ".$nr."\nUmsatzSt.-Nummer 31653392174\n";    ;
 }
 function getPrintInfo($conn,$limit){
@@ -425,7 +421,7 @@ switch ($q_parameter) {
         $result= new SqlSelect($conn,array("*"),"User",array("UserID='".$_GET['UserID']."'"));
         echo json_encode($result->execute_sql());
         break;
-        case'getAllData':
+    case'getAllData':
         $result=new SqlSelect($conn,array("*"),$_GET['table']);
 
         //  echo $result->get_sql();
@@ -458,9 +454,9 @@ switch ($q_parameter) {
 
         break;
     case "printToday":
-       /* for($i =0;$i<21;$i++){
-            getPrintInfo($conn,$i);
-        }*/
+        /* for($i =0;$i<21;$i++){
+             getPrintInfo($conn,$i);
+         }*/
         getPrintInfo($conn,0);
         break;
     case "updateUser":
@@ -470,7 +466,7 @@ switch ($q_parameter) {
             $updParam[$k]="'".$v."'";
         }
         $sql_insert=new SqlUpdate($conn,'User',$updParam,array("UserID="."'".$ta."'"));
-      //  echo $sql_insert->get_sql();
+        //  echo $sql_insert->get_sql();
         echo json_encode([common_execute_procedure($sql_insert),$ta]);
         break;
 

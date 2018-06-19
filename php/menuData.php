@@ -420,8 +420,8 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'subtype'=>'h',
             'addPrice'=>1.25,
             'sprice'=>4.75,
-            'mprice'=>9.5,
-            'bprice'=>14.25
+            'mprice'=>8.25,
+            'bprice'=>11.75
         ),
 
 
@@ -494,8 +494,8 @@ mit eine ausgewählt soße.',
             'subtype'=>'h',
             'addPrice'=>1.25,
             'sprice'=>4.75,
-            'mprice'=>9.5,
-            'bprice'=>14.25
+            'mprice'=>8.25,
+            'bprice'=>11.75
         ),
 
 

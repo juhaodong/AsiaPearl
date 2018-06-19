@@ -1,35 +1,70 @@
-const PHPROOT="http://asia-pearl-express.com/php/";
+const PHPROOT="https://asia-pearl-express.com/php/";
+let position="";
 $('document').ready(function () {
 
     $(".mdl-navigation__link").click(function (event) {
         $(".mdl-layout__tab-panel").removeClass("is-active");
         $("#"+event.target.href.split("#")[1]).addClass(" is-active");
     });
+    Pos=getQueryString("password");
 
-
-    refreshTable();
+    if(Pos=="0501"){
+        position="all";
+    }
+    else if(Pos=="1111"){
+        position="gelsenkirchen@asiagourment.de";
+    }
+    else{
+        position="none";
+    }
+    refreshTable(position);
 
 });
-function refreshTable() {
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = location.search.substr(1).match(reg);
+    if (r != null) return unescape(decodeURI(r[2])); return null;
+}
+function fliterData(item,target,value) {
+    return (item[target]==value);
+}
+function refreshTable(position) {
     $("#table").empty();
     $.ajax({
-        url:"http://asia-pearl-express.com/php/DataBaseJ.php?q=getAllData",
+        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=getAllData",
         data:{
             table:"u809451557_order.Orders",
         },
         success:function (res) {
-            let info = JSON.parse(res);
-            console.log(info);
+            let info = (JSON.parse(res)).reverse();
+
             let total=0;
             let table=document.getElementById("table");
             let r=document.createElement("tr");
             r.innerHTML="  <th class=\"un\" width=\"300px\">Address</th>\n" +
                 "                           <th>确认收单</th>\n" +
                 "                           <th>订单状态</th>\n" +
+                "                           <th>结算方式</th>\n" +
                 "                           <th class=\"un\">OrderID</th>\n" +
                 "                           <th class=\"un\">UserID</th><th class=\"un\">Amount</th><th class=\"un\">Time</th>\n";
 
-                table.appendChild(r);
+            table.appendChild(r);
+
+
+
+          //  console.log(position);
+            if(position!="all"){
+                let tmp=[];
+                for(let item of info){
+                    if(fliterData(item,"goto",position)){
+                        //console.log(item);
+                        tmp.push(item);
+                    }
+                }
+                info=tmp;
+            }
+
+            console.log(info);
             for(let i in info){
                 total+=parseFloat(  newRow(info[i]));
             }
@@ -48,7 +83,7 @@ function newCard(item) {
 }
 function ChangePayment(t,m) {
     $.ajax({
-        url:"http://asia-pearl-express.com/php/DataBaseJ.php?q=updatePayment",
+        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=updatePayment",
         data:{
             OrderID:t.dataset.id,
             Payment:m
@@ -56,7 +91,7 @@ function ChangePayment(t,m) {
         method:"POST",
         success:function (res) {
             console.log(res);
-            refreshTable();
+            refreshTable(position);
         }
     })
 
@@ -64,7 +99,7 @@ function ChangePayment(t,m) {
 function confirmOrder(t) {
     console.log(t.dataset);
     $.ajax({
-        url:"http://asia-pearl-express.com/php/DataBaseJ.php?q=finishOrder",
+        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=finishOrder",
         data:{
             OrderID:t.dataset.id,
             recieved:1
@@ -72,7 +107,7 @@ function confirmOrder(t) {
         method:"POST",
         success:function (res) {
           console.log(res);
-          refreshTable();
+          refreshTable(position);
         }
     })
 }
@@ -92,7 +127,7 @@ function resendOrder(info) {
         }),
         success:function (res) {
             console.log(res);
-            refreshTable();
+            refreshTable(position);
         }
     });
 }

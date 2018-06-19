@@ -239,10 +239,23 @@
                         function checkAddress() {
                             var a=document.getElementById("address").value;
                             console.log(a);
-
-                                console.log("run");
-                                window.location.href="http://asia-pearl-express.com/order/order/mp/nd/sites/desktop/Dashboard/menu.html";
+                            if(['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879'].indexOf(a)<0){
+                                alert(" In dieser Bereich\n" +
+                                    "        noch keine Lieferservice\n" +
+                                    "        Bitte Verstehen");
                                 return false;
+                            }else{
+                                if(['44532','44534','44536','44536','44563'].indexOf(a)<0){
+                                    f="gelsenkirchen"
+                                }else{
+                                    f="lunen";
+                                }
+                                console.log("run");
+                                window.location.href="https://asia-pearl-express.com/order/order/mp/nd/sites/desktop/Dashboard/menu.html?location="+f;
+                                return false;
+                            }
+
+
 
                         }
                     </script>

@@ -392,11 +392,19 @@ margin-left: 24px;
     width: 100px;
 }
 .wagen td{
+    max-width: 125px;
+    width: 70px;
     white-space: nowrap;
-    overflow: visible;
+    text-overflow: ellipsis;
+    overflow: hidden;
     padding-left: 5px;
     font-size: small;
    font-style: normal;
+}
+.wagen tr{
+    width: 270px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .jhG{
     border-top: 1px solid lightgrey;

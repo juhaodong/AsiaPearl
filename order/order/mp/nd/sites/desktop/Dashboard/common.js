@@ -1,5 +1,11 @@
 
 
+
+
+
+
+
+
 /************全局变量****************/
 var orderInfo=new Object();//记录全部Order信息，即购物车
 const PHPROOT="../../../../../../../php/";
@@ -184,7 +190,7 @@ function gast() {
 function sendUserinfo() {
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ?q=getUser",
+        url: "https://asia-pearl-express.com/php/DataBaseJ?q=getUser",
         data : {q:0,Username:userInfo.Username.value},
         success: function(msg) {
             info=JSON.parse(msg);
@@ -231,7 +237,7 @@ function sendUserAddress(event) {
     }
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
+        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
         data : {
             Password:reg.Password.value,
             EmailAddress:reg.Emailaddress.value
@@ -260,7 +266,7 @@ function sendUserAddress(event) {
 function getUserAddress() {
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=getUserByID",
+        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=getUserByID",
         data : {
             UserID:UserID},
         success: function(msg) {
@@ -476,10 +482,18 @@ function showItems(wagens) {
         end.style.background="blue";
         end.removeAttribute("disabled");
         r.style.display="none";
+        var x=document.getElementById("hint");
+        console.log(x);
+        x.innerHTML="Du hast den Mindesbestellwert von 15,00€ " +
+            "erreicht und kannst jetzt fortfahren."
     }else{
         var r=document.getElementById("rest");
-        rest.innerHTML="Benötigeter Betrag, um den Mindestbestellwert zu erreichen:<span style='font-size: medium;font-style: oblique'>€"+(15-priceAll).toFixed(2)+"</span>";
+
+        r.style.color="green";
+        rest.innerHTML=" Benötigter Betrag, um den Mindestbestellwert zu erreichen <span style='font-size: medium;font-style: oblique'>€"+(15-priceAll).toFixed(2)+"</span>";
         r.style.display="";
+        var x=document.getElementById("hint");
+        x.innerHTML="Wir liefert erst ab einem Mindestbestellwert von 15.00€(exkl. Lieferkosten)";
 
     }
 
@@ -1031,14 +1045,14 @@ function initial() {
 
     $('input.timepicker').timepicker({
         timeFormat: 'HH:mm',
-        interval: 30,
-        minTime: '12',
-        maxTime: '8:00pm',
+        interval: 15,
+        minTime: '11:30',
+        maxTime: '22:00',
         defaultTime: d,
-        startTime: d+":"+m,
+        startTime: "11:30",
         dynamic: false,
         dropdown: true,
-        scrollbar: true
+        scrollbar: false
     });
     //console.log(pages);
     //document.getElementById("buttonH").style.visibility="hidden";
@@ -1128,7 +1142,7 @@ function sendOrdertime() {
     if(ordertime.type!="SBWM"){
 
         ordertime.time="("+time.times.value+'Uhr am'+time.date.value+")";
-        if(ordertime.time==""){
+        if(ordertime.time[2]=="h"){
             alert("Bitte Wählens Sie Eine Gültig Zeit");
             return false;
         }
@@ -1136,13 +1150,70 @@ function sendOrdertime() {
     else{
         ordertime.time=timeNow();
     }
+
+    let hour=ordertime.time.split(":")[0].substring(1,3);
+    let min=ordertime.time.split(":")[1].substring(0,2);
+    console.log(hour,min);
+
+    let target=new Date();
+    target.setHours(hour);
+    target.setMinutes(min);
    // console.log(ordertime);
-    $("[data-order-step=2]").addClass("done");
-    showPages("f1");
-    orderInfo.time=ordertime;
-    newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
-    backIndex("timePage");
+    restaurantName=getQueryString("location")?getQueryString("location"):"lunen";
+    console.log(restaurantName);
+    if(restaurantName=="lunen"){
+        let judge=new Date();
+        judge.setHours(11);
+        judge.setMinutes(30);
+        let end=new Date();
+        end.setHours(14);
+        end.setMinutes(30);
+        let night=new Date();
+        night.setHours(17);
+        night.setMinutes(0);
+        let close=new Date();
+        close.setHours(21);
+        close.setMinutes(30);
+
+
+        if((target>=judge&&target<=end)||(target>=night&&target<=close)){
+            console.log("good");
+            $("[data-order-step=2]").addClass("done");
+            showPages("f1");
+            orderInfo.time=ordertime;
+            newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
+            backIndex("timePage");
+            return false;
+
+        }
+
+    }else{
+
+        let night=new Date();
+        night.setHours(17);
+        night.setMinutes(0);
+        let close=new Date();
+        close.setHours(21);
+        close.setMinutes(30);
+
+
+        if((target>=night&&target<=close)){
+            console.log("good");
+            $("[data-order-step=2]").addClass("done");
+            showPages("f1");
+            orderInfo.time=ordertime;
+            newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
+            backIndex("timePage");
+            return false;
+
+        }
+    }
+
+
+
+    alert("Bitte Wählens Sie Eine Gültig Zeit");
     return false;
+
 }//完成时间页并返回首页
 
 /**/
@@ -1250,7 +1321,7 @@ function sendOrder(){
     console.log(orderInfo);
     jQuery.ajax({
         type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
+        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
         data : {
             Etage:address.Etage.value,
             Name:address.Name.value,

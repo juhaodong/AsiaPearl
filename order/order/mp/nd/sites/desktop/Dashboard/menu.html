@@ -337,10 +337,12 @@
                 <div onclick="showPartyPack()" class="partyButton short"
                      style=" background: url('../yxj/menu/partypack.jpg'); background-size: 250px">
                     <div class="jhItemDetail red">
-                        <div class="upperLine" style="height: 40px">
+                        <div class="upperLine" >
                             <span style="display: inline-block">Party Packs</span>
                         </div>
                         <div class="lowerLine">
+                            Der beste weg für eine Gruppe oder
+                            Büroparty<br>
 
                         </div>
                     </div>
@@ -350,7 +352,7 @@
                       style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
                     <div class="jhItemDetail red">
                         <div class="upperLine" >
-                            <span style="display: inline-block">12-16 Person</span>
+                            <span style="display: inline-block">8-12 Person</span>
                             <span style="display: inline-block;">102.00€</span>
                         </div>
                         <div class="lowerLine">
@@ -365,7 +367,7 @@
                       style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
                     <div class="jhItemDetail red">
                         <div class="upperLine">
-                            <span style="display: inline-block">18-22 Person</span>
+                            <span style="display: inline-block">16-20 Person</span>
                             <span style="display: inline-block;">143.00€</span>
                         </div>
                         <div class="lowerLine">
@@ -380,7 +382,7 @@
                       style=" background: url('../yxj/menu/k.jpg'); background-size: 250px">
                     <div class="jhItemDetail red">
                         <div class="upperLine" >
-                            <span style="display: inline-block">26-30 Person</span>
+                            <span style="display: inline-block">24-26 Person</span>
                             <span style="display: inline-block;">205.00€</span>
                         </div>
                         <div class="lowerLine">
@@ -446,8 +448,8 @@
         <div class="formC">
             <form name="address" >
                 <div class="line">
-                    <div class="halfline">
-                        <label>Straße <input required class="TextArea" name="StrasseName" type="text"/></label>
+                    <div  class="halfline">
+                        <label>Straße <input id="autocomplete" required class="TextArea" name="StrasseName" type="text"/></label>
                     </div>
                     <div class="quadline">
                         <label>Haus Nr. <input required class="TextArea" name="HausNr" type="text"/></label>
@@ -912,7 +914,7 @@
 
 
         </table>
-        <div id="rest" class="wagen" style="display: none;font-size: small;padding:5px">
+        <div id="rest" class="wagen" style="line-height:12px;display: none;font-size: small;padding:5px">
 
         </div>
 
@@ -921,9 +923,11 @@
                 Kasse
             </button>
         </div>
-        <div class="wagen" style="font-size: small;line-height:13px;padding: 5px;text-align: center;color: #bebeb7;">
-            Leider kannst Du noch nicht bestellen. Wir liefert erst ab einem Mindestbestellwert von 15.00€(exkl.
-            Lieferkosten)
+        <div   class="wagen" style="font-size: small;line-height:13px;padding: 5px;text-align: center;color: #bebeb7;">
+           <span id="hint">
+               Wir liefert erst ab einem Mindestbestellwert von 15.00€(exkl.
+               Lieferkosten)
+           </span>
         </div>
     </div>
 
@@ -960,5 +964,6 @@
     </div>
 </footer>
 </body>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 </html>
