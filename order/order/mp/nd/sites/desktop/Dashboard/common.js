@@ -534,9 +534,9 @@ function processMenu(menuType) {
         case "MENÜ 2":h=2;break;
         case "MENÜ 3":h=3;break;
         case "Familienfest":h=3;b=3;break;
-        case "12-16 Person":h=2;b=2;break;
-        case "18-22 Person":h=3;b=3;break;
-        case "26-30 Person":h=4;b=4;break;
+        case "8-12 Person":h=2;b=2;break;
+        case "16-20 Person":h=3;b=3;break;
+        case "24-26 Person":h=4;b=4;break;
         case "Unsere Favoriten":{
             singleOrderMenuProcess(menuType);
             return;
