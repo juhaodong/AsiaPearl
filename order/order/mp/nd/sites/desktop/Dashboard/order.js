@@ -12,6 +12,7 @@ function newAddon(item,where){
     _iD.setAttribute("class","itemDescribe");
     var title=document.createElement("span");
     title.setAttribute("class","title");
+    title.setAttribute("data-name",item.name);
     title.innerText=item.name;
     _iD.appendChild(title);
     var itemFunction=document.createElement("div");
@@ -39,7 +40,8 @@ function newAddon(item,where){
 }//菜单页中生成并插入菜单栏物品
 function addOnOrder(amount,item,source) {
     //console.log('addOnItem');
-    var name=item.parentElement.parentElement.children[1].children[0].innerHTML;
+  //  var name=item.parentElement.parentElement.children[1].children[0].innerHTML;
+    var name=item.parentElement.parentElement.children[1].children[0].dataset.name;
     recordAddOnOrder(amount,name);
 
 
@@ -147,7 +149,8 @@ function showCartOnMobile() {
 function singleItemOrder(item,amount) {
   //  console.log("SingleOrdering:"+item+" : "+amount);
     //console.log(item.parentElement.parentElement.children[1].children[0].innerHTML);
-    var tmp= findDataByName(item.parentElement.parentElement.children[1].children[0].innerHTML);
+    //var tmp= findDataByName(item.parentElement.parentElement.children[1].children[0].innerHTML);
+    var tmp= findDataByName(item.parentElement.parentElement.children[1].children[0].dataset.name);
     recordSingleItemOrder(tmp.name,amount);
 }
 function recordSingleItemOrder(name,amount) {
@@ -371,6 +374,7 @@ function alaCarteItem(itemName,itemImg,item){
         var title=document.createElement("span");
         title.setAttribute("class","title colorb");
         title.innerText=itemName;
+        title.setAttribute("data-name",itemName)
         _iD.appendChild(title);
         var itemFunction=document.createElement("div");
         itemFunction.setAttribute("class","itemFunction");
@@ -425,6 +429,7 @@ function SingleOrderItem(itemName,itemImg,where,item){
     var title=document.createElement("span");
     title.setAttribute("class","title colorb");
     title.innerText=itemName;
+    title.setAttribute("data-name",itemName);
     _iD.appendChild(title);
     var itemFunction=document.createElement("div");
     itemFunction.setAttribute("class","itemFunction");

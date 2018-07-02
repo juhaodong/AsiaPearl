@@ -713,7 +713,7 @@ function Order(amount,item,source){
         }
 
     }
-    RecordOrder(amount,item.parentElement.parentElement.children[1].children[0].innerHTML);
+    RecordOrder(amount,item.parentElement.parentElement.children[1].children[0].dataset.name);//todo replace with dataset
 }
 var lastHalf="";
 function RecordOrder(amount,name) {
@@ -883,6 +883,7 @@ function newItem(itemName,itemImg,method,where,item){
     _iD.setAttribute("class","itemDescribe");
     var title=document.createElement("span");
     title.setAttribute("class","title colorb");
+    title.setAttribute("data-name",itemName);
     title.innerText=itemName;
     _iD.appendChild(title);
     var itemFunction=document.createElement("div");
@@ -1087,8 +1088,10 @@ function backIndex(pageName){
 
 function startOrder(event) {
     document.getElementById("gastName").value="";
+
     if(logged){
-        OrderType=event.target.children[0].children[0].children[0].innerText;
+        OrderType=event.target.children[0].children[0].children[0].dataset.name;
+        //OrderType=event.target.children[0].children[0].children[0].innerText;
         BeginOrder(OrderType);
     //    console.log(OrderType);
     }else{
