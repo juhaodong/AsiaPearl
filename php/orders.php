@@ -95,7 +95,8 @@ function sendMail(){
     $order=json_decode($_POST['order']);
 
 
-    $email="haodong.ju@asiagourment.de";
+    $email=$order->goto;
+
     $subject="print";
     if($resend){
         $subject=$_POST['id'];

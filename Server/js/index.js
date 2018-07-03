@@ -114,7 +114,7 @@ function confirmOrder(t) {
 
 function resendOrder(info) {
     let data=info.dataset.info;
-
+    console.log(data);
 
    // console.log(data);
     $.ajax({

@@ -305,7 +305,7 @@ function bulidMail($method,$order){
 function sendMail($param,$id,$to){
     $order=json_decode( $param);
     $email=$to??"haodong.ju@asiagourment.de";
-    $confirm="asia-gourmet@outlook.com";
+    $confirm=$to=="haodong.ju@asiagourment.de"?"asia-gourmet@outlook.com":"asia-gourmet-gelsenkirchen@outlook.com";
     if($to=="gelsenkirchen@asiagourmet.de"){
         $confirm="asia-gourmet-gelsenkirchen@outlook.com";
     }
