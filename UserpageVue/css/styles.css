@@ -124,3 +124,16 @@
 .detailC{
     padding: 14px;
 }
+.whiteBackgroud{
+    background-color: white;
+}
+input{
+    color:white;
+}
+nav{
+     color: #fff;
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    line-height: unset;
+}

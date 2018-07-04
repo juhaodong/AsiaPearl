@@ -1,8 +1,146 @@
-$(".mdl-navigation__link").click(function (event) {
+
+UserID="";
+UserInfo={};
+isLogged=false;
+$(document).ready(function () {
+  randomColorBackground();
+
+  M.AutoInit();
+    $(".mdl-navigation__link").click(function (event) {
+        if(!isLogged){
+            return;
+        }
+        $(".mdl-layout__tab-panel").removeClass("is-active");
+
+        $("#"+event.target.href.split("#")[1]).addClass("is-active");
+    });
+
+
+
+
+});
+
+function login(event) {
+    event.preventDefault();
+    sendUserinfo();
+}
+function getDatas(){
+    getUserInfo();
     $(".mdl-layout__tab-panel").removeClass("is-active");
 
-    $("#"+event.target.href.split("#")[1]).addClass(" is-active");
-});
+    $("#home").addClass("is-active");
+
+}
+function getUserInfo() {
+    jQuery.ajax({
+        type: "POST",
+        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=getDetailUser",
+        data : {
+            UserID:UserID},
+        success: function(msg) {
+
+            msg=JSON.parse(msg);
+
+            UserInfo.Bestellungs=msg[1];
+            UserInfo.BaseInfo=msg[0];
+            console.log(msg);
+            if( UserInfo.BaseInfo.Name){
+                 UserInfo.address =  UserInfo.BaseInfo.Name + "   " + UserInfo.BaseInfo.FamileName + "<br>" + UserInfo.BaseInfo.Strasse + UserInfo.BaseInfo.HausNr +
+                     "Etage: " +
+                     UserInfo.BaseInfo.Etage + "<br>" + UserInfo.BaseInfo.Plz + " " + UserInfo.BaseInfo.Stadt + "<br>" + UserInfo.BaseInfo.MobiNr + "<br>";
+                 document.getElementById("address").innerHTML=UserInfo.address;
+            }
+            for(let bes of UserInfo.Bestellungs){
+                let card=generateCard(bes);
+                if(card){
+                    document.getElementById("orderC").appendChild(card);
+                }
+
+            }
+        }
+    });
+
+    return false;
+}
+function update() {
+
+    address=document.getElementsByName("address")[0];
+    jQuery.ajax({
+        type: "POST",
+        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
+        data : {
+            Etage:address.Etage.value,
+            Name:address.Name.value,
+            FamileName:address.famileName.value,
+            Strasse:address.StrasseName.value,
+            HausNr:address.HausNr.value,
+            PLZ:address.Plz.value,
+            Stadt:address.Stadt.value,
+            MobiNr:address.MobiNr.value,
+            UserID:UserID,
+        },
+        success: function(msg) {
+            let a = JSON.parse(msg);
+            console.log(a);
+            
+        }
+    });
+    return false;
+}
+function sendUserinfo() {
+    jQuery.ajax({
+        type: "POST",
+        url: "http://asia-pearl-express.com/php/DataBaseJ?q=getUser",
+        data : {Username:logIn.Email.value},
+        success: function(msg) {
+            info=JSON.parse(msg);
+            console.log(info);
+            if(info.UserName=="Gast"){
+                alert("bitte Email Eingabe.");
+            }
+            if(info){
+                if(info.Password==logIn.password.value){
+
+                    UserID=info.UserID;
+                    isLogged=true;
+                    logIn.style.display="none";
+                   // login();
+                }else{
+                    alert("Falsch Passwort");
+                }
+            }else{
+                alert("User Nicht Exist.");
+            }
+
+            getDatas();
+            /*  var a=msg.toString();
+              a.replace(/[\r\n]/g,"");
+              console.log(a);
+
+              if(a=='loginok'){
+
+
+              }
+              else{
+                  alert('Falsch Passwort');
+              }*/
+        }
+    });
+
+    return false;
+
+
+}//登陆
+
+
+
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+
 function randomColorBackground() {
     let colors=[
         "#E74C3C  ",
@@ -21,7 +159,7 @@ function randomColorBackground() {
 }
 function randomColor() {
     let colors=[
-       "white",
+        "white",
         "grey",
         "lightgrey",
 
@@ -29,38 +167,21 @@ function randomColor() {
     ];
     return colors[Math.floor(Math.random() * colors.length)];
 }
-function getDatas(){
-    getUserInfo();
-
-}
-UserID="";
-UserInfo={};
-$(document).ready(function () {
-  randomColorBackground();
-  UserID=getQueryString("uid");
-  getDatas();
-   
-});
-let excludeSpecial = function (s) {
-    // 去掉转义字符
-    s = s.replace(/[\\\/\b\f\n\r\t]/g, '');
-    // 去掉特殊字符
-//    s = s.replace(/[\@\#\$\%\^\&\*\{\}\:\"\L\<\>\?]/);
-    return s;
-};
 
 function generateCard(Order) {
 
     let chips="";
     let Title="Bestellung";
     let Names=[];
+    let pic="";
     if(Order.detail){
-      //  console.log(Order.detail[623]+Order.detail[624]+Order.detail[625]);
-       // console.log(excludeSpecial(Order.detail));
+        //  console.log(Order.detail[623]+Order.detail[624]+Order.detail[625]);
+        // console.log(excludeSpecial(Order.detail));
         let details=JSON.parse(excludeSpecial(Order.detail));
-
+        console.log(details)
         for(let set of details.orders){
             Names.push(set.name);
+            pic="img/yxj/menus/"+set.name+".jpg";
             for(let item of set.info){
 
                 chips+=        "                                    <span class=\"mdl-chip\">\n" +
@@ -97,7 +218,7 @@ function generateCard(Order) {
         "                                </div>\n" +
         "\n" +
         "                            </div>\n" +
-        "                            <div class=\"mdl-card__title\">\n" +
+        "                            <div class=\"mdl-card__title\" style='background-image: url(\""+pic+"\")'>\n" +
         "                                <h2 class=\"mdl-card__title-text\">"+Order.TimeStamp.substr(0,11)+"</h2>\n" +
         "                            </div>\n" +
         "                            <div class=\"mdl-card__supporting-text\">\n" +
@@ -118,89 +239,21 @@ function generateCard(Order) {
         "                        </div>";
     return card;
 }
+
 function showDetailCard(card) {
     let cardDetail=card.parentElement.parentElement.children[0];
     console.log(cardDetail);
     cardDetail.setAttribute("class","card-Detail show")
 }
+
 function hideDetailCard(th) {
 
     th.parentElement.parentElement.parentElement.setAttribute("class","card-Detail hide");
 }
-function getUserInfo() {
-    jQuery.ajax({
-        type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ.php?q=getDetailUser",
-        data : {
-            UserID:UserID},
-        success: function(msg) {
-
-            msg=JSON.parse(msg);
-
-            UserInfo.Bestellungs=msg[1];
-            UserInfo.BaseInfo=msg[0];
-            console.log(msg);
-            if( UserInfo.BaseInfo.Name){
-                 UserInfo.address =  UserInfo.BaseInfo.Name + "   " + UserInfo.BaseInfo.FamileName + "<br>" + UserInfo.BaseInfo.Strasse + UserInfo.BaseInfo.HausNr +
-                     "Etage: " +
-                     UserInfo.BaseInfo.Etage + "<br>" + UserInfo.BaseInfo.Plz + " " + UserInfo.BaseInfo.Stadt + "<br>" + UserInfo.BaseInfo.MobiNr + "<br>";
-                 document.getElementById("address").innerHTML=UserInfo.address;
-            }
-            for(let bes of UserInfo.Bestellungs){
-                let card=generateCard(bes);
-                if(card){
-                    document.getElementById("orderC").appendChild(card);
-                }
-
-            }
-        }
-    });
-
-    return false;
-}
-function sendUserinfo() {
-    jQuery.ajax({
-        type: "POST",
-        url: "http://asia-pearl-express.com/php/DataBaseJ?q=getUser",
-        data : {q:0,Username:userInfo.Username.value},
-        success: function(msg) {
-            info=JSON.parse(msg);
-            console.log(info);
-            if(info.UserName=="Gast"){
-                alert("bitte Email Eingabe.");
-            }
-            if(info){
-                if(info.Password==userInfo.Password.value){
-                    username=info.Name;
-                    UserID=info.UserID;
-                    login();
-                }else{
-                    alert("Falsch Passwort");
-                }
-            }else{
-                alert("User Nicht Exist.");
-            }
-
-            /*  var a=msg.toString();
-              a.replace(/[\r\n]/g,"");
-              console.log(a);
-
-              if(a=='loginok'){
-
-
-              }
-              else{
-                  alert('Falsch Passwort');
-              }*/
-        }
-    });
-
-    return false;
-
-
-}//登陆
-function getQueryString(name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) return unescape(r[2]); return null;
-}
+let excludeSpecial = function (s) {
+    // 去掉转义字符
+    s = s.replace(/[\\\/\b\f\n\r\t]/g, '');
+    // 去掉特殊字符
+//    s = s.replace(/[\@\#\$\%\^\&\*\{\}\:\"\L\<\>\?]/);
+    return s;
+};
