@@ -195,19 +195,52 @@ function sendUserinfo() {
         success: function(msg) {
             info=JSON.parse(msg);
             console.log(info);
-            if(info.UserName=="Gast"){
-                alert("bitte Email Eingabe.");
-            }
+
+
             if(info){
+                if(info.UserName=="Gast"){
+                    alert("bitte Email Eingabe.");
+                }
                 if(info.Password==userInfo.Password.value){
                     username=info.Name;
                     UserID=info.UserID;
                     login();
                 }else{
+                    
                     alert("Falsch Passwort");
                 }
             }else{
-                alert("User Nicht Exist.");
+                if(userInfo.Username.value.indexOf("@")==-1){
+                    jQuery.ajax({
+                        type: "POST",
+                        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
+                        data : {
+                            Password:"",
+                            EmailAddress:userInfo.Username.value
+                        },
+                        success: function(msg) {
+                            let a = JSON.parse(msg);
+                            console.log(a);
+                            if(a[0]=='good'){
+                                username="";
+                                UserID=a[1];
+                                alert("Deine Account wurde erstellt. ");
+                                window.scrollTo(0,0);
+                                login();
+                                return false;
+
+                            }
+                            else{
+                                alert("E-mail ist besetzt.");
+                                return false;
+                            }
+                        }
+                    });
+
+                }else{
+                    alert("User Nicht Exist.");
+                }
+
             }
 
             /*  var a=msg.toString();
@@ -232,8 +265,10 @@ function sendUserAddress(event) {
     event.preventDefault();
     console.log(reg);
     if(!(reg.Password.value===reg.Password2.value)){
-        alert('two Password not same');
-        return false;
+
+            alert('two Password not same');
+            return false;
+
     }
     jQuery.ajax({
         type: "POST",
