@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <title>所有订单</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="../js/AllOrders.js"></script>
-    <link rel="stylesheet" href="../css/common.css">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-colvis-1.5.2/datatables.min.css"/>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/b-1.5.2/b-colvis-1.5.2/datatables.min.js"></script>
+
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/AllOrders.js"></script>
 </head>
 <body>
 <h1>订单信息</h1>
     <table id="table">
+        <thead>
         <tr>
-            <th>OrderID</th><th>UserID</th><th>Amount</th><th>Time</th><th width="300px">Address</th>
+            <th>OrderID</th><th>UserID</th><th>Amount</th><th>Time</th><th>Address</th>
         </tr>
+        </thead>
+
     </table>
 </body>
 </html>

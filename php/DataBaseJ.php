@@ -274,6 +274,8 @@ function generateOrderInfo($method,$order){
         }
     }
     $s.="=============================\n";
+    $s.="Annmerkungen für Restaurant:\n";
+    $s.=$order->tag."\n";
     return $s;
 
 }
@@ -281,6 +283,8 @@ function generateOrderInfo($method,$order){
 function bulidMail($method,$order){
     if($method==1){
         $message="\bAsia Pearl express\n";
+        $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
+        $message.=$head;
         $time="Zeit:".
             $order->time->time."\n";
 

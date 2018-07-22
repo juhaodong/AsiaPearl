@@ -55,24 +55,8 @@ function getQueryString(name) {
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
 }
-function setCookie(name,value,Days)
-{
 
-    var exp　= new Date();
-    exp.setTime(exp.getTime() +Days*24*60*60*1000);
-    document.cookie = name +"="+ decodeURI(value) + ";expires=" + exp.toGMTString();
-    console.log(document.cookie);
 
-}
-function getCookie(name)
-{
-    var arr =document.cookie.match(new RegExp("(^|)"+name+"=([^;]*)(;|$)"));
-    if(arr !=null) return decodeURIComponent(arr[2]); return null;
-}
-function deleteCookie(name) {
-    this.setCookie(name,'',-1);
-
-}
 function timeNow(){
     var years,months,days,hours, minutes, seconds;
     var intYears,intMonths,intDays,intHours, intMinutes, intSeconds;
@@ -1310,6 +1294,7 @@ function timeChange() {
 }
 function sendOrder(){
     orderInfo.drinkPrice=0;
+    orderInfo.tag=address.annmerkungen.value;
     for(item of orderInfo.orders){
         for(t of item.info){
             if(t.type==="getranke"){
@@ -1379,7 +1364,7 @@ function sendOrder(){
                 orderInfo.address="\\b"+address.Name.value +
                     "   \\b"+address.famileName.value
                     +"\n"+address.StrasseName.value
-                    +address.HausNr.value+"Etage: "+
+                    +address.HausNr.value+"\nEtage: "+
                     address.Etage.value+"\n"+
                     address.Plz.value+" \t"+
                     address.Stadt.value+"\n"+
@@ -1393,7 +1378,8 @@ function sendOrder(){
                         Address:orderInfo.address,
                         goto:orderInfo.goto,
                         drinkPrice:orderInfo.drinkPrice,
-                        detail:JSON.stringify(orderInfo)
+                        detail:JSON.stringify(orderInfo),
+                        tag:orderInfo.tag,
                     }),
                     success:function (res) {
                         console.log(res);
