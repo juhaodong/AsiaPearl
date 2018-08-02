@@ -1372,14 +1372,14 @@ function sendOrder(){
                 $.ajax({
                     url:PHPROOT+"DataBaseJ.php?q=saveOrder",
                     method:"POST",
-                    data:({
+                    data:({ 
                         UserID:UserID,
                         Amount:orderInfo.finalPrice,
                         Address:orderInfo.address,
                         goto:orderInfo.goto,
                         drinkPrice:orderInfo.drinkPrice,
                         detail:JSON.stringify(orderInfo),
-                        tag:orderInfo.tag,
+
                     }),
                     success:function (res) {
                         console.log(res);

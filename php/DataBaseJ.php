@@ -280,10 +280,10 @@ function generateOrderInfo($method,$order){
 
 }
 // echo 'order.';
-function bulidMail($method,$order){
+function bulidMail($method,$order,$head){
     if($method==1){
         $message="\bAsia Pearl express\n";
-        $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
+
         $message.=$head;
         $time="Zeit:".
             $order->time->time."\n";
@@ -310,12 +310,14 @@ function sendMail($param,$id,$to){
     $order=json_decode( $param);
     $email=$to??"haodong.ju@asiagourment.de";
     $confirm=$to=="haodong.ju@asiagourment.de"?"asia-gourmet@outlook.com":"asia-gourmet-gelsenkirchen@outlook.com";
+    $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
     if($to=="gelsenkirchen@asiagourmet.de"){
         $confirm="asia-gourmet-gelsenkirchen@outlook.com";
+        $head="Pastorastr.3\n 45879 Gelsenkirchen. TEL:0209/9478 6118. \nUmst-Nr:319/5764/5263\n";
     }
 
     $subject=$id;
-    $message=bulidMail(1,$order);
+    $message=bulidMail(1,$order,$head);
     $headers = 'From: Asia Pearl Express <asia-pearl@asiagourmet.de>';
 
     mail($order->emailAddress,"Danke für Bestellung",str_replace("\\b","",$message),$headers);//send to the user for confirm
@@ -462,9 +464,9 @@ switch ($q_parameter) {
 
         break;
     case "printToday":
-      /* for($i =0;$i<50;$i++){
+        for($i =0;$i<33;$i++){
             getPrintInfo($conn,$i);
-        }*/
+        }
         getPrintInfo($conn,0);
         break;
     case "updateUser":
