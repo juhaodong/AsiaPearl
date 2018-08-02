@@ -187,13 +187,7 @@ mit eine ausgewählt soße.',
         ),
 
 
-        array(
-            'name' => 'orange-soße',
-            'img' => '/汁水/橙子.jpg',
-            'discibe' => '',
-            'type' => 'sauce',
-            'sprice' => 0.8,
-        ),
+
         array(
             'name' => 'BONAQA TABLEWATER',
             'img' => '/酒水/BONAQATABLEWATER.jpg',
@@ -583,14 +577,7 @@ mit eine ausgewählt soße.',
         ),
 
 
-        array(
-            'name' => 'orange-soße',
-            'img' => '/汁水/橙子.jpg',
-            'discibe' => '',
-            'type' => 'carte',
-            'subtype' => 's',
-            'sprice' => 0.8,
-        ),
+       
         array(
             'name' => 'BONAQA TABLEWATER',
             'img' => '/酒水/BONAQATABLEWATER.jpg',
