@@ -329,7 +329,7 @@ function sendMail($param,$id,$to){
     mail($confirm,"Bestellungen".$order->time->time,$message,$headers);
 
 
-    $message= bulidMail(2,$order);
+    $message= bulidMail(2,$order,$head);
     mail($email,$subject,$message);//send to the kitchen for make
     $err=error_get_last();
     echo $err['message']??"good";

@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b935fb0-d65c-4c00-92e1-d7d3a4d18046" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/php/menuData.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/menuData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html/root/datenschutz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserpageVue/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/UserpageVue/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/how-to-order.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/how-to-order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/lieferService.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/lieferService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/pic/主餐/橙子鸡.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/pic/主餐/橙子鸡.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/DataBaseJ.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/DataBaseJ.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/menuDataJpg.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/menuDataJpg.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/orders.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,20 +25,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.48183104">
+    <splitter split-orientation="horizontal" split-proportion="0.5831749">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="DataBaseJ.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DataBaseJ.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="467" column="35" selection-start-line="467" selection-start-column="35" selection-end-line="467" selection-end-column="35" />
+                <state relative-caret-position="4968">
+                  <caret line="333" column="26" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
                   <folding>
                     <element signature="n#sortCtype#0;n#!!top" />
                     <element signature="n#generateOrderInfo#0;n#!!top" />
                     <element signature="n#get_predicate_by_day_count#0;n#!!top" />
                     <element signature="n#MessageHead#0;n#!!top" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="orders.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/orders.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="36">
+                  <caret line="2" selection-start-line="2" selection-end-line="2" />
                 </state>
               </provider>
             </entry>
@@ -52,11 +70,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/UserpageVue/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="990">
-                  <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+                <state relative-caret-position="597">
+                  <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
                 </state>
               </provider>
             </entry>
@@ -74,55 +92,29 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UserpageVue/js/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-                  <folding>
-                    <element signature="n#!!block;n#getQueryString#0" />
-                    <element signature="n#!!block;n#randomColorBackground#0" />
-                    <element signature="n#!!block;n#randomColor#0" />
-                    <element signature="n#!!block;n#generateCard#0" />
-                    <element signature="n#!!block;n#showDetailCard#0" />
-                    <element signature="n#!!block;n#hideDetailCard#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/UserpageVue/css/styles.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2466">
-                  <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24732">
-                  <caret line="1374" column="28" selection-start-line="1374" selection-start-column="28" selection-end-line="1374" selection-end-column="28" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="menuData.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="menuData.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/php/menuData.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="189" selection-start-line="189" selection-end-line="189" />
+                <state relative-caret-position="-2118">
+                  <caret line="362" column="10" lean-forward="true" selection-start-line="362" selection-start-column="10" selection-end-line="362" selection-end-column="10" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="menuDataJpg.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="menuDataJpg.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/php/menuDataJpg.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="579" column="7" selection-start-line="579" selection-start-column="7" selection-end-line="579" selection-end-column="7" />
+                <state relative-caret-position="8928">
+                  <caret line="496" column="39" selection-start-line="496" selection-start-column="33" selection-end-line="496" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="menu.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/root/menu.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="832">
+                  <caret line="431" column="66" selection-start-line="431" selection-start-column="66" selection-end-line="431" selection-end-column="66" />
                 </state>
               </provider>
             </entry>
@@ -130,8 +122,17 @@
           <file leaf-file-name="how-to-order.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/html/root/how-to-order.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="24120">
-                  <caret line="1340" column="28" selection-start-line="1340" selection-start-column="28" selection-end-line="1340" selection-end-column="28" />
+                <state relative-caret-position="28314">
+                  <caret line="1573" column="62" selection-start-line="1573" selection-start-column="62" selection-end-line="1573" selection-end-column="62" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="userlocation.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/root/userlocation.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4788">
+                  <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
                 </state>
               </provider>
             </entry>
@@ -139,29 +140,34 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Server/html/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="54">
-                  <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+                <state relative-caret-position="72">
+                  <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="AllOrders.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Server/html/AllOrders.html">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/root/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+                <state relative-caret-position="14598">
+                  <caret line="811" selection-start-line="811" selection-end-line="811" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="orders.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/orders.php">
+          <file leaf-file-name="datenschutz.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/html/root/datenschutz.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+                <state relative-caret-position="11394">
+                  <caret line="633" column="47" selection-start-line="633" selection-start-column="47" selection-end-line="633" selection-end-column="47" />
                   <folding>
-                    <element signature="n#sortCtype#0;n#!!top" />
-                    <element signature="n#generateOrderInfo#0;n#!!top" />
+                    <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#noscript#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#20233#20305#0" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -182,9 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>email</find>
-      <find>sendordertime</find>
-      <find>dyn</find>
       <find>leider</find>
       <find>liefer</find>
       <find>wage</find>
@@ -212,6 +215,9 @@
       <find>beijing beef</find>
       <find>sendorder</find>
       <find>orange</find>
+      <find>asia-</find>
+      <find>bui</find>
+      <find>shrimp</find>
     </findStrings>
     <replaceStrings>
       <replace>1.95</replace>
@@ -237,23 +243,26 @@
         <option value="$PROJECT_DIR$/Server/html/index.html" />
         <option value="$PROJECT_DIR$/php/DataBaseGelsenkirchen.php" />
         <option value="$PROJECT_DIR$/Server/html/gelsenkirchen.html" />
-        <option value="$PROJECT_DIR$/html/root/userlocation.html" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/Order.css" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/order.js" />
-        <option value="$PROJECT_DIR$/html/root/lieferService.html" />
         <option value="$PROJECT_DIR$/Server/js/index.js" />
         <option value="$PROJECT_DIR$/UserpageVue/css/styles.css" />
         <option value="$PROJECT_DIR$/UserpageVue/js/index.js" />
-        <option value="$PROJECT_DIR$/UserpageVue/index.html" />
         <option value="$PROJECT_DIR$/Server/html/AllOrders.html" />
         <option value="$PROJECT_DIR$/Server/js/AllOrders.js" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" />
-        <option value="$PROJECT_DIR$/html/root/how-to-order.html" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" />
-        <option value="$PROJECT_DIR$/php/DataBaseJ.php" />
-        <option value="$PROJECT_DIR$/php/orders.php" />
         <option value="$PROJECT_DIR$/php/menuData.php" />
         <option value="$PROJECT_DIR$/php/menuDataJpg.php" />
+        <option value="$PROJECT_DIR$/html/root/menu.html" />
+        <option value="$PROJECT_DIR$/html/root/how-to-order.html" />
+        <option value="$PROJECT_DIR$/html/root/lieferService.html" />
+        <option value="$PROJECT_DIR$/html/root/userlocation.html" />
+        <option value="$PROJECT_DIR$/html/root/datenschutz.html" />
+        <option value="$PROJECT_DIR$/html/root/index.html" />
+        <option value="$PROJECT_DIR$/php/DataBaseJ.php" />
+        <option value="$PROJECT_DIR$/php/orders.php" />
+        <option value="$PROJECT_DIR$/UserpageVue/index.html" />
       </list>
     </option>
   </component>
@@ -294,6 +303,24 @@
             <path>
               <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
               <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="root" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="html" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="root" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pic" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="php" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -306,6 +333,11 @@
               <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Server" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="UserpageVue" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -409,16 +441,20 @@
       <workItem from="1532274334816" duration="168000" />
       <workItem from="1533196361200" duration="990000" />
       <workItem from="1533197736851" duration="952000" />
-      <workItem from="1533198867722" duration="40000" />
+      <workItem from="1533198867722" duration="1263000" />
+      <workItem from="1533200302069" duration="869000" />
+      <workItem from="1533202214872" duration="6000" />
+      <workItem from="1533231639827" duration="1378000" />
+      <workItem from="1533240124136" duration="617000" />
+      <workItem from="1533279621909" duration="766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111758000" />
+    <option name="totallyTimeSpent" value="116617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
@@ -428,7 +464,7 @@
       <window_info anchor="bottom" id="Run" order="9" weight="0.3293348" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3293348" />
       <window_info anchor="right" id="Remote Host" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16017488" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16613673" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -445,27 +481,27 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17488076" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="right" id="Remote Host" order="1" />
       <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3293348" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.3293348" />
-      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" order="3" visible="true" weight="0.018538713" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17488076" />
+      <window_info anchor="bottom" id="Find" order="8" />
+      <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,35 +516,10 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/orders.php">
+    <entry file="file://$PROJECT_DIR$/html/root/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="104" column="16" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
-          <folding>
-            <element signature="n#sortCtype#0;n#!!top" />
-            <element signature="n#generateOrderInfo#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserpageVue/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7470">
-          <caret line="415" column="26" selection-start-line="415" selection-start-column="26" selection-end-line="415" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8856">
-          <caret line="492" column="71" selection-start-line="492" selection-start-column="71" selection-end-line="492" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="14598">
+          <caret line="811" selection-start-line="811" selection-end-line="811" />
         </state>
       </provider>
     </entry>
@@ -672,24 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/root/userlocation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3294">
-          <caret line="190" column="28" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/order.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7614">
           <caret line="423" column="37" selection-start-line="423" selection-start-column="37" selection-end-line="423" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/root/lieferService.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="48" selection-start-line="8" selection-start-column="48" selection-end-line="8" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -718,28 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!block;n#getQueryString#0" />
-            <element signature="n#!!block;n#randomColorBackground#0" />
-            <element signature="n#!!block;n#randomColor#0" />
-            <element signature="n#!!block;n#generateCard#0" />
-            <element signature="n#!!block;n#showDetailCard#0" />
-            <element signature="n#!!block;n#hideDetailCard#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UserpageVue/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/html/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -754,13 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9288">
           <caret line="516" column="88" selection-start-line="516" selection-start-column="88" selection-end-line="516" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/root/how-to-order.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24120">
-          <caret line="1340" column="28" selection-start-line="1340" selection-start-column="28" selection-end-line="1340" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -785,10 +753,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/lieferService.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8082">
+          <caret line="465" selection-start-line="465" selection-end-line="465" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/userlocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4788">
+          <caret line="280" column="7" selection-start-line="280" selection-start-column="7" selection-end-line="280" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/how-to-order.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28314">
+          <caret line="1573" column="62" selection-start-line="1573" selection-start-column="62" selection-end-line="1573" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/datenschutz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11394">
+          <caret line="633" column="47" selection-start-line="633" selection-start-column="47" selection-end-line="633" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#noscript#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#20233#20305#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14598">
+          <caret line="811" selection-start-line="811" selection-end-line="811" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/menuDataJpg.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8928">
+          <caret line="496" column="39" selection-start-line="496" selection-start-column="33" selection-end-line="496" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="467" column="35" selection-start-line="467" selection-start-column="35" selection-end-line="467" selection-end-column="35" />
+        <state relative-caret-position="4968">
+          <caret line="333" column="26" selection-start-line="333" selection-start-column="26" selection-end-line="333" selection-end-column="26" />
           <folding>
             <element signature="n#sortCtype#0;n#!!top" />
             <element signature="n#generateOrderInfo#0;n#!!top" />
@@ -798,28 +817,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="431" column="66" selection-start-line="431" selection-start-column="66" selection-end-line="431" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/orders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-          <folding>
-            <element signature="n#sortCtype#0;n#!!top" />
-            <element signature="n#generateOrderInfo#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UserpageVue/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/menuData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="189" selection-start-line="189" selection-end-line="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/menuDataJpg.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="579" column="7" selection-start-line="579" selection-start-column="7" selection-end-line="579" selection-end-column="7" />
+        <state relative-caret-position="-2118">
+          <caret line="362" column="10" lean-forward="true" selection-start-line="362" selection-start-column="10" selection-end-line="362" selection-end-column="10" />
         </state>
       </provider>
     </entry>
