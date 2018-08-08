@@ -1,5 +1,6 @@
 <?php
 header("Access-Control-Allow-Origin: *");
+
 function sortCtype($a,$b){
     if($a->step>$b->step){
         return -1;
@@ -54,13 +55,17 @@ function generateOrderInfo($method,$order){
         }
     }
     $s.="=============================\n";
+    $s.="Annmerkungen für Restaurant:\n";
+    $s.=$order->tag."\n";
     return $s;
 
 }
 // echo 'order.';
-function bulidMail($method,$order){
+function bulidMail($method,$order,$head){
     if($method==1){
         $message="\bAsia Pearl express\n";
+
+        $message.=$head;
         $time="Zeit:".
             $order->time->time."\n";
 
@@ -74,7 +79,7 @@ function bulidMail($method,$order){
         $message.=$time.$s.$address.$payment;
     }else{
         $message="Zeit:".
-        $order->time->time."\n";
+            $order->time->time."\n";
         $s=generateOrderInfo(0,$order);
         $message.=$s."\b".explode("\n",$order->address)[0];
     }
@@ -101,7 +106,11 @@ function sendMail(){
     if($resend){
         $subject=$_POST['id'];
     }
-    $message=bulidMail(1,$order);
+    $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
+    if($email=="gelsenkirchen@asiagourmet.de"){
+        $head="Pastorastr.3\n 45879 Gelsenkirchen. TEL:0209/9478 6116. \nUmst-Nr:319/5764/5263\n";
+    }
+    $message=bulidMail(1,$order,$head);
 
     if(!$resend){
         mail($order->emailAddress,"Bestellungen".$order->time->time,str_replace("\\b","",$message));//send to the user for confirm
@@ -115,7 +124,7 @@ function sendMail(){
     mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,str_replace("\\b","",$message));
 
 
-    $message= bulidMail(2,$order);
+    $message= bulidMail(2,$order,$head);
     mail($email,$subject,$message);//send to the kitchen for make
     $err=error_get_last();
     echo $err['message'];
