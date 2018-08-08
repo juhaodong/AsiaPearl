@@ -636,17 +636,17 @@ function processMenu(menuType) {
         price=49;
         familyFest=true;
     }
-    if(menuType=="12-16 Person"){
+    if(menuType=="8-12 Person"){
         menuPrice=102;
         price=102;
         familyFest=true;
     }
-    if(menuType=="26-30 Person"){
+    if(menuType=="24-26 Person"){
         menuPrice=205;
         price=205;
         familyFest=true;
     }
-    if(menuType=="18-22 Person"){
+    if(menuType=="16-20 Person"){
         menuPrice=143;
         price=143;
         familyFest=true;
