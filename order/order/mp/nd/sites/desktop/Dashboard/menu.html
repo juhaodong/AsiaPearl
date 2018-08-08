@@ -165,9 +165,9 @@
     </div>
 
 </div>
-<header id="panda-header" style="width: 98%">
+<header id="panda-header" style="width: 100%">
 
-    <div class="contain" style="width: 90%">
+    <div class="contain" style="width: 100%">
 
         <nav id="progress" onclick="">
             <ul>
@@ -215,7 +215,7 @@
             <img src="../../../../../local/siteFiles/images/header-logo.png" usemap="#home-logo" height="141"
                  width="230" alt="Panda Express Logo">
             <map name="home-logo">
-                <area shape="circle" coords="60.7,60.2,60.5" href="menu.html" alt="Logo">
+                <area shape="circle" coords="60.7,60.2,60.5" href="https://asia-pearl-express.com/html/root/lieferService.html" alt="Logo">
             </map>
         </h1>
 
@@ -457,7 +457,7 @@
 
                         google.maps.event.addDomListener(window, 'load', function () {
 
-                            var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+                            var places = new google.maps.places.Autocomplete((document.getElementById('autocomplete')));
 
                         });
 
@@ -532,7 +532,7 @@
                         <label for="payment">
                             <select  id="payment">
                                 <option>Bar</option>
-                                <option>EC Karte</option>
+
                             </select>
 
                         </label>
@@ -680,12 +680,22 @@
             <div class="js-ready-time">
                 <h4 class="titleRed" style="font-size: x-large;">Wählen Sie Bestellzeit aus</h4>
 
-                <p class="important-instruction">
+                <div class="important-instruction">
+                    <div>
+                        Die end gültige Bestell dauer kann sich je nach Auftragsumfang <br>
+                        Bestellens Zeit:<br>
+                    </div>
 
-                    Die end gültige Bestell dauer kann sich je nach Auftragsumfang <br>
-                    Bestellens Zeit:<br>
-                    Montag - Sonntag<br> 11:30 - 14:30 Uhr <br> 17:00 - 21:30 Uhr
-                </p>
+                    <div style="display: flex;justify-content: space-evenly">
+                        <div>
+                            Lünen<br>Montag - Sonntag<br> 11:30 - 14:30 Uhr <br> 17:00 - 21:30 Uhr
+                        </div>
+                        <div>
+                            Gelsenkirchen<br>Montag - Sonntag<br> 17:00 - 21:30 Uhr
+                        </div>
+                    </div>
+
+                </div>
                 <script>
 
 

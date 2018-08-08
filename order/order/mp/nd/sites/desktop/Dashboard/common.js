@@ -1086,6 +1086,8 @@ function initial() {
     // processMenu('MENÜ 1');
     //showPages("menuPage")
     showPages("f1");
+    document.getElementById('controls').style.display='flex';
+    startLogin();
     //  showPages("addressPage");
     //showPages('timePage');
     //showRecip('');

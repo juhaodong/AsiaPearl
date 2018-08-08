@@ -441,25 +441,15 @@ switch ($q_parameter) {
         break;
     case 'saveOrder':
         $insertParam=[];
-        $sql_select=new SqlSelect($conn,array("max(OrderID)"),"`u809451557_order`.Orders");
-        $rs=$sql_select->execute_sql();
-        if($rs){
 
-            $rs =((int)substr($rs[0]["max(OrderID)"],-4,4))+1;
-            //   var_dump($rs);
-            $rs=str_pad($rs,4,"0",STR_PAD_LEFT);
-
-        }else{
-            $rs="0001";
-        }
-        $insertParam["OrderID"]="'".date("Ymd").$rs."'";
+        $insertParam["OrderID"]="'".date("Ymdhis")."'";
         foreach($_POST as $k=>$v){
 
             $insertParam[$k]="'".$v."'";
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
-        sendMail($_POST['detail'],date("Ymd").$rs,$_POST['goto']);
+        sendMail($_POST['detail'],date("Ymdhis"),$_POST['goto']);
         echo common_execute_procedure($sql_insert);
 
         break;
