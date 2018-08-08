@@ -451,6 +451,18 @@
                     <div  class="halfline">
                         <label>Straße <input id="autocomplete" required class="TextArea" name="StrasseName" type="text"/></label>
                     </div>
+                    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBIkKAd0S2KirZNraqalVd8QfYf_SkRyms"></script>
+
+                    <script type="text/javascript">
+
+                        google.maps.event.addDomListener(window, 'load', function () {
+
+                            var places = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+
+                        });
+
+                    </script>
+
                     <div class="quadline">
                         <label>Haus Nr. <input required class="TextArea" name="HausNr" type="text"/></label>
                     </div>
