@@ -311,7 +311,7 @@ function sendMail($param,$id,$to){
     $email=$to??"haodong.ju@asiagourment.de";
     $confirm=$to=="haodong.ju@asiagourment.de"?"asia-gourmet@outlook.com":"asia-gourmet-gelsenkirchen@outlook.com";
     $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
-    if($to=="gelsenkirchen@asiagourmet.de"){
+    if($to=="gelsenkirchen@asiagourment.de"){
         $confirm="asia-gourmet-gelsenkirchen@outlook.com";
         $head="Pastorastr.3\n 45879 Gelsenkirchen. TEL:0209/9478 6118. \nUmst-Nr:319/5764/5263\n";
     }
@@ -319,7 +319,7 @@ function sendMail($param,$id,$to){
     $subject=$id;
     $message=bulidMail(1,$order,$head);
     $headers = 'From: Asia Pearl Express <asia-pearl@asiagourmet.de>';
-
+ 
     mail($order->emailAddress,"Danke für Bestellung",str_replace("\\b","",$message),$headers);//send to the user for confirm
 
     mail($email,$subject,$message,$headers);//send twice for save
@@ -441,25 +441,15 @@ switch ($q_parameter) {
         break;
     case 'saveOrder':
         $insertParam=[];
-        $sql_select=new SqlSelect($conn,array("max(OrderID)"),"`u809451557_order`.Orders");
-        $rs=$sql_select->execute_sql();
-        if($rs){
 
-            $rs =((int)substr($rs[0]["max(OrderID)"],-4,4))+1;
-            //   var_dump($rs);
-            $rs=str_pad($rs,4,"0",STR_PAD_LEFT);
-
-        }else{
-            $rs="0001";
-        }
-        $insertParam["OrderID"]="'".date("Ymd").$rs."'";
+        $insertParam["OrderID"]="'".date("Ymdhis")."'";
         foreach($_POST as $k=>$v){
 
             $insertParam[$k]="'".$v."'";
         }
 
         $sql_insert=new SqlInsert($conn,'Orders',$insertParam);
-        sendMail($_POST['detail'],date("Ymd").$rs,$_POST['goto']);
+        sendMail($_POST['detail'],date("Ymdhis"),$_POST['goto']);
         echo common_execute_procedure($sql_insert);
 
         break;

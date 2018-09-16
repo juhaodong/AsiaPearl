@@ -216,7 +216,7 @@
             <div style="display: flex;justify-content: center" >
                 <div  id="locationField" style="position: absolute;top:300px; padding:7px; background: whitesmoke; display: flex;justify-content: center;">
                     <form onsubmit="return checkAddress()" style="display: flex;justify-content: center">
-                        <input id="address"  style="width: 300px;margin: 0" placeholder="Postleizahlen Z.B 44532" type="text" />
+                        <input id="address"  style="width: 300px;margin: 0" placeholder="Postleizahlen Z.B 44532" type="number" />
                         <input  type="submit" value="Weiter" class="Submit"   style="font-weight: normal;
     line-height: 38px;
     letter-spacing: -.025em;
@@ -239,6 +239,11 @@
                         function checkAddress() {
                             var a=document.getElementById("address").value;
                             console.log(a);
+                            if(a==""){
+                                alert("bitte eingabe ihren PLZ");
+                                return;
+                            }
+
                             if(['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879'].indexOf(a)<0){
                                 alert(" In dieser Bereich\n" +
                                     "        noch keine Lieferservice\n" +
@@ -280,6 +285,18 @@
                     <p style="text-align: left">IN MOMENTAN LIFERSERVICE VERFÜGBAR IN</p>
 
                         <h2 style="font-size:1.5rem;text-align: left">·LÜNEN</h2>
+                    <p style="color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left">
+                       lieferszeit:<br>Montag - Sonntag<br> 12:00 - 15:00 Uhr <br> 17:30 - 22:00 Uhr
+                    </p>
+
+
+
+                        <h2 style="font-size:1.5rem;text-align: left">·Gelsenkirchen</h2>
+
+                    <p style="color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left">
+                        lieferszeit:<br>Montag - Sonntag<br> 17:30 - 22:00 Uhr
+                    </p>
+
 
 
                 </div>

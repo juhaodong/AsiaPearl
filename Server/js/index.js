@@ -11,6 +11,9 @@ $('document').ready(function () {
     if(Pos=="0501"){
         position="all";
     }
+    else if(Pos=="0002"){
+        position="haodong.ju@asiagourment.de";
+    }
     else if(Pos=="1111"){
         position="gelsenkirchen@asiagourment.de";
     }
