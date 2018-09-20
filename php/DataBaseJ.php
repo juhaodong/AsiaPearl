@@ -454,7 +454,7 @@ switch ($q_parameter) {
 
         break;
     case "printToday":
-        for($i =0;$i<33;$i++){
+        for($i =18;$i<49;$i++){
             getPrintInfo($conn,$i);
         }
         getPrintInfo($conn,0);

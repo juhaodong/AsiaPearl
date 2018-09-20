@@ -1146,7 +1146,8 @@ function login() {
     showRecip("none");
     $("[data-order-step=1]").addClass("done");
     if(document.getElementById("welcomeWord")){
-        document.getElementById("welcomeWord").remove();
+        let ele=document.getElementById("welcomeWord")
+        ele.parentNode.removeChild(ele);
     }
 
     document.getElementById("gastName").placeholder=username;
@@ -1161,11 +1162,19 @@ function startTime() {
 }//开始时间页
 function sendOrdertime() {
 
-    ordertime.type=time.ready_time_type.value;
 
+    var radios = document.getElementsByName('ready_time_type');
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            ordertime.type=radios[i].value;
+
+            break;
+        }
+    }
     if(ordertime.type!="SBWM"){
 
         ordertime.time="("+time.times.value+'Uhr am'+time.date.value+")";
+        console.log(ordertime.time);
         if(ordertime.time[2]=="h"){
             alert("Bitte Wählens Sie Eine Gültig Zeit");
             return false;
@@ -1297,8 +1306,10 @@ function timeChange() {
 function sendOrder(){
     orderInfo.drinkPrice=0;
     orderInfo.tag=address.annmerkungen.value;
-    for(item of orderInfo.orders){
-        for(t of item.info){
+    for(let i =0;i< orderInfo.orders.length;i++){
+
+        for(let x = 0;x< orderInfo.orders[i].info.length;x++){
+            t=orderInfo.orders[i].info[x];
             if(t.type==="getranke"){
                 if(t.amount==="Klein"){
                     orderInfo.drinkPrice+=1.5;
@@ -1319,9 +1330,9 @@ function sendOrder(){
         orderInfo.time.time=["\\b",orderInfo.time.time,"\n"+timeNow()].join("");
     }
 
-    for(let value of children ){
+    for(let i in children ){
+        let value=children[i];
        if(value.required){
-
            if(!value.value){
                alert("Bitte füllen Sie die vollständigen Formular aus");
                return;
