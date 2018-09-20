@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3b935fb0-d65c-4c00-92e1-d7d3a4d18046" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/root/lieferService.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/lieferService.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/DataBaseJ.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/DataBaseJ.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,23 +29,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="menuData.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/menuData.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7602">
-              <caret line="362" column="10" selection-start-line="362" selection-start-column="10" selection-end-line="362" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="1322" column="23" selection-start-line="1322" selection-start-column="23" selection-end-line="1322" selection-end-column="23" />
+            <state relative-caret-position="63">
+              <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
               </folding>
@@ -54,11 +45,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataBaseJ.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lieferService.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/root/lieferService.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="327" column="89" selection-start-line="327" selection-start-column="84" selection-end-line="327" selection-end-column="89" />
+              <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataBaseJ.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="456" column="24" selection-start-line="456" selection-start-column="24" selection-end-line="456" selection-end-column="24" />
+            <state relative-caret-position="6552">
+              <caret line="312" column="42" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -152,11 +161,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showitems</find>
-      <find>9.5</find>
-      <find>party</find>
-      <find>http</find>
-      <find>44532</find>
       <find>startOrder</find>
       <find>parentElement</find>
       <find>children</find>
@@ -182,6 +186,11 @@
       <find>12</find>
       <find>ready_time_type</find>
       <find>ready_</find>
+      <find>44532</find>
+      <find>initial</find>
+      <find>15</find>
+      <find>location</find>
+      <find>44</find>
     </findStrings>
     <replaceStrings>
       <replace>1.95</replace>
@@ -218,15 +227,15 @@
         <option value="$PROJECT_DIR$/php/menuDataJpg.php" />
         <option value="$PROJECT_DIR$/html/root/menu.html" />
         <option value="$PROJECT_DIR$/html/root/how-to-order.html" />
-        <option value="$PROJECT_DIR$/html/root/lieferService.html" />
         <option value="$PROJECT_DIR$/html/root/userlocation.html" />
         <option value="$PROJECT_DIR$/html/root/datenschutz.html" />
         <option value="$PROJECT_DIR$/html/root/index.html" />
         <option value="$PROJECT_DIR$/php/orders.php" />
         <option value="$PROJECT_DIR$/UserpageVue/index.html" />
         <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/menu.html" />
-        <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" />
         <option value="$PROJECT_DIR$/php/DataBaseJ.php" />
+        <option value="$PROJECT_DIR$/html/root/lieferService.html" />
+        <option value="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" />
       </list>
     </option>
   </component>
@@ -256,13 +265,30 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
               <item name="AsiaPearl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="root" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsiaPearl" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="root" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AsiaPearl" type="b2602c69:ProjectViewProjectNode" />
@@ -338,6 +364,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -447,11 +474,13 @@
       <workItem from="1533296238744" duration="15000" />
       <workItem from="1537094860319" duration="4266000" />
       <workItem from="1537274228018" duration="131000" />
+      <workItem from="1537402863652" duration="1643000" />
+      <workItem from="1537430401107" duration="1234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121408000" />
+    <option name="totallyTimeSpent" value="124285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
@@ -482,27 +511,27 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17488076" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3293348" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="right" id="Remote Host" order="1" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Thumbnails" order="0" weight="0.3293348" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="File Transfer" order="3" visible="true" weight="0.018538713" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="13" />
       <window_info anchor="bottom" id="Run" order="9" weight="0.3293348" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
+      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3293348" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="File Transfer" order="3" visible="true" weight="0.018538713" />
       <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17488076" />
+      <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,6 +541,36 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/html/root/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17031">
+          <caret line="811" selection-start-line="811" selection-end-line="811" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/root/datenschutz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13293">
+          <caret line="633" column="47" selection-start-line="633" selection-start-column="47" selection-end-line="633" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#noscript#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#noscript#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#20233#20305#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#footer#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9576">
+          <caret line="456" column="24" selection-start-line="456" selection-start-column="24" selection-end-line="456" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/php/menuData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7602">
@@ -588,6 +647,7 @@
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
           </folding>
@@ -679,6 +739,7 @@
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -749,13 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html/root/lieferService.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8082">
-          <caret line="465" selection-start-line="465" selection-end-line="465" />
         </state>
       </provider>
     </entry>
@@ -849,23 +903,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6552">
+          <caret line="312" column="42" selection-start-line="312" selection-start-column="37" selection-end-line="312" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="1322" column="23" selection-start-line="1322" selection-start-column="23" selection-end-line="1322" selection-end-column="23" />
+        <state relative-caret-position="63">
+          <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/DataBaseJ.php">
+    <entry file="file://$PROJECT_DIR$/html/root/lieferService.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="456" column="24" selection-start-line="456" selection-start-column="24" selection-end-line="456" selection-end-column="24" />
+        <state relative-caret-position="257">
+          <caret line="327" column="89" selection-start-line="327" selection-start-column="84" selection-end-line="327" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#div#0;n#div#4;n#div#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

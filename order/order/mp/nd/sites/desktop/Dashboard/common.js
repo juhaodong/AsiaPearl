@@ -1,10 +1,12 @@
 
 
+let allPlz=['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879',
+'44329','44328','44339','44359','44357','44174','44145','44369','59368','59379','59192','59174','45731','59174'];
+let lunen=['44532','44534','44536','44536','44563','44329','44328','44339','44359','44357','44174','44145',
+    '44369','59368','59379','59192','59174','45731','59174'];
 
 
-
-
-
+let miniumPrice=15;
 
 /************全局变量****************/
 var orderInfo=new Object();//记录全部Order信息，即购物车
@@ -495,7 +497,8 @@ function showItems(wagens) {
     col1.innerText="Zusammen:";
     priceAll=priceAll.toFixed(2);
     var end=document.getElementById("kasseButton");
-    if(priceAll>=15){
+
+    if(priceAll>=miniumPrice){
 
         var r=document.getElementById("rest");
         end.style.background="blue";
@@ -503,16 +506,16 @@ function showItems(wagens) {
         r.style.display="none";
         var x=document.getElementById("hint");
         console.log(x);
-        x.innerHTML="Du hast den Mindesbestellwert von 15,00€ " +
+        x.innerHTML="Du hast den Mindesbestellwert von "+miniumPrice+",00€ " +
             "erreicht und kannst jetzt fortfahren."
     }else{
         var r=document.getElementById("rest");
 
         r.style.color="green";
-        rest.innerHTML=" Benötigter Betrag, um den Mindestbestellwert zu erreichen <span style='font-size: medium;font-style: oblique'>€"+(15-priceAll).toFixed(2)+"</span>";
+        rest.innerHTML=" Benötigter Betrag, um den Mindestbestellwert zu erreichen <span style='font-size: medium;font-style: oblique'>€"+(miniumPrice-priceAll).toFixed(2)+"</span>";
         r.style.display="";
         var x=document.getElementById("hint");
-        x.innerHTML="Wir liefert erst ab einem Mindestbestellwert von 15.00€(exkl. Lieferkosten)";
+        x.innerHTML="Wir liefert erst ab einem Mindestbestellwert von "+miniumPrice+".00€(exkl. Lieferkosten)";
 
     }
 
@@ -1025,7 +1028,10 @@ function initial() {
     getMenuData();
     $("form").validate();
     var childrens=document.getElementById("main").children;
-
+    if(getQueryString("location")=="more"){
+        console.log("more and more");
+        miniumPrice=30
+    }
     for(x in childrens){
         if(childrens[x].id!=null&&childrens[x].id!=""){
             if(childrens[x].id!="cart"){
@@ -1174,7 +1180,6 @@ function sendOrdertime() {
     if(ordertime.type!="SBWM"){
 
         ordertime.time="("+time.times.value+'Uhr am'+time.date.value+")";
-        console.log(ordertime.time);
         if(ordertime.time[2]=="h"){
             alert("Bitte Wählens Sie Eine Gültig Zeit");
             return false;
@@ -1220,7 +1225,7 @@ function sendOrdertime() {
 
         }
 
-    }else{
+    }else if(restaurantName=="gelsenkirchen"){
 
         let night=new Date();
         night.setHours(17);
@@ -1231,6 +1236,31 @@ function sendOrdertime() {
 
 
         if((target>=night&&target<=close)){
+            console.log("good");
+            $("[data-order-step=2]").addClass("done");
+            showPages("f1");
+            orderInfo.time=ordertime;
+            newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
+            backIndex("timePage");
+            return false;
+
+        }
+    }else{
+        let judge=new Date();
+        judge.setHours(11);
+        judge.setMinutes(30);
+        let end=new Date();
+        end.setHours(14);
+        end.setMinutes(30);
+        let night=new Date();
+        night.setHours(17);
+        night.setMinutes(0);
+        let close=new Date();
+        close.setHours(21);
+        close.setMinutes(30);
+
+
+        if((target>=judge&&target<=end)||(target>=night&&target<=close)){
             console.log("good");
             $("[data-order-step=2]").addClass("done");
             showPages("f1");
@@ -1254,8 +1284,8 @@ function sendOrdertime() {
 function kasse() {
 
     var price=detialShowItems("wagens");
-    if(price<15){
-        // alert("Mindesten Total ist 15EUR");
+    if(price<miniumPrice){
+
         showItems("wagen");
         return;
     }
@@ -1341,13 +1371,13 @@ function sendOrder(){
     }
     orderInfo.payment=document.getElementById("payment").value;
     orderInfo.orders=orderInfo.orders.sort(compare("name"));
-    if(['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879'].indexOf(address.Plz.value)<0){
+    if(allPlz.indexOf(address.Plz.value)<0){
         alert(" In dieser Bereich\n" +
             "        noch keine Lieferservice\n" +
             "        Bitte Verstehen");
         return false;
     }else{
-        if(['44532','44534','44536','44536','44563'].indexOf(address.Plz.value)<0){
+        if(lunen.indexOf(address.Plz.value)<0){
             orderInfo.goto="gelsenkirchen@asiagourment.de";
         }else{
             orderInfo.goto="haodong.ju@asiagourment.de";
