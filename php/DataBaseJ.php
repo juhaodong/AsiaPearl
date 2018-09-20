@@ -453,11 +453,15 @@ switch ($q_parameter) {
         echo common_execute_procedure($sql_insert);
 
         break;
+    case "printT":
+        getPrintInfo($conn,0);
+        break;
     case "printToday":
-        for($i =18;$i<49;$i++){
+
+        for($i =$_GET['start'];$i<$_GET['end'];$i++){
             getPrintInfo($conn,$i);
         }
-        getPrintInfo($conn,0);
+        //getPrintInfo($conn,0);
         break;
     case "updateUser":
         $updParam=[];
