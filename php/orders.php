@@ -10,6 +10,7 @@ function sortCtype($a,$b){
     }
     return 0;
 }
+
 function generateOrderInfo($method,$order){
     $s="";
     foreach ($order->orders as $value){
@@ -107,8 +108,11 @@ function sendMail(){
         $subject=$_POST['id'];
     }
     $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
+    $confirmMail="asia-gourmet@outlook.com";
     if($email=="gelsenkirchen@asiagourmet.de"){
         $head="Pastorastr.3\n 45879 Gelsenkirchen. TEL:0209/9478 6116. \nUmst-Nr:319/5764/5263\n";
+
+        $confirmMail="asia-gourmet-gelsenkirchen@outlook.com";
     }
     $message=bulidMail(1,$order,$head);
 
@@ -121,7 +125,7 @@ function sendMail(){
     mail($email,$subject,$message);
 
 
-    mail("asia-gourmet@outlook.com","Bestellungen".$order->time->time,str_replace("\\b","",$message));
+    mail($confirmMail,"Bestellungen".$order->time->time,str_replace("\\b","",$message));
 
 
     $message= bulidMail(2,$order,$head);
