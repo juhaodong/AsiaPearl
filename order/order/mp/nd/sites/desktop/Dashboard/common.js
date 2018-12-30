@@ -341,6 +341,8 @@ function newRow(title,word) {
 }//账单中生成新行
 function detialShowItems(target) {
     var wagen=document.getElementById(target);
+  //  console.log("this is detialshowitem");
+    //console.log(orderInfo);
     $("#wagen").empty();
     wagen.innerHTML=" <tr>\n" +
         "                <th style='width:200px'>BESTELLT FÜR</th>\n" +
@@ -409,6 +411,7 @@ function detialShowItems(target) {
             wagen.appendChild(row1);
         }
     }
+   // console.log(priceAll);
     return priceAll;
 }
 
@@ -418,6 +421,8 @@ function removeItem(event) {
     removeItemAt(event.target.attributes[0].nodeValue);
 
     showItems('wagen');
+    kasse();
+    console.log("good");
 }
 function removeItemAt(i) {
     //  console.log(orderInfo.orders.length);
@@ -505,7 +510,7 @@ function showItems(wagens) {
         end.removeAttribute("disabled");
         r.style.display="none";
         var x=document.getElementById("hint");
-        console.log(x);
+       // console.log(x);
         x.innerHTML="Du hast den Mindesbestellwert von "+miniumPrice+",00€ " +
             "erreicht und kannst jetzt fortfahren."
     }else{
@@ -1282,31 +1287,37 @@ function sendOrdertime() {
 /**/
 
 function kasse() {
-
+    //console.log(orderInfo);
     var price=detialShowItems("wagens");
+    orderInfo.finalPrice=price.toFixed(2);
+    document.getElementById("totalNumber").innerText=orderInfo.orders.length;
+    document.getElementById("betrag").innerText="‎€"+(price/1.19).toFixed(2);
+    document.getElementById("sumPrice").innerText="‎€"+(price).toFixed(2);
+    document.getElementById("steuer").innerText="‎€"+(price-price/1.19).toFixed(2);
     if(price<miniumPrice){
 
         showItems("wagen");
         return;
     }
-
+   // console.log(price);
     showPages("BestellungDetailPage");
     var kasse= document.getElementById("kasseButton");
     kasse.innerText="Bestätigen";
     kasse.setAttribute("onclick","zukasse()");
-    document.getElementById("totalNumber").innerText=orderInfo.orders.length;
 
 
-    document.getElementById("betrag").innerText="‎€"+(price/1.19).toFixed(2);
-    document.getElementById("sumPrice").innerText="‎€"+(price).toFixed(2);
-    document.getElementById("steuer").innerText="‎€"+(price-price/1.19).toFixed(2);
-    orderInfo.finalPrice=price.toFixed(2);
     backIndex("f1");
-    finalPrice=price;
+
 }//打开检视页
 
 function zukasse() {
     //  document.getElementById("totalPrice").innerText="‎€"+(finalPrice).toFixed(2);
+    console.log(orderInfo.finalPrice,miniumPrice);
+    if(orderInfo.finalPrice<miniumPrice){
+
+        showItems("wagen");
+        return;
+    }
     showPages("addressPage");
     var kasse= document.getElementById("kasseButton")
     kasse.nodeName="input";
@@ -1334,6 +1345,7 @@ function timeChange() {
     document.getElementById("ready_time_type").checked="true";
 }
 function sendOrder(){
+    document.getElementById("kasseButton").disabled=true;
     orderInfo.drinkPrice=0;
     orderInfo.tag=address.annmerkungen.value;
     for(let i =0;i< orderInfo.orders.length;i++){
@@ -1350,10 +1362,10 @@ function sendOrder(){
         }
 
     }
-    console.log("run");
+    //console.log("run");
     let form=document.address;
     let children=form.getElementsByTagName("input");
-    console.log(orderInfo);
+   // console.log(orderInfo);
     if(orderInfo.time.type=="SBWM"){
         orderInfo.time.time=timeNow();
     }else{
@@ -1429,6 +1441,7 @@ function sendOrder(){
                         showRecip("none");
                         showPages("dankePage");
                         $("[data-order-step=4]").addClass("done");
+                        document.getElementById("kasseButton").disabled=false;
                         backIndex("over");
                     }
                 });
