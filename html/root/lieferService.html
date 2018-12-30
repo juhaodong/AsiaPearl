@@ -380,23 +380,65 @@
                     WIR</h1>
                     <br>
                     <p style="text-align: left">IN MOMENTAN LIFERSERVICE VERFÜGBAR IN</p>
+                    <div id="cw">
+                        <h2 style="font-size:1.5rem;text-align: left">·LÜNEN</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·BRAMBAUER</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·OBERADEN</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·BORK</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·BERGKAMEN</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·KAMEN</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·WERNE</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·SELM</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·WALTROP</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·DO-BRECHTEN</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·DO-DERNE</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·DO-LANSTROP</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·DO-EVING</h2>
+                        <h2 style="font-size:1.5rem;text-align: left">·DO-SCHARNHORST</h2>
 
-                    <h2 style="font-size:1.5rem;text-align: left">·LÜNEN</h2>
+
+                    </div>
+                    <script>
+                        let i = document.getElementById("cw");
+                        let ww=i.children.length;
+                        console.log(ww);
+                        for(let b=0; b< ww;b++){
+                            let x=i.children[b];
+                            if(x.tagName!=="H2"){
+                                console.log("not");
+
+                                continue;
+                            }
+
+                            i.removeChild(x);
+                            b--;
+                            let t=document.createElement("div");
+                            x.onclick=function (e) {
+                                let w=e.target.parentElement.children[1].style.display===""?"none":"";
+                                console.log(w);
+                                e.target.parentElement.children[1].style.display=w;
+                            };
+
+                            let d=document.createElement("div");
+                            d.style.display="none";
+                            d.innerHTML="  <p style=\"color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left\">\n" +
+                                "                                lieferszeit:<br>Montag - Sonntag<br> 12:00 - 15:00 Uhr <br> 17:30 - 22:00 Uhr\n" +
+                                "                            </p>\n" +
+                                "                            <p style=\"color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left\">\n" +
+                                "                                Feiertag Lieferzeiten<br>\n" +
+                                "                                Am Neujahr, Ostern<br>\n" +
+                                "                                Muttertag nur abholen.<br>\n" +
+                                "                                Am 24.25.26 & 31.<br>\n" +
+                                "                                Dezenber nur abholen.\n" +
+                                "                            </p>";
+                            t.appendChild(x);
+                            t.appendChild(d);
 
 
-                    <h2 style="font-size:1.5rem;text-align: left">·BRAMBAUER</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·OBERADEN</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·BORK</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·BERGKAMEN</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·KAMEN</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·WERNE</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·SELM</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·WALTROP</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·DO-BRECHTEN</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·DO-DERNE</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·DO-LANSTROP</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·DO-EVING</h2>
-                    <h2 style="font-size:1.5rem;text-align: left">·DO-SCHARNHORST</h2>
+                            i.appendChild(t)
+
+                        }
+                    </script>
 
 
                     <div style="    display: flex;width: 150%;  z-index: 3;">
