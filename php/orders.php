@@ -107,9 +107,10 @@ function sendMail(){
     if($resend){
         $subject=$_POST['id'];
     }
+
     $head="Kurt-Schumacher-Str 93.\n 44532 Lünen. TEL:02306-267672. \nUmst-Nr:31653392174\n";
     $confirmMail="asia-gourmet@outlook.com";
-    if($email=="gelsenkirchen@asiagourmet.de"){
+    if($email=="gelsenkirchen@asiagourment.de"){
         $head="Pastorastr.3\n 45879 Gelsenkirchen. TEL:0209/9478 6116. \nUmst-Nr:319/5764/5263\n";
 
         $confirmMail="asia-gourmet-gelsenkirchen@outlook.com";

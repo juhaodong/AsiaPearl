@@ -1377,6 +1377,7 @@ function sendOrder(){
        if(value.required){
            if(!value.value){
                alert("Bitte füllen Sie die vollständigen Formular aus");
+               document.getElementById("kasseButton").disabled=false;
                return;
            }
        }
