@@ -112,6 +112,15 @@ mit eine ausgewählt soße.',
 
 
         array(
+            'name' => 'Peking Suppe',
+            'img' => '/前餐/pekingsuppe.png',
+            'discibe' => 'crisp-golden butterflied garnelen.',
+            'type' => 'vorspeisen',
+            'sprice' => 2.80,
+        ),
+
+
+        array(
             'name' => 'knusprige shrimps',
             'img' => '/前餐/炸大虾.png',
             'discibe' => 'crisp-golden butterflied garnelen.',
