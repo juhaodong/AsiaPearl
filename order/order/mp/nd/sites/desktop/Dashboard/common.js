@@ -1,6 +1,6 @@
 
 
-let allPlz=['44532','44534','44536','44536','44563','45881','45883','45884','45886','45888','45889','45879',
+let allPlz=['44532','44534','44536','44536','44563',
 '44329','44328','44339','44359','44357','44174','44145','44369','59368','59379','59192','59174','45731','59174'];
 let lunen=['44532','44534','44536','44536','44563','44329','44328','44339','44359','44357','44174','44145',
     '44369','59368','59379','59192','59174','45731','59174'];
@@ -27,7 +27,7 @@ var menuData;
 var username="";
 var ordertime=new Object();
 var logged=false;
-var OrderType="";
+var OrderType=""; 
 var Username="";
 var hauptGericht_Nr=0;
 var Deal_Nr=0;
@@ -128,11 +128,17 @@ function showPages(index) {
 
 /******************界面控制器*************************/
 function popLogin() {
+    console.log("run");
+
+
     document.getElementById("choiceBlock").style.display="none";
     document.getElementById("log").style.display="block";
 }
 
 function popReg() {
+    console.log("run");
+
+
     document.getElementById("choiceBlock").style.display="none";
     document.getElementById("regs").style.display="block";
 }//弹出注册页面
@@ -171,6 +177,9 @@ function getMenuData() {
 function gast() {
     username="Gast";
     UserID="Gast";
+    console.log("run");
+
+
     login();
 }
 function sendUserinfo() {
