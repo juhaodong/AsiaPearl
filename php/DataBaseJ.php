@@ -349,8 +349,9 @@ function MessageHead($nr,$limit){
     "TAGESABSCHLUSS vom\n"
         .date_sub(date_create(date('Y-m-d')),date_interval_create_from_date_string($limit." days"))->format("Y-m-d")." \nErstellt am:\n".date('D d.m.Y h:i:s')."\n************************\nZBon Nr    :    ".$nr."\nUmsatzSt.-Nummer 31653392174\n";    ;
 }
-function getPrintInfo($conn,$limit){
-    $select=new SqlSelect($conn,array("*"),"`u809451557_order`.Orders",array("DateDiff(now(),TimeStamp)=".$limit));
+function getPrintInfo($conn,$limit,$who){
+
+    $select=new SqlSelect($conn,array("*"),"`u809451557_order`.Orders",array("DateDiff(now(),TimeStamp)=".$limit,"goto='$who'"));
 
     $rs=$select->execute_sql();
     $mailTo="haodong.ju@asiagourment.de";
@@ -454,12 +455,12 @@ switch ($q_parameter) {
 
         break;
     case "printT":
-        getPrintInfo($conn,0);
+        getPrintInfo($conn,0,"haodong.ju@asiagourment.de");
         break;
     case "printToday":
 
         for($i =$_GET['start'];$i<$_GET['end'];$i++){
-            getPrintInfo($conn,$i);
+            getPrintInfo($conn,$i,$_GET['who']);
         }
         //getPrintInfo($conn,0);
         break;
