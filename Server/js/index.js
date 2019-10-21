@@ -1,4 +1,4 @@
-const PHPROOT="https://asia-pearl-express.com/php/";
+const PHPROOT="https://pearldaten.com/php/";
 let position="";
 $('document').ready(function () {
 
@@ -34,7 +34,7 @@ function fliterData(item,target,value) {
 function refreshTable(position) {
     $("#table").empty();
     $.ajax({
-        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=getAllData",
+        url:"https://pearldaten.com/php/DataBaseJ.php?q=getAllData",
         data:{
             table:"u809451557_order.Orders",
         },
@@ -86,7 +86,7 @@ function newCard(item) {
 }
 function ChangePayment(t,m) {
     $.ajax({
-        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=updatePayment",
+        url:PHPROOT+"DataBaseJ.php?q=updatePayment",
         data:{
             OrderID:t.dataset.id,
             Payment:m
@@ -102,7 +102,7 @@ function ChangePayment(t,m) {
 function confirmOrder(t) {
     console.log(t.dataset);
     $.ajax({
-        url:"https://asia-pearl-express.com/php/DataBaseJ.php?q=finishOrder",
+        url:PHPROOT+"DataBaseJ.php?q=finishOrder",
         data:{
             OrderID:t.dataset.id,
             recieved:1

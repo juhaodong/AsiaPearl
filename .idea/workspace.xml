@@ -5,18 +5,22 @@
       <change afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/yxj/前餐/pekingsupe.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/yxj/前餐/pekingsuppe.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/html/root/lieferService.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/root/lieferService.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/menuData.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/menuData.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Server/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/order/order/mp/nd/sites/desktop/Dashboard/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/DataBaseJ.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/DataBaseJ.php" afterDir="false" />
+>>>>>>> 67b7dccc5bd8bc5cf1bcc51d44b0d03f9070f701
     </list>
-    <ignored path="$PROJECT_DIR$/.tmp/" />
-    <ignored path="$PROJECT_DIR$/temp/" />
-    <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="-147207472">
       <usages-collector id="statistics.lifecycle.project">
@@ -187,6 +191,42 @@
         </entry>
       </file>
     </leaf>
+=======
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Remote" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Remote" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Remote" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="u809451557_order: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+>>>>>>> 67b7dccc5bd8bc5cf1bcc51d44b0d03f9070f701
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -197,6 +237,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="FindInProjectRecents">
     <findStrings>
       <find>autocomplete</find>
@@ -390,12 +431,32 @@
       </pane>
     </panes>
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1RrvaDdKD0RxuudDJTfT3W9tinm" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+>>>>>>> 67b7dccc5bd8bc5cf1bcc51d44b0d03f9070f701
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+<<<<<<< HEAD
     <property name="SearchEverywhereHistoryKey" value="vorspeisen&#9;FILE&#9;file://D:/work/project a2/UserpageVue/img/yxj/menu/Vorspeisen.jpg&#10;knuspige shrimps&#9;null&#9;null" />
+=======
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+>>>>>>> 67b7dccc5bd8bc5cf1bcc51d44b0d03f9070f701
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/php/menuDataJpg.php" />
@@ -419,6 +480,31 @@
           <option name="name" value="StatusDashboardGroupingRule" />
         </RuleState>
       </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@83722d52" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@83722d52" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@3a380b3c" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@83722d52" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@13407676" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -510,9 +596,15 @@
       <workItem from="1546160870220" duration="2078000" />
       <workItem from="1556353237836" duration="952000" />
       <workItem from="1556354282055" duration="373000" />
+      <workItem from="1556634837095" duration="695000" />
+      <workItem from="1561728540963" duration="725000" />
+      <workItem from="1570438093427" duration="3901000" />
+      <workItem from="1570447895862" duration="456000" />
+      <workItem from="1570448994483" duration="255000" />
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="132766000" />
   </component>
@@ -850,5 +942,22 @@
         </state>
       </provider>
     </entry>
+=======
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+>>>>>>> 67b7dccc5bd8bc5cf1bcc51d44b0d03f9070f701
   </component>
 </project>
