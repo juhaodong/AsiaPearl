@@ -225,6 +225,10 @@ function singleOrderMenuProcess(type) {
             menuPrice=0;
             SinglemenuProcess('menu');
         }break;
+        case "NeueTakeaway":{
+            SinglemenuProcess('takeaway');
+
+        }break;
         case "Vorspeisen":{
             menuPrice=0;
             SinglemenuProcess('vorspeisen');

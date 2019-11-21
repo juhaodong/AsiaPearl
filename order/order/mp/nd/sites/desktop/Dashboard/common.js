@@ -555,6 +555,7 @@ function processMenu(menuType) {
     totalAmount=0;
     stepIndex=0;
     finishStep=0;
+    console.log(menuType);
 
     switch (menuType){
         case "MENÜ 1":h=1;break;
@@ -565,6 +566,10 @@ function processMenu(menuType) {
         case "16-20 Person":h=3;b=3;break;
         case "24-26 Person":h=4;b=4;break;
         case "Unsere Favoriten":{
+            singleOrderMenuProcess(menuType);
+            return;
+        }
+        case "NeueTakeaway":{
             singleOrderMenuProcess(menuType);
             return;
         }
@@ -606,6 +611,8 @@ function processMenu(menuType) {
                 removeItemAt(menuType);
                 return;
             }
+
+
             processMenu(infos.name);
 
             for(i in infos.info){
@@ -626,6 +633,7 @@ function processMenu(menuType) {
                 }
 
             }
+
             showAddOns();
             removeItemAt(menuType);
             return;
