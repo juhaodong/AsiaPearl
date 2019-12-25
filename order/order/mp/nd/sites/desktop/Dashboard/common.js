@@ -799,6 +799,9 @@ function RecordOrder(amount,name) {
 
     }
     if(findDataByName(name).addPrice!=undefined){
+        if(familyFest){
+            menuPrice+=parseFloat(findDataByName(name).addPrice)*4;
+        }
         menuPrice+=findDataByName(name).addPrice;
     }
 
