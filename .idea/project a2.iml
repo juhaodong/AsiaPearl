@@ -17,5 +17,6 @@
     <orderEntry type="library" name="axios" level="application" />
     <orderEntry type="library" name="material" level="application" />
     <orderEntry type="library" name="materialize" level="application" />
+    <orderEntry type="library" name="respond" level="application" />
   </component>
 </module>

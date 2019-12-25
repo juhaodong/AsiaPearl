@@ -216,15 +216,7 @@ h3{
     margin-top: 50px;
     margin-bottom: 50px;
 }
-.long{
-    width: 650px;
-}
-.short{
-    margin-top: 8px;
-    margin-right: 10px;
-    width: 210px;
 
-}
 .partyButton{
     cursor: pointer;
     background: red;
@@ -234,12 +226,25 @@ h3{
     height: 175px;
 }
 .jhMenuItemContainer{
+    width: 100%;
     cursor: pointer;
     background: red;
     display: flex;
     align-items: flex-end;
     border: 1px solid silver;
     height: 175px;
+}
+.long{
+    width: 650px;
+}
+.halfLong{
+    width: 49%;
+}
+.short{
+    margin-top: 8px;
+    margin-right: 10px;
+    width: 210px;
+
 }
 .jhItemDetail{
 

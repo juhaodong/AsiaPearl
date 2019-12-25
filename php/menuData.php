@@ -112,6 +112,15 @@ mit eine ausgewählt soße.',
 
 
         array(
+            'name' => 'Peking Suppe',
+            'img' => '/前餐/pekingsuppe.png',
+            'discibe' => 'crisp-golden butterflied garnelen.',
+            'type' => 'vorspeisen',
+            'sprice' => 2.80,
+        ),
+
+
+        array(
             'name' => 'knusprige shrimps',
             'img' => '/前餐/炸大虾.png',
             'discibe' => 'crisp-golden butterflied garnelen.',
@@ -654,6 +663,90 @@ mit eine ausgewählt soße.',
             'subtype' => 'g',
             'sprice' => 1.5,
             'bprice' => 2.5,
+        ),
+        array(
+            'name' => '8 kostbarkeiten',
+            'img' => '/外卖/8kostbarkeiten.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'gongbaochicken',
+            'img' => '/外卖/gongbaochicken.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'hongkongchicken',
+            'img' => '/外卖/hongkongchicken.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'hongkongchickenreis',
+            'img' => '/外卖/hongkongchickenreis.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'hühnerfleisch',
+            'img' => '/外卖/hühnerfleisch.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'nudeln',
+            'img' => '/外卖/nudeln.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'reis',
+            'img' => '/外卖/reis.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'rindfleisch',
+            'img' => '/外卖/rindfleisch.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'rotemchicken',
+            'img' => '/外卖/rotemchicken.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'schrimps',
+            'img' => '/外卖/schrimps.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'schweinefleisch',
+            'img' => '/外卖/schweinefleisch.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'tofu',
+            'img' => '/外卖/tofu.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'takeaway',
+            'sprice' => 6.90
         ),
 
 

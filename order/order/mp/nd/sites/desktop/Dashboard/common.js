@@ -10,7 +10,7 @@ let miniumPrice=15;
 
 /************全局变量****************/
 var orderInfo=new Object();//记录全部Order信息，即购物车
-const PHPROOT="../../../../../../../php/";
+const PHPROOT="https://pearldaten.com/php/";
 var UserID="";
 orderInfo.orders=new Array();
 orderInfo.time="";
@@ -32,7 +32,7 @@ var Username="";
 var hauptGericht_Nr=0;
 var Deal_Nr=0;
 var DealM_Nr=0;
-var main_Nr=0
+var main_Nr=0;
 var pages=Array();
 var finalPrice=0;
 
@@ -185,7 +185,7 @@ function gast() {
 function sendUserinfo() {
     jQuery.ajax({
         type: "POST",
-        url: "https://asia-pearl-express.com/php/DataBaseJ?q=getUser",
+        url: "https://pearldaten.com/php/DataBaseJ.php?q=getUser",
         data : {q:0,Username:userInfo.Username.value},
         success: function(msg) {
             info=JSON.parse(msg);
@@ -208,7 +208,7 @@ function sendUserinfo() {
                 if(userInfo.Username.value.indexOf("@")==-1){
                     jQuery.ajax({
                         type: "POST",
-                        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
+                        url: "https://pearldaten.com/php/DataBaseJ.php?q=saveUser",
                         data : {
                             Password:"",
                             EmailAddress:userInfo.Username.value
@@ -267,7 +267,7 @@ function sendUserAddress(event) {
     }
     jQuery.ajax({
         type: "POST",
-        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=saveUser",
+        url: "https://pearldaten.com/php/DataBaseJ.php?q=saveUser",
         data : {
             Password:reg.Password.value,
             EmailAddress:reg.Emailaddress.value
@@ -296,7 +296,7 @@ function sendUserAddress(event) {
 function getUserAddress() {
     jQuery.ajax({
         type: "POST",
-        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=getUserByID",
+        url: "https://pearldaten.com/php/DataBaseJ.php?q=getUserByID",
         data : {
             UserID:UserID},
         success: function(msg) {
@@ -564,6 +564,7 @@ function processMenu(menuType) {
     totalAmount=0;
     stepIndex=0;
     finishStep=0;
+    console.log(menuType);
 
     switch (menuType){
         case "MENÜ 1":h=1;break;
@@ -574,6 +575,10 @@ function processMenu(menuType) {
         case "16-20 Person":h=3;b=3;break;
         case "24-26 Person":h=4;b=4;break;
         case "Unsere Favoriten":{
+            singleOrderMenuProcess(menuType);
+            return;
+        }
+        case "NeueTakeaway":{
             singleOrderMenuProcess(menuType);
             return;
         }
@@ -615,6 +620,8 @@ function processMenu(menuType) {
                 removeItemAt(menuType);
                 return;
             }
+
+
             processMenu(infos.name);
 
             for(i in infos.info){
@@ -635,6 +642,7 @@ function processMenu(menuType) {
                 }
 
             }
+
             showAddOns();
             removeItemAt(menuType);
             return;
@@ -1412,7 +1420,7 @@ function sendOrder(){
     console.log(orderInfo);
     jQuery.ajax({
         type: "POST",
-        url: "https://asia-pearl-express.com/php/DataBaseJ.php?q=updateUser",
+        url: "https://pearldaten.com/php/DataBaseJ.php?q=updateUser",
         data : {
             Etage:address.Etage.value,
             Name:address.Name.value,
