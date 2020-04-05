@@ -27,7 +27,7 @@ var menuData;
 var username="";
 var ordertime=new Object();
 var logged=false;
-var OrderType=""; 
+var OrderType="";
 var Username="";
 var hauptGericht_Nr=0;
 var Deal_Nr=0;
@@ -113,8 +113,6 @@ function showPages(index) {
         if(x!="remove"){
             pages[x].style.display="none";
         }
-
-
     }
     if(index=="f1"){
         if(logged){
@@ -201,7 +199,7 @@ function sendUserinfo() {
                     UserID=info.UserID;
                     login();
                 }else{
-                    
+
                     alert("Falsch Passwort");
                 }
             }else{
@@ -968,10 +966,8 @@ function ToSteps(target) {
     stepIndex--;
     removeSpecificStep(step);
     nextStep();
-
-
-
 }//在菜单页点击step中的内容后触发，跳转到指定位置。
+
 function findStepIndex(step) {
     for(var i in orderMenu){
         if(orderMenu[i].step==step){
@@ -979,6 +975,7 @@ function findStepIndex(step) {
         }
     }
 }
+
 function removeSpecificStep(step) {
     console.log(step);
     while(findStepIndex(step)){
@@ -988,6 +985,7 @@ function removeSpecificStep(step) {
 
     console.log(orderMenu);
 }//配合ToSteps使用，删除指定step中的内容
+
 function bestellung() {
     //  console.log(orderMenu);
     var tmp=new Object();
@@ -1069,7 +1067,6 @@ function initial() {
 
     }
     $("#buttonH").click(function () {
-
         console.log(pageNames);
         if(pageNames=="f1"&&!logged){
             showRecip('none');
@@ -1096,12 +1093,12 @@ function initial() {
 
     $('input.timepicker').timepicker({
         timeFormat: 'HH:mm',
-        interval: 15,
+        interval:30,
         minTime: '11:30',
         maxTime: '22:00',
-        defaultTime: d,
-        startTime: "11:30",
-        dynamic: false,
+        defaultTime: '11',
+        startTime: '11:30',
+        dynamic: true,
         dropdown: true,
         scrollbar: false
     });
@@ -1151,6 +1148,7 @@ function startOrder(event) {
         startLogin();
     }
 }//准备开始订单，未登陆时打开登陆页。
+
 function BeginOrder(OrderType) {
     $("[data-order-step=3]").addClass("on");
     processMenu(OrderType);
@@ -1158,6 +1156,7 @@ function BeginOrder(OrderType) {
     showPages("menuPage");
     backIndex("f1");
 }
+
 function endOrder() {
     showRecip("block");
     showItems("wagen");
@@ -1170,6 +1169,7 @@ function startLogin() {
     showPages("LoginPage");
     backIndex("f1");
 }//开始登陆和选择地址
+
 function login() {
 
     logged=true;
@@ -1185,6 +1185,7 @@ function login() {
     document.getElementById("username").innerText=username;
     startTime();
 }//登陆成功后打开时间页
+
 function startTime() {
     backIndex("LoginPage");
     $("[data-order-step=2]").addClass("on");
@@ -1192,8 +1193,6 @@ function startTime() {
     showRecip("");
 }//开始时间页
 function sendOrdertime() {
-
-
     var radios = document.getElementsByName('ready_time_type');
     for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
@@ -1203,7 +1202,6 @@ function sendOrdertime() {
         }
     }
     if(ordertime.type!="SBWM"){
-
         ordertime.time="("+time.times.value+'Uhr am'+time.date.value+")";
         if(ordertime.time[2]=="h"){
             alert("Bitte Wählens Sie Eine Gültig Zeit");
@@ -1217,7 +1215,6 @@ function sendOrdertime() {
     let hour=ordertime.time.split(":")[0].substring(1,3);
     let min=ordertime.time.split(":")[1].substring(0,2);
     console.log(hour,min);
-
     let target=new Date();
     target.setHours(hour);
     target.setMinutes(min);
@@ -1237,8 +1234,6 @@ function sendOrdertime() {
         let close=new Date();
         close.setHours(21);
         close.setMinutes(30);
-
-
         if((target>=judge&&target<=end)||(target>=night&&target<=close)){
             console.log("good");
             $("[data-order-step=2]").addClass("done");
@@ -1247,19 +1242,14 @@ function sendOrdertime() {
             newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
             backIndex("timePage");
             return false;
-
         }
-
     }else if(restaurantName=="gelsenkirchen"){
-
         let night=new Date();
         night.setHours(17);
         night.setMinutes(0);
         let close=new Date();
         close.setHours(21);
         close.setMinutes(30);
-
-
         if((target>=night&&target<=close)){
             console.log("good");
             $("[data-order-step=2]").addClass("done");
@@ -1293,11 +1283,8 @@ function sendOrdertime() {
             newRow("Lieferzeit","("+ordertime.type+")"+ordertime.time+" <a style='cursor: pointer;' onclick='showPages(\"timePage\")'>ändern</a>");
             backIndex("timePage");
             return false;
-
         }
     }
-
-
 
     alert("Bitte Wählens Sie Eine Gültig Zeit");
     return false;
@@ -1448,7 +1435,7 @@ function sendOrder(){
                 $.ajax({
                     url:PHPROOT+"DataBaseJ.php?q=saveOrder",
                     method:"POST",
-                    data:({ 
+                    data:({
                         UserID:UserID,
                         Amount:orderInfo.finalPrice,
                         Address:orderInfo.address,
@@ -1470,10 +1457,7 @@ function sendOrder(){
             }
         }
     });
-
     return false;
-
-
 }
 
 function showAddOn(Type){
@@ -1500,6 +1484,7 @@ function editItem(event) {
     showPages("menuPage");
     backIndex("f1");
 }
+
 function ToStepsMenu(target) {
     console.log("TOSTEPSMENU*******************************************");
     //  bestellung();
