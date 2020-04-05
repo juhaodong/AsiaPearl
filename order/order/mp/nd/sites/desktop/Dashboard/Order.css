@@ -293,10 +293,11 @@ body{
     color: #1b6d85;
 }
 .ui-datepicker{
-    top:485px !important;
+
+    position: absolute;
 }
 .ui-timepicker-container{
-    top:485px !important;
+    position: absolute;
 }
 .headLine{
 
