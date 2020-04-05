@@ -12,7 +12,7 @@
     <!-- Compiled and minified CSS -->
 
     <!-- Compiled and minified CSS -->
-      <!-- IE compatibility -->
+    <!-- IE compatibility -->
     <!--[if IE 9]>
     <script type="text/javascript">
         ie9 = true;
@@ -212,7 +212,7 @@
                 </li>
             </ul>
         </nav>
-      
+
         <h1 id="logo">
 
             <img src="../../../../../local/siteFiles/images/header-logo.png" usemap="#home-logo" height="141"
@@ -240,7 +240,7 @@
                 <li style="" class="account">
                     <a href="http://asia-pearl-express.de/UserpageVue/index.html?action=#bestellung">
                         <span>&bull;</span>
-                       Account
+                        Account
                     </a>
                 </li>
             </ul>
@@ -262,14 +262,14 @@
                 loggen Sie sich bitten ein, um auf Ihre gespeicherten Informationen zuzugreifen</span>
             </div>
         </div>
-        <div class="container2 " style="padding:30px" >
-            <div  class="long "style="display:flex;justify-content: space-between">
-                <div style="padding-top: 150px" class="long">
-                    <h3 class="page-title characters">Alle Produkte</h3>
+        <div class="container2 " >
+            <div class="long "style="display:flex;justify-content: space-between">
+                <div class="halfLong">
+                    <h3 class="page-title characters">Neue Takeaway</h3>
                     <div class="jhMenuItemContainer" style="background: url('../yxj/Menu1-1Haupt-1Beilage1.jpg');">
                         <div class="jhItemDetail red">
                             <div class="upperLine">
-                                <span data-name="NeueTakeaway" style="display: inline-block">Die neuen Produkte</span>
+                                <span data-name="NeueTakeaway" style="display: inline-block">Die neuen Takeaways</span>
                             </div>
                             <div class="lowerLine">
                                 ab sofort in kühlregal
@@ -278,9 +278,7 @@
                     </div>
 
                 </div>
-
-
-                    <!--========================================这是隐藏的套餐选项==========================================================
+                <div class="halfLong">
                     <h3 class="page-title characters">Unsere Favoriten</h3>
                     <div class="jhMenuItemContainer" style="background: url('../yxj/menu/unsere-favoriten.jpg');">
                         <div class="jhItemDetail red">
@@ -292,12 +290,11 @@
                             </div>
                         </div>
                     </div>
-                    ========================================这是隐藏的套餐选项==========================================================-->
 
+                </div>
             </div>
 
 
-            <!--========================================这是隐藏的套餐选项==========================================================
             <h3 class="page-title characters">BAU Dein eigenes</h3>
             <div class="container2">
                 <div class="jhMenuItemContainer short" style="background: url('../yxj/Menu1-1Haupt-1Beilage1.jpg');">
@@ -428,6 +425,11 @@
                         </div>
                     </div>
                 </div>
+
+
+
+
+
             </div>
             <h3 class="page-title characters">Mehr hinzufügen</h3>
             <div class="container2">
@@ -474,8 +476,11 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
-            ========================================这是隐藏的套餐选项==========================================================-->
+
+
         </div>
 
     </div>
@@ -559,8 +564,8 @@
 
                 </div>
                 <div class="line">
-                        <p>zurzeit kann nur Bargeld bezahlt werden.
-                            <br>Vielen Dank für ihr Verständnis</p>
+                    <p>zurzeit kann nur Bargeld bezahlt werden.
+                        <br>Vielen Dank für ihr Verständnis</p>
 
                 </div>
                 <div class="line">
@@ -681,19 +686,19 @@
                 </div>
                 <form name="reg">
 
-                        <div id="regss">
-                            <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
-                                               type="text"/></label>
+                    <div id="regss">
+                        <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
+                                           type="text"/></label>
 
-                            <label>Password</label><input required="required"  class="TextArea" name="Password"
-                                                          placeholder="Passwort" type="text"/>
-                            <label>Password Bestätigungs</label>
-                            <input required="required" class="TextArea" name="Password2"
-                                   placeholder="Passwort Bestätigungs" type="text"/>
-                            <input type="submit" class="TextArea" onclick="return sendUserAddress(event)" value="Anmeldung">
+                        <label>Password</label><input required="required"  class="TextArea" name="Password"
+                                                      placeholder="Passwort" type="text"/>
+                        <label>Password Bestätigungs</label>
+                        <input required="required" class="TextArea" name="Password2"
+                               placeholder="Passwort Bestätigungs" type="text"/>
+                        <input type="submit" class="TextArea" onclick="return sendUserAddress(event)" value="Anmeldung">
 
 
-                        </div>
+                    </div>
 
 
                 </form>
@@ -713,7 +718,7 @@
             </div>
         </div>
         <h4 class="characters titleSmall titleRed">Bestelloptionen</h4>
-        <div style="height:420px;width: 91%;" class="left whiteBackgroud">
+        <div style="height:420px;width: 95%" class="left whiteBackgroud">
             <div class="js-ready-time">
                 <h4 class="titleRed" style="font-size: x-large;">Wählen Sie Bestellzeit aus</h4>
 
@@ -760,7 +765,7 @@
 
                                 $('.sdu').css("display",document.getElementById("sbwm").checked?"none":"inline");
 
-                                       }
+                            }
 
                             jQuery(function () {
                                 $('input.timepicker').timepicker({
@@ -789,19 +794,19 @@
                             });
                         </script>
 
-                            <input class="sdu"   type="text" placeholder="DD/MM/YYYY" name="date" id="datepicker" size="15"
-                                     style="display: none; width: auto" aria-labelledby="ready_time_type"
-                                     required>
+                        <input class="sdu"   type="text" placeholder="DD/MM/YYYY" name="date" id="datepicker" size="15"
+                               style="display: none; width: auto" aria-labelledby="ready_time_type"
+                               required>
 
 
-                            <!--
-                            <button type="button" class="js-show-datepicker btn">
-                              <i class="icon-calendar">C</i>
-                            </button>
-                            -->
-                            <input  type="text" placeholder="HH:MM" name="times" class="timepicker sdu" size="15"
-                                    style="display: none; width: auto" aria-labelledby="ready_time_type"
-                                    autocomplete="off" required>
+                        <!--
+                        <button type="button" class="js-show-datepicker btn">
+                          <i class="icon-calendar">C</i>
+                        </button>
+                        -->
+                        <input  type="text" placeholder="HH:MM" name="times" class="timepicker sdu" size="15"
+                                style="display: none; width: auto" aria-labelledby="ready_time_type"
+                                autocomplete="off" required>
 
 
 
@@ -817,7 +822,7 @@
                     </div>
                     <div class="form-row">
 
-                        <input  style="color:white;width:200px;background:#ee9730; margin-top: 10px; margin-left: 35px; margin-bottom: 300px"
+                        <input  style="color:white;width:200px;background:#ee9730; margin-top: 30px; margin-left: 35px; margin-bottom: 300px"
                                 type="submit" onclick="return sendOrdertime()" class="TextArea"
                                 value="Bestellung Starten"/>
                     </div>

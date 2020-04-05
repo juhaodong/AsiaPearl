@@ -58,6 +58,19 @@
 </head>
 <body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <noscript>
     <img src="../../pixel.quantserve.com/pixel/p-Y8YJaDWqbZrNU9476.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast" />
 </noscript>
@@ -150,7 +163,215 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
 </script>
 
+
+
+
+
+
+
+
 <div class="wrapper" style="height: auto ;">
+
+
+
+
+<!--======================================自动跳转的大海报============================================================
+
+    <script type="text/javascript">
+        function showme() {
+
+            location.href = "http://asia-pearl-express.com/order/order/mp/nd/sites/desktop/Dashboard/UserInfo.html";
+        }
+
+        function auslog() {
+            deleteCookie('Username');
+            popMainmenu();
+        }
+
+        function popReg() {
+            document.getElementById("titletext").innerText = "Account Erstellen";
+            document.getElementById("mainMenu").style.display = "none";
+            document.getElementById("regMenu").style.display = "block";
+        }
+
+        function poplogin() {
+            document.getElementById("titletext").innerText = "Login";
+            document.getElementById("mainMenu").style.display = "none";
+            document.getElementById("loginMenu").style.display = "block";
+        }
+
+        function popAccount() {
+
+            document.getElementById("titletext").innerText = "Meine Account";
+            document.getElementById("regMenu").style.display = "none";
+            document.getElementById('Account').style.display = "block";
+            var name = getCookie("Username");
+            document.getElementById('Usn').innerText = name;
+            document.getElementById("mainMenu").style.display = "none";
+            document.getElementById("loginMenu").style.display = "none";
+        }
+
+        function popMainmenu() {
+
+            document.getElementById("titletext").innerText = 'Meine Account';
+            document.getElementById('Account').style.display = "none";
+            document.getElementById("mainMenu").style.display = "block";
+            document.getElementById("loginMenu").style.display = "none";
+        }
+
+        function sendRegUserinfo() {
+
+            if (!(regUserInfo.Password1.value == regUserInfo.Password2.value)) {
+                alert('two Password not same');
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "http://asiagourment.de/php/userFunction.php",
+                data: {
+                    q: 1,
+                    Username: regUserInfo.Username.value,
+                    Password: regUserInfo.Password1.value
+                },
+                success: function (msg) {
+                    var a = msg.toString();
+                    a.replace(/[\r\n]/g, "");
+                    console.log(a);
+
+                    if (a == 'reg ok') {
+                        setCookie('Username', regUserInfo.Username.value);
+                        popAccount();
+
+                    } else {
+                        alert(a);
+                    }
+                }
+
+            });
+
+            return false;
+
+        }
+
+        function setCookie(name, value, Days) {
+
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + decodeURI(value) + ";expires=" + exp.toGMTString();
+            console.log(document.cookie);
+
+        }
+
+        function getCookie(name) {
+            var arr = document.cookie.match(new RegExp("(^|)" + name + "=([^;]*)(;|$)"));
+            if (arr != null) return decodeURIComponent(arr[2]);
+            return null;
+        }
+
+        function deleteCookie(name) {
+            this.setCookie(name, '', -1);
+
+        }
+
+        function sendUserinfo() {
+
+            $.ajax({
+                type: "POST",
+                url: "http://asiagourment.de/php/userFunction.php",
+                data: {q: 0, Username: userInfo.Username.value, Password: userInfo.Password.value},
+                success: function (msg) {
+                    var a = msg.toString();
+                    a.replace(/[\r\n]/g, "");
+                    console.log(a);
+
+                    if (a == 'loginok') {
+                        setCookie('Username', userInfo.Username.value);
+                        popAccount();
+
+                    } else {
+                        alert(a);
+                    }
+                }
+            });
+
+            return false;
+
+
+        }
+    </script>
+    <a href="menu.html" class="peking-poc-section">
+        <ul>
+            <li>
+                <picture>
+                    <source srcset="../../../yxj/haibaos.jpg" media="(max-width: 767px)">
+                    <img src="../../../yxj/haibao.jpg" alt="favorites"
+                         style="width:100%;height:auto!important;%!important;">
+                </picture>
+            </li>
+            <li>
+                <picture>
+                    <source srcset="../../../yxj/haibaos2.jpg" media="(max-width: 767px)">
+                    <img src="../../../yxj/haibao2.jpg" alt="favorites"
+                         style="width:100%;height:auto!important;%!important;">
+                </picture>
+            </li>
+        </ul>
+
+    </a>
+    <script>
+        $('.peking-poc-section').unslider({
+            autoplay: true,
+            fluid: true
+        });
+    </script>
+
+=============================自动跳转的大海报=================================================-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+    <li>
+        <picture>
+            <source srcset="../../../yxj/haibaos2.jpg" media="(max-width: 767px)">
+            <img src="../../../yxj/haibao2.jpg" alt="favorites"
+                 style="width:100%;height:auto!important;%!important;">
+        </picture>
+    </li>
+    -->
+
+
+        <picture>
+            <source srcset="../../../yxj/haibaos.jpg" media="(max-width: 767px)">
+            <img src="../../../yxj/haibao.jpg" alt="favorites"
+                 style="width:100%;height:auto!important;%!important;">
+        </picture>
+
+
+
+
+
+
+
+
     <div id="float-layer" style="display: none;">
         <div class="ctn">
             <div  class="img">
@@ -169,7 +390,6 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
             </div>
         </div>
-
     </div>
 	    <div class="top-frame"></div>
 
@@ -182,127 +402,141 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
         <div class="main-links">
             <div id="sub1" class="link-block submenu-link food" data-a11y-focus data-open="false"  >
 
-                <a class="anchor" data-ga-event-menu="Food" href="../menu.html" data-mobile-label="Produkte"
+                <a class="anchor" data-ga-event-menu="Food" href="entrees.html?q=takeaway" data-mobile-label="Produkte"
                    data-label="PRODUKTE" aria-label="PRODUKTE"><span class="nav-icon"></span></a>
-                <div class="submenu">
-                    <div class="container">
-                        <a href="../how-to-order.html" class="image-link"> <img
-                                src="../../s3.amazonaws.com/PandaExpressWebsite/img/favorites/fav-menu.jpg"
-                                alt="Panda Favorites"> <span class="text">Unsere favoriten</span> </a><a
-                            href="entrees.html?q=hauptgericht" class="image-link"> <img class="img"
-                                                                              src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/entrees.jpg"
-                                                                              alt="Entrees"> <span class="text">HAUTgericht</span>
-                    </a> <a href="entrees.html?q=beilag" class="image-link"> <img
-                            src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/sidedishes.jpg"
-                            alt="Sides"> <span class="text">Beilage</span> </a> <a href="entrees.html?q=vorspeisen"
-                                                                                   class="image-link"> <img
-                            src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/appetizers.jpg"
-                            alt="Appetizers"> <span class="text">Vorseisen</span> </a>
-                        <div class="link-list"><a href="../how-to-order.html?tab=2">Unsere favoriten</a>&nbsp;<a
-                                href="entrees.html?q=sauce">Berühmte sauce</a>&nbsp;&nbsp;<a
-                                href="entrees.html?q=getranke">getränke</a>&nbsp;</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="link-block locations" data-a11y-focus>
-                <a class="anchor" data-ga-event-menu="Locations" href="../userlocation.html"
-                   data-mobile-label="Restaurants" data-label="Restaurants" aria-label="Restaurants"><span
-                        class="nav-icon"></span></a>
-            </div>
-            <script type="text/javascript">
-                function getQueryString(name) {
-                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-                    var r = window.location.search.substr(1).match(reg);
-                    if (r != null) return unescape(r[2]); return null;
-                }
-                $('[data-a11y-focus]').each( function() {
-                    var $el = $(this);
-                    var _focusTimeout;
-
-                    $el.on('mouseenter', function() {
-
-                        $el.attr('data-open', 'true');
-                        clearTimeout(_focusTimeout);
-                    });
 
 
 
-                    $el.on('mouseleave', function() {
+           <!--=========================alt Produkte hauptgericht beilage vorspeisen versteken ====================
+              <div class="submenu">
+                  <div class="container">
+                      <a href="../how-to-order.html" class="image-link">
+                          <img src="../../s3.amazonaws.com/PandaExpressWebsite/img/favorites/fav-menu.jpg" alt="Panda Favorites">
+                          <span class="text">Unsere favoriten</span>
+                      </a>
+                      <a href="entrees.html?q=hauptgericht" class="image-link">
+                          <img class="img" src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/entrees.jpg" alt="Entrees">
+                          <span class="text">HAUTgericht</span>
+                      </a>
+                      <a href="entrees.html?q=beilag" class="image-link">
+                          <img src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/sidedishes.jpg" alt="Sides">
+                          <span class="text">Beilage</span>
+                      </a>
+                      <a href="entrees.html?q=vorspeisen" class="image-link">
+                          <img src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/appetizers.jpg" alt="Appetizers">
+                          <span class="text">Vorseisen</span>
+                      </a>
+                      <div class="link-list">
+                          <a href="../how-to-order.html?tab=2">Unsere favoriten</a>&nbsp;
+                          <a
+                              href="entrees.html?q=sauce">Berühmte sauce</a>&nbsp;&nbsp;<a
+                              href="entrees.html?q=getranke">getränke</a>&nbsp;</div>
+                  </div>
+              </div>
 
-                        _focusTimeout = setTimeout( function() {
-                            $el.attr('data-open', 'false');
-                        }, 100);
-                    });
-                });
-            </script>
 
-            <div class="link-block submenu-link family" data-a11y-focus data-open="false">
-                <a class="anchor" data-ga-event-menu="Our Family Story" href="../lieferService.html"
-                   data-label="Lieferservice" aria-label="Lieferservice"><span class="nav-icon"></span></a>
-
-            </div>
-
-            <div class="link-block order" data-a11y-focus>
-                <a class="anchor" target="_blank" href="../lieferService.html" data-mobile-label="Lieferservices"
-                   aria-label="Order Now"><span class="nav-icon"></span></a>
-            </div>
-
-            <div class="link-block burger-icon" data-a11y-focus data-mobile-menu-toggle>
-                <span class="nav-icon"></span>
-            </div>
-        </div>
+             -->
 
 
 
 
 
-    </nav>
-        
-        <main>
-            <div class="m1" style="text-align: right" >
-                <img style="margin-right:20px;margin-top:20px;height:20px;width: 20px;opacity: 0.7" src="../img/memu_icon.png" onclick="showme()">
+          </div>
 
-            </div>
-            <a id="skip-to-content" tabindex="-1" class="visually-hidden"></a>
-            <div class="row content-container" style="">
-                
-    
-<!-- Side Nav -->
+          <div class="link-block locations" data-a11y-focus>
+              <a class="anchor" data-ga-event-menu="Locations" href="../userlocation.html"
+                 data-mobile-label="Restaurants" data-label="Restaurants" aria-label="Restaurants"><span
+                      class="nav-icon"></span></a>
+          </div>
+          <script type="text/javascript">
+              function getQueryString(name) {
+                  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                  var r = window.location.search.substr(1).match(reg);
+                  if (r != null) return unescape(r[2]); return null;
+              }
+              $('[data-a11y-focus]').each( function() {
+                  var $el = $(this);
+                  var _focusTimeout;
 
+                  $el.on('mouseenter', function() {
 
-                
-
-<div class="mainContainer" id="skip-to-items" tabindex="-1">
-
-    <div class="sticky-title" data-sticky>
-        <a class="back-button " style="z-index: 5" href="../menu.html" data-back-button aria-label="Go Back to Previous Page"></a>
-        <h1 class="page-title" id="title">Hauptgericht</h1>
-    </div>
-
-    <div style="width: 74%">
-    <div id="menu1" class="row menu-row">
+                      $el.attr('data-open', 'true');
+                      clearTimeout(_focusTimeout);
+                  });
 
 
-        <div id='end'></divid>
-    </div>
-    </div>
-</div>
+
+                  $el.on('mouseleave', function() {
+
+                      _focusTimeout = setTimeout( function() {
+                          $el.attr('data-open', 'false');
+                      }, 100);
+                  });
+              });
+          </script>
+
+          <div class="link-block submenu-link family" data-a11y-focus data-open="false">
+              <a class="anchor" data-ga-event-menu="Our Family Story" href="../lieferService.html"
+                 data-label="Lieferservice" aria-label="Lieferservice"><span class="nav-icon"></span></a>
+
+          </div>
+
+          <div class="link-block order" data-a11y-focus>
+              <a class="anchor" target="_blank" href="../lieferService.html" data-mobile-label="Lieferservices"
+                 aria-label="Order Now"><span class="nav-icon"></span></a>
+          </div>
+
+          <div class="link-block burger-icon" data-a11y-focus data-mobile-menu-toggle>
+              <span class="nav-icon"></span>
+          </div>
+      </div>
 
 
-            </div>
-            
-    
 
 
-        </main>
-    <div class="botmenu-container">
-        <div class="botmenu">
-            <div class="columnn">
-                <div class="titlee">
-                    <span>Produkte</span><button class="hide-button" id="a1" onclick="show1()">+</button>
-                    <script>
-                        function  show1() {
+
+
+
+
+  </nav>
+
+      <main>
+          <div class="m1" style="text-align: right" >
+              <img style="margin-right:20px;margin-top:20px;height:20px;width: 20px;opacity: 0.7" src="../img/memu_icon.png" onclick="showme()">
+
+          </div>
+          <a id="skip-to-content" tabindex="-1" class="visually-hidden"></a>
+          <div class="row content-container" style="">
+                 <!-- Side Nav -->
+               <div class="mainContainer" id="skip-to-items" tabindex="-1">
+
+
+                  <!--=======================这是老的内容自动提取和跳转链接=========================================
+               <div class="sticky-title" >
+                <a class="back-button " style="z-index: 5" href="../menu.html" data-back-button aria-label="Go Back to Previous Page"></a>
+                <h1 class="page-title" id="title">Hauptgericht</h1>
+               </div>
+                 ============================这是老的内容自动提取和跳转链接===============================================-->
+                   <h1 style="font-size:3rem">ALLE PRODUKTE</h1>
+                   <div >
+                       <h1 style="font-size:2rem" class="page-title" id="title">Hauptgericht</h1>
+                   </div>
+                   <div style="width: 81%">
+                       <div id="menu1" class="row menu-row">
+                           <div id='end'></divid>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+          </div>
+      </main>
+      <div class="botmenu-container">
+          <div class="botmenu">
+              <div class="columnn">
+                  <div class="titlee">
+                      <span>Produkte</span><button class="hide-button" id="a1" onclick="show1()">+</button>
+                      <script>
+                          function  show1() {
                             var div = document.getElementById("memu-1");
                             console.log(div);
                             if(div.style.display==""){
@@ -319,22 +553,23 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
                                 d.innerText="+";
                             }
-                        }
-                    </script>
-                </div>
-                <div class="list-context" id="memu-1">
-                    <div class="list-item"><a   href="entrees.html?q=hauptgericht" >Hauptgericht</a></div>
-                    <div class="list-item"><a  href="entrees.html?q=beilag">Belage</a></div>
-                    <div class="list-item"><a  href="entrees.html?q=sauce">Berühmte Sauce</a></div>
-                    <div class="list-item"><a  href="entrees.html?q=vorspeisen">Vorspeise</a></div>
-                    <div class="list-item"><a  href="entrees.html?q=getranke">Getränke</a></div>
-                </div>
-            </div>
-            <div class="columnn">
-                <div class="titlee">
-                    <span>Wie zu Asia Pear!</span><button id="a2" class="hide-button" onclick="show2()">+</button>
-                    <script>
-                        function  show2() {
+                          }
+                      </script>
+                  </div>
+                  <div class="list-context" id="memu-1">
+                      <div class="list-item"><a   href="entrees.html?q=hauptgericht" >Hauptgericht</a></div>
+                      <div class="list-item"><a  href="entrees.html?q=beilag">Belage</a></div>
+                      <div class="list-item"><a  href="entrees.html?q=sauce">Berühmte Sauce</a></div>
+                      <div class="list-item"><a  href="entrees.html?q=vorspeisen">Vorspeise</a></div>
+                      <div class="list-item"><a  href="entrees.html?q=getranke">Getränke</a></div>
+                  </div>
+              </div>
+              <div class="columnn">
+                  <div class="titlee">
+                      <span>Wie zu Asia Pear!</span>
+                      <button id="a2" class="hide-button" onclick="show2()">+</button>
+                      <script>
+                          function  show2() {
                             var div = document.getElementById("memu-2");
                             console.log(div);
                             if(div.style.display==""){
@@ -354,22 +589,21 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
                                 d.innerText="+";
                             }
-                        }
-                    </script>
-                </div>
-                <div class="list-context" id="memu-2">
-                    <div class="list-item"><a  href="../how-to-order.html">Asia Pear favoriten</a></div>
-                    <div class="list-item"><a  href="../how-to-order.html">Baue deine eigenes</a></div>
-                    <div class="list-item"><a  href="../userlocation.html">Restaurants</a></div>
-                    <div class="list-item"><a  href="../lieferService.html">Lieferservice</a></div>
-
-                </div>
-            </div>
-            <div class="columnn">
-                <div class="titlee">
-                    <span>Karriere</span><button id="a4" class="hide-button"  onclick="show4()">+</button>
-                    <script>
-                        function  show4() {
+                          }
+                      </script>
+                  </div>
+                  <div class="list-context" id="memu-2">
+                      <div class="list-item"><a  href="../how-to-order.html">Asia Pear favoriten</a></div>
+                      <div class="list-item"><a  href="../how-to-order.html">Baue deine eigenes</a></div>
+                      <div class="list-item"><a  href="../userlocation.html">Restaurants</a></div>
+                      <div class="list-item"><a  href="../lieferService.html">Lieferservice</a></div>
+                  </div>
+              </div>
+              <div class="columnn">
+                  <div class="titlee">
+                      <span>Karriere</span><button id="a4" class="hide-button"  onclick="show4()">+</button>
+                      <script>
+                          function  show4() {
                             var div = document.getElementById("memu-4");
                             console.log(div);
                             if(div.style.display==""){
@@ -388,22 +622,21 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
 
                                 d.innerText="+";
                             }
-                        }
-                    </script>
-                </div>
-                <div class="list-context" id="memu-4">
+                          }
+                      </script>
+                  </div>
+                  <div class="list-context" id="memu-4">
                     <div class="list-item"><a  >Asia Pearl als arbeitgeber</a></div>
                     <div class="list-item"><a  >Jobs als Restaurant Mitarbeiter</a></div>
                     <div class="list-item"><a  >Jobs im Restaurant Management</a></div>
                     <div class="list-item"><a  >Mini-jobs</a></div>
                     <div class="list-item"><a  >Ausbildung</a></div>
-
-                </div>
-            </div>
-            <div class="columnn">
-                <div class="titlee">
-                    <span>Über uns</span><button id="a3" class="hide-button" onclick="show3()">+</button>
-                    <script>
+                  </div>
+              </div>
+              <div class="columnn">
+                  <div class="titlee">
+                      <span>Über uns</span><button id="a3" class="hide-button" onclick="show3()">+</button>
+                      <script>
                         function  show3() {
                             var div = document.getElementById("memu-3");
 
@@ -424,19 +657,16 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
                                 d.innerText="+";
                             }
                         }
-                    </script>
-                </div>
-                <div class="list-context" id="memu-3">
+                      </script>
+                  </div>
+                  <div class="list-context" id="memu-3">
                     <div class="list-item"><a  >Facebook</a></div>
                     <div class="list-item"><a  >Twitter</a></div>
                     <div class="list-item"><a  >Youtube</a></div>
-
-
-                </div>
-            </div>
-
-        </div>
-    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
         <a href="#skip-to-top" class="skip-navigation-button">Skip Footer and Return to Top</a>
         <!-- Site Footer -->
     <!-- Site Footer -->
@@ -454,20 +684,12 @@ window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.
                             </div>
                         </nav>
                     </div>
-
-
-
                 </div>
             </div>
         </footer>
     </footer>
-
 </div>
-
-
-
-
-    <script src="../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<script src="../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
 
 

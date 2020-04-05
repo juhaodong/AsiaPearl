@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from root/menu/entrees by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Dec 2017 21:32:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Entrees | Menu | Panda Express Chinese Restaurant</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content='width=device-width, height=device-height' name='viewport'>
+    <meta name="description" content="The Panda Express menu includes a variety of entrees with Chinese and Sichuan influences. All are wok-cooked with our signature sauces and fresh vegetables. ">
+    <meta name="keywords">
+    <link rel="canonical" href="entrees.html" />
+    <script type="text/javascript" src="../../jquery-3.2.1.min.js"> </script>
+    <script type="text/javascript" src="../../unslider-master/src/js/unslider.js"></script>
+    <link href="../../maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../../unslider-master/dist/css/unslider.css" rel="stylesheet"/>
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+    <script>window.IS_IE8 = true;</script>
+    <link rel="stylesheet" href="/Content/styles/ie.min.css">
+    <![endif]-->
+
+    <!--[if IE 9]>
+    <script>window.IS_IE9 = true;</script>
+    <![endif]-->
+
+    <!--[if (gte IE 9) | (IEMobile)]><!-->
+    <link href="../content/site/frontend-css2ac2.css?v=C4aOCUaSMq39OXjzRv53a9ugRzO49mZxUJhj4x5CCaA1" rel="stylesheet"/>
+
+    <!--<![endif]-->
+    <link href="../content/qaptcha/qaptcha.jquery.css" rel="stylesheet"/>
+
+
+    <link href="../../cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css" rel="stylesheet"/>
+    <style>
+        @media only screen and (min-width: 1024px){
+            .c4-l{
+                width: 32%;
+            }
+            .wrapper{
+                margin-top:150px;
+            }
+            .ctn{
+                top:300px;
+            }
+        }
+    </style>
+    <script>
+        dataLayer = [];
+    </script>
+    <link rel="stylesheet" href="gericht.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<noscript>
+    <img src="../../pixel.quantserve.com/pixel/p-Y8YJaDWqbZrNU9476.gif?labels=_fp.event.Default" style="display: none;" border="0" height="1" width="1" alt="Quantcast" />
+</noscript>
+<!-- End Quantcast Tag -->
+<script type="text/javascript" src="../../10399715.collect.igodigital.com/collect.js"></script>
+<script type="text/javascript">
+    _etmc.push(["setOrgId", "10399715"]);
+    _etmc.push(["trackPageView"]);
+</script>
+<div id="fb-root"></div>
+<script>
+
+    // Twitter
+    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="../../platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        Page= getQueryString("q");
+        document.getElementById("title").innerText=Page;
+        getMenuData();
+        $(".tile").click(function(event){
+            console.log(event);
+            $("#float-layer").fadeToggle();
+            document.getElementById("detialDiscribe").innerHTML=event.currentTarget.attributes['discibe'].nodeValue;
+            document.getElementById("detialTitle").innerText=event.target.innerText;
+            document.getElementById("detialImg").src=event.currentTarget.attributes['data-bg-cover'].nodeValue;
+
+        });
+        $("#float-layer").click(function(){
+            $("#float-layer").fadeToggle();
+        });
+    });
+    function showfloat(event) {
+        console.log(event);
+        $("#float-layer").fadeToggle();
+        document.getElementById("float-layer").style.display="flex";
+        document.getElementById("detialDiscribe").innerHTML=event.target.attributes['discribe'].nodeValue;
+        document.getElementById("detialTitle").innerText=event.target.innerText;
+        document.getElementById("detialImg").src=event.target.attributes['data-bg-cover'].nodeValue;
+    }
+    function writeHtml(value) {
+        console.log("run");
+        if(value.type!=Page){
+            return;
+        }
+
+        var newDiv=document.createElement("div");
+        newDiv.setAttribute("class"," c4-l menu-block c6-m c12-s");
+        newDiv.setAttribute("onclick","showfloat(event)");
+        newDiv.setAttribute("aira-label",value.name);
+        var n=document.createElement("a");
+        n.setAttribute("class","tile");
+        var imgpath="../pic"+value.img;
+        console.log(imgpath);
+
+        var bgpath="background-image: url(../pic"+value.img+")";
+        n.setAttribute("style",bgpath);
+        var tileW=document.createElement("div");
+        tileW.setAttribute("class","tile-wrapper");
+        tileW.setAttribute("data-bg-cover",imgpath);
+        tileW.setAttribute("discribe",value.discibe);
+        var menuT=document.createElement("div");
+        menuT.setAttribute("class","menu-tags");
+        var titl=document.createElement("span");
+        titl.setAttribute("class","title");
+        titl.innerText=value.name;
+        tileW.appendChild(titl);
+        tileW.appendChild(menuT);
+        n.appendChild(tileW);
+        newDiv.appendChild(n);
+        document.getElementById("menu1").insertBefore(newDiv,document.getElementById("end"));
+
+
+    }
+    function getMenuData() {
+        $.ajax({
+            type: "POST",
+            url: "http://asia-pearl-express.com/php/menuDataJpg.php",
+            success: function(msg) {
+                console.log(msg);
+                var a=msg.data;
+                for(var k in a){
+                    writeHtml(a[k]);
+                }
+            }
+
+        });
+    }
+
+</script>
+
+
+
+
+
+
+
+
+<div class="wrapper" style="height: auto ;">
+
+    <a class="peking-poc-section">
+        <ul>
+            <li>
+                <picture>
+                    <source srcset="../../../yxj/haibaos2.jpg" media="(max-width: 767px)">
+                    <img src="../../../yxj/haibao2.jpg" alt="favorites"
+                         style="width:100%;height:auto!important;%!important;">
+                </picture>
+            </li>
+        </ul>
+
+    </a>
+
+
+
+
+
+
+
+    <div id="float-layer" style="display:none;">
+        <div class="ctn">
+            <div  class="img">
+                <img id="detialImg" style="width: 360px" src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/thumbnails/grid_OrangeChicken.jpg">
+            </div>
+            <div class="detail">
+                <h1 id="detialTitle" class="detail-title "> <a class="back-button " style="float:none; z-index: 15" href="#" data-back-button aria-label="Go Back to Previous Page"></a>GEBR.NUDELN</h1>
+
+
+                <div id="detialDiscribe" >
+                    <span > Angebratene Nudeln mit Zweibeln Sllerie und Kohl</span>
+                </div>
+                <a href="../lieferService.html" class="detail-button">
+                    Bestellen
+                </a>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="top-frame"></div>
+
+    <a href="#skip-to-content" class="skip-navigation-button" data-skip-to-content id="skip-to-top">Skip to Content</a>
+    <a href="../sitemap.html" class="skip-navigation-button">Skip to Sitemap</a>
+    <!-- Main Navigation -->
+
+    <nav class="main-nav" data-mobile-active="false" aria-label="Main Navigation">
+        <a class="logo" href="../index.html" aria-label="Panda Express Logo, Click to go home."></a>
+        <div class="main-links">
+            <div id="sub1" class="link-block submenu-link food" data-a11y-focus data-open="false"  >
+
+                <a class="anchor" data-ga-event-menu="Food" href="../menu.html" data-mobile-label="Produkte"
+                   data-label="PRODUKTE" aria-label="PRODUKTE"><span class="nav-icon"></span></a>
+                <div class="submenu">
+                    <div class="container">
+                        <a href="../how-to-order.html" class="image-link"> <img
+                                src="../../s3.amazonaws.com/PandaExpressWebsite/img/favorites/fav-menu.jpg"
+                                alt="Panda Favorites"> <span class="text">Unsere favoriten</span> </a><a
+                            href="entrees.html?q=hauptgericht" class="image-link"> <img class="img"
+                                                                                        src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/entrees.jpg"
+                                                                                        alt="Entrees"> <span class="text">HAUTgericht</span>
+                    </a> <a href="entrees.html?q=beilag" class="image-link"> <img
+                            src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/sidedishes.jpg"
+                            alt="Sides"> <span class="text">Beilage</span> </a> <a href="entrees.html?q=vorspeisen"
+                                                                                   class="image-link"> <img
+                            src="../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/food/navigation/appetizers.jpg"
+                            alt="Appetizers"> <span class="text">Vorseisen</span> </a>
+                        <div class="link-list"><a href="../how-to-order.html?tab=2">Unsere favoriten</a>&nbsp;<a
+                                href="entrees.html?q=sauce">Berühmte sauce</a>&nbsp;&nbsp;<a
+                                href="entrees.html?q=getranke">getränke</a>&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="link-block locations" data-a11y-focus>
+                <a class="anchor" data-ga-event-menu="Locations" href="../userlocation.html"
+                   data-mobile-label="Restaurants" data-label="Restaurants" aria-label="Restaurants"><span
+                        class="nav-icon"></span></a>
+            </div>
+            <script type="text/javascript">
+                function getQueryString(name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                    var r = window.location.search.substr(1).match(reg);
+                    if (r != null) return unescape(r[2]); return null;
+                }
+                $('[data-a11y-focus]').each( function() {
+                    var $el = $(this);
+                    var _focusTimeout;
+
+                    $el.on('mouseenter', function() {
+
+                        $el.attr('data-open', 'true');
+                        clearTimeout(_focusTimeout);
+                    });
+
+
+
+                    $el.on('mouseleave', function() {
+
+                        _focusTimeout = setTimeout( function() {
+                            $el.attr('data-open', 'false');
+                        }, 100);
+                    });
+                });
+            </script>
+
+            <div class="link-block submenu-link family" data-a11y-focus data-open="false">
+                <a class="anchor" data-ga-event-menu="Our Family Story" href="../lieferService.html"
+                   data-label="Lieferservice" aria-label="Lieferservice"><span class="nav-icon"></span></a>
+
+            </div>
+
+            <div class="link-block order" data-a11y-focus>
+                <a class="anchor" target="_blank" href="../lieferService.html" data-mobile-label="Lieferservices"
+                   aria-label="Order Now"><span class="nav-icon"></span></a>
+            </div>
+
+            <div class="link-block burger-icon" data-a11y-focus data-mobile-menu-toggle>
+                <span class="nav-icon"></span>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </nav>
+
+    <main>
+        <div class="m1" style="text-align: right" >
+            <img style="margin-right:20px;margin-top:20px;height:20px;width: 20px;opacity: 0.7" src="../img/memu_icon.png" onclick="showme()">
+
+        </div>
+        <a id="skip-to-content" tabindex="-1" class="visually-hidden"></a>
+        <div class="row content-container" style="">
+
+
+            <!-- Side Nav -->
+
+
+
+
+
+            <div class="mainContainer" id="skip-to-items" tabindex="-1">
+
+                <div class="sticky-title" data-sticky>
+
+                    <a class="back-button " style=" z-index: 5" href="../menu.html" data-back-button aria-label="Go Back to Previous Page"></a>
+                    <h1 class="page-title" id="title">Hauptgericht</h1>
+                </div>
+
+                <div style="width: 100%">
+                    <div id="menu1" class="row menu-row">
+
+
+                        <div id='end'></divid>
+
+                            <div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Nudeln mit Chicken"><a class="tile" style="background-image: url(../pic/外卖/nudeln.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/nudeln.jpg" discribe="weißer gedünsteter reis"><span class="title">Nudeln mit Chicken</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Reis mit Chicken"><a class="tile" style="background-image: url(../pic/外卖/reis.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/reis.jpg" discribe="weißer gedünsteter reis"><span class="title">Reis mit Chicken</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="8 Kostbarkeiten"><a class="tile" style="background-image: url(../pic/外卖/8Kostbarkeiten.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/8Kostbarkeiten.jpg" discribe="weißer gedünsteter reis"><span class="title">8 Kostbarkeiten</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Gongbao Chicken"><a class="tile" style="background-image: url(../pic/外卖/gongbaochicken.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/gongbaochicken.jpg" discribe="weißer gedünsteter reis"><span class="title">Gongbao Chicken</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="HongKong Chicken"><a class="tile" style="background-image: url(../pic/外卖/hongkongchicken.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/hongkongchicken.jpg" discribe="weißer gedünsteter reis"><span class="title">HongKong Chicken</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Shanghai Rindfleisch"><a class="tile" style="background-image: url(../pic/外卖/rindfleisch.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/rindfleisch.jpg" discribe="weißer gedünsteter reis"><span class="title">Shanghai Rindfleisch</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Chicken in rotem Curry"><a class="tile" style="background-image: url(../pic/外卖/rotemchicken.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/rotemchicken.jpg" discribe="weißer gedünsteter reis"><span class="title">Chicken in rotem Curry</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Schrimps"><a class="tile" style="background-image: url(../pic/外卖/schrimps.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/schrimps.jpg" discribe="weißer gedünsteter reis"><span class="title">Schrimps</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="Beijing Schweinefleisch"><a class="tile" style="background-image: url(../pic/外卖/schweinefleisch.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/schweinefleisch.jpg" discribe="weißer gedünsteter reis"><span class="title">Beijing Schweinefleisch</span><div class="menu-tags"></div></div></a></div><div class=" c4-l menu-block c6-m c12-s" onclick="showfloat(event)" aira-label="ToFu"><a class="tile" style="background-image: url(../pic/外卖/tofu.jpg)"><div class="tile-wrapper" data-bg-cover="../pic/外卖/tofu.jpg" discribe="weißer gedünsteter reis"><span class="title">ToFu</span><div class="menu-tags"></div></div></a></div><div id="end">
+
+                            </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+    <div class="botmenu-container">
+        <div class="botmenu">
+            <div class="columnn">
+                <div class="titlee">
+                    <span>Produkte</span><button class="hide-button" id="a1" onclick="show1()">+</button>
+                    <script>
+                        function  show1() {
+                            var div = document.getElementById("memu-1");
+                            console.log(div);
+                            if(div.style.display==""){
+                                div.style.display="none";
+                            }
+                            var d=document.getElementById("a1");
+                            if(div.style.display=="none"){
+                                div.style.display="block";
+
+                                d.innerText="-";
+                            }
+                            else if(div.style.display=="block"){
+                                div.style.display="none";
+
+                                d.innerText="+";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="list-context" id="memu-1">
+                    <div class="list-item"><a   href="entrees.html?q=hauptgericht" >Hauptgericht</a></div>
+                    <div class="list-item"><a  href="entrees.html?q=beilag">Belage</a></div>
+                    <div class="list-item"><a  href="entrees.html?q=sauce">Berühmte Sauce</a></div>
+                    <div class="list-item"><a  href="entrees.html?q=vorspeisen">Vorspeise</a></div>
+                    <div class="list-item"><a  href="entrees.html?q=getranke">Getränke</a></div>
+                </div>
+            </div>
+            <div class="columnn">
+                <div class="titlee">
+                    <span>Wie zu Asia Pear!</span><button id="a2" class="hide-button" onclick="show2()">+</button>
+                    <script>
+                        function  show2() {
+                            var div = document.getElementById("memu-2");
+                            console.log(div);
+                            if(div.style.display==""){
+                                div.style.display="none";
+                            }
+
+
+                            var d=document.getElementById("a2");
+
+                            if(div.style.display=="none"){
+                                div.style.display="block";
+
+                                d.innerText="-";
+                            }
+                            else if(div.style.display=="block"){
+                                div.style.display="none";
+
+                                d.innerText="+";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="list-context" id="memu-2">
+                    <div class="list-item"><a  href="../how-to-order.html">Asia Pear favoriten</a></div>
+                    <div class="list-item"><a  href="../how-to-order.html">Baue deine eigenes</a></div>
+                    <div class="list-item"><a  href="../userlocation.html">Restaurants</a></div>
+                    <div class="list-item"><a  href="../lieferService.html">Lieferservice</a></div>
+
+                </div>
+            </div>
+            <div class="columnn">
+                <div class="titlee">
+                    <span>Karriere</span><button id="a4" class="hide-button"  onclick="show4()">+</button>
+                    <script>
+                        function  show4() {
+                            var div = document.getElementById("memu-4");
+                            console.log(div);
+                            if(div.style.display==""){
+                                div.style.display="none";
+                            }
+
+                            var d=document.getElementById("a4");
+
+                            if(div.style.display=="none"){
+                                div.style.display="block";
+
+                                d.innerText="-";
+                            }
+                            else if(div.style.display=="block"){
+                                div.style.display="none";
+
+                                d.innerText="+";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="list-context" id="memu-4">
+                    <div class="list-item"><a  >Asia Pearl als arbeitgeber</a></div>
+                    <div class="list-item"><a  >Jobs als Restaurant Mitarbeiter</a></div>
+                    <div class="list-item"><a  >Jobs im Restaurant Management</a></div>
+                    <div class="list-item"><a  >Mini-jobs</a></div>
+                    <div class="list-item"><a  >Ausbildung</a></div>
+
+                </div>
+            </div>
+            <div class="columnn">
+                <div class="titlee">
+                    <span>Über uns</span><button id="a3" class="hide-button" onclick="show3()">+</button>
+                    <script>
+                        function  show3() {
+                            var div = document.getElementById("memu-3");
+
+                            console.log(div);
+                            if(div.style.display==""){
+                                div.style.display="none";
+                            }
+                            var d=document.getElementById("a3");
+
+                            if(div.style.display=="none"){
+                                div.style.display="block";
+
+                                d.innerText="-";
+                            }
+                            else if(div.style.display=="block"){
+                                div.style.display="none";
+
+                                d.innerText="+";
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="list-context" id="memu-3">
+                    <div class="list-item"><a  >Facebook</a></div>
+                    <div class="list-item"><a  >Twitter</a></div>
+                    <div class="list-item"><a  >Youtube</a></div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <a href="#skip-to-top" class="skip-navigation-button">Skip Footer and Return to Top</a>
+    <!-- Site Footer -->
+    <!-- Site Footer -->
+    <footer class="footer">
+        <footer class="footer">
+            <div class="footer-low">
+                <div class="container">
+                    <div style="display: flex;width: 100%;justify-content: center">
+                        <nav class="footer-sub-menu">
+                            <a class="" href="">Contakt</a>
+                            <a class="" href="">Inpresaum</a>
+                            <a class="" href="">Datenschutz</a>
+                            <div class="marker">
+                                <span >Asia Pearl Gmbh</span>
+                            </div>
+                        </nav>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+</div>
+
+
+
+
+<script src="../../cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
+
+</body>
+
+
+</html>

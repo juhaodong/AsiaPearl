@@ -518,6 +518,46 @@
 <body>
 
 
+
+
+
+
+<div id="float" class="floatlayers" style="display: none" onclick="this.style.display='none';">
+    <div class="alertt">
+        In dieser Bereich<br>
+        noch keine Lieferservice<br>
+        Bitte Verstehen
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Google Tag Manager (noscript) -->
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MC337DS"
@@ -908,10 +948,11 @@
                             }
                         </script>
                         <a href="menu.html" class="peking-poc-section">
+
                             <ul>
                                 <li>
                                     <picture>
-                                        <source srcset="../../yxj/haibaos.jpg" media="(max-width: 767px)">
+                                        <source srcset="../../菜谱图片JPEG小容量图/liefer2.jpg" media="(max-width: 767px)">
                                         <img src="../../yxj/haibao.jpg" alt="favorites"
                                              style="width:100%;height:auto!important;%!important;">
                                     </picture>
@@ -933,44 +974,255 @@
                             });
                         </script>
 
+
+
+
                     </div>
                 </div>
-                <div class="row sub-feature-tiles-wrapper">
 
-                    <div class="sub-features-tiles-container">
+            </div>
 
 
-                        <a class="sub-feature-tile orange "
-                           href="menu.html"
-                           data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/swag-shop.jpg"
-                           style="background-image: url(../../yxj/unnamed1.png);background-size: contain;background-repeat:no-repeat ">
-                            <div class="tile-wrapper">
-                                <div class="tile-container">
+            <main>
+                        <div class="content-container">
+
+
+
+
+                            <div style="display: flex;justify-content: center">
+                                <div id="locationField"
+                                     style="position: absolute;top:300px; padding:7px; background: whitesmoke; display: flex;justify-content: center;">
+                                    <form onsubmit="return checkAddress()" style="display: flex;justify-content: center">
+                                        <input id="address" style="width: 300px;margin: 0" placeholder="Postleizahlen Z.B 44532"
+                                               type="number"/>
+                                        <input type="submit" value="Weiter" class="Submit" style="font-weight: normal;
+   line-height: 38px;
+   letter-spacing: -.025em;
+   color: white;
+   text-transform: none;
+   padding: 0 15px;
+   margin: 0;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
+   border-bottom-right-radius: 6px;
+   border-bottom-left-radius: 6px;
+   background: red;
+   border: 1px solid #b2b2b2;
+   box-shadow: 0 2px 0 0 rgba(0,0,0,.1);
+   display: block;
+   height: 38px;
+   width: 80px;">
+                                    </form>
+                                    <script>
+
+                                        let allPlz = ['445320', '445340', '445360', '445360', '445630', '458810', '458830', '458840', '458860', '458880', '458890', '458790',
+                                            '443290', '443280', '443390', '443590', '443570', '441740', '441450', '443690', '593680', '593790', '591920', '591740', '457310', '591740'];
+                                        let lunen = ['445320', '445340', '445360', '445360', '445630'];
+                                        let more=['443290', '443280', '443390', '443590', '443570', '441740', '441450', '443690', '593680', '593790', '591920', '591740', '457310', '591740']
+
+                                        function checkAddress() {
+                                            var a = document.getElementById("address").value;
+                                            console.log(a);
+                                            if (a == "") {
+                                                alert("bitte eingabe ihren PLZ");
+                                                return;
+                                            }
+
+                                            if (allPlz.indexOf(a) < 0) {
+                                                alert("      Wir machen zuzeit kein \n" +
+                                                    "        Lieferservice,nur selbst abholen\n" +
+                                                    "        mit 10% Rabatt \n" +
+                                                    "        Bitte Verstehen");
+                                                return false;
+                                            } else {
+                                                if (lunen.indexOf(a) < 0) {
+                                                    if(more.indexOf(a)<0){
+                                                        f = "gelsenkirchen"
+                                                    }
+                                                    f="more";
+                                                } else {
+                                                    f = "lunen";
+                                                }
+                                                console.log("run");
+                                                window.location.href = "https://asia-pearl-express.com/order/order/mp/nd/sites/desktop/Dashboard/menu.html?location=" + f;
+                                                return false;
+                                            }
+
+
+                                        }
+                                    </script>
 
                                 </div>
+
+                                <div style="display: none;" id="controls">
+                                    <select id="country">
+                                        <option value="de" selected>Germany</option>
+
+                                    </select>
+                                </div>
+
+
                             </div>
-                        </a>
-                        <a class="sub-feature-tile red "
-                           href="lieferService.html"
-                           data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/Careers.jpg"
-                           style="background-image: url(../../菜谱图片JPEG小容量图/外卖车广告图.jpg);background-color: #3C2424; background-size: contain;background-repeat: no-repeat">
-                            <div class="tile-wrapper">
-                                <div class="tile-container">
+                            <div>
+                                <img src=""/>
+                            </div>
+                            <div style="display: flex;border-top: 1px solid black;padding: 30px">
+                                <div style="width: 600px; text-align: center"><h1 style="font-size: 3rem">IN DIESEN STÄDTEN LIEFERN
+                                    WIR</h1>
+                                    <br>
+                                    <p style="text-align: left">IN MOMENTAN LIFERSERVICE VERFÜGBAR IN</p>
+                                    <style>
+                                        #cw h2{
+                                            cursor: pointer;
+                                        }
+                                    </style>
+                                    <div id="cw">
+                                        <h2 style="font-size:1.5rem;text-align: left">·LÜNEN</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·BRAMBAUER</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·OBERADEN</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·BORK</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·BERGKAMEN</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·KAMEN</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·WERNE</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·SELM</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·WALTROP</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·DO-BRECHTEN</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·DO-DERNE</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·DO-LANSTROP</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·DO-EVING</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·DO-SCHARNHORST</h2>
+                                        <h2 style="font-size:1.5rem;text-align: left">·Gelsenkirchen</h2>
+
+                                    </div>
+                                    <script>
+                                        let i = document.getElementById("cw");
+                                        let ww=i.children.length;
+                                        console.log(ww);
+                                        for(let b=0; b< ww;b++){
+                                            let x=i.children[b];
+                                            if(x.tagName!=="H2"){
+                                                console.log("not");
+
+                                                continue;
+                                            }
+
+                                            i.removeChild(x);
+                                            b--;
+                                            let t=document.createElement("div");
+                                            x.onclick=function (e) {
+                                                let w=e.target.parentElement.children[1].style.display===""?"none":"";
+                                                console.log(w);
+                                                e.target.parentElement.children[1].style.display=w;
+                                            };
+
+                                            let d=document.createElement("div");
+                                            d.style.display="none";
+                                            d.innerHTML="  <p style=\"color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left\">\n" +
+                                                "                                lieferszeit:<br>Montag - Sonntag<br> 12:00 - 15:00 Uhr <br> 17:30 - 22:00 Uhr\n" +
+                                                "                            </p>\n" +
+                                                "                            <p style=\"color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left\">\n" +
+                                                "                                Feiertag Lieferzeiten<br>\n" +
+                                                "                                Am Neujahr, Ostern<br>\n" +
+                                                "                                Muttertag nur abholen.<br>\n" +
+                                                "                                Am 24.25.26 & 31.<br>\n" +
+                                                "                                Dezenber nur abholen.\n" +
+                                                "                            </p>";
+                                            t.appendChild(x);
+                                            t.appendChild(d);
+
+
+                                            i.appendChild(t)
+
+                                        }
+                                    </script>
+
+
+                                    <div style="    display: flex;width: 150%;  z-index: 3;">
+
+                                        <div style="width:100%;margin-left: 40px">
+                                            <h2 style="font-size:1.5rem;text-align: left">·Gelsenkirchen</h2>
+                                            <p style="color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left">   -Mitte<br>
+                                                -Alt Stadt<br>
+                                                -Ückendorf<br>
+                                                -Schalke.Schalke Nord<br>
+                                                -Bismarck<br>
+                                                -Heßler.Feldmark.<br>
+                                                -Rott-hausen<br>
+                                                -Bulmke.Hüllen</p>
+
+                                            <p style="color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left">
+                                                lieferszeit:<br>Montag - Sonntag<br> 17:30 - 22:00 Uhr
+                                            </p>
+                                            <p style="color:grey; margin-top: -10px;margin-bottom: 30px;text-align: left">
+                                                Feiertag Lieferzeiten<br>
+                                                Am Neujahr, Ostern<br>
+                                                Muttertag nur abholen.<br>
+                                                Am 24.25.26 & 31.<br>
+                                                Dezenber nur abholen.
+                                            </p>
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
 
                                 </div>
-                            </div>
-                        </a>
-                        <a class="sub-feature-tile black "
-                           href="lieferService.html"
-                           data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/Catering.jpg"
-                           style="background-image: url(../../yxj/unnamed.jpg);;background-size: contain;background-repeat:no-repeat ">
-                            <div class="tile-wrapper">
-                                <div class="tile-container">
+                                <div><img src="../../菜谱图片JPEG小容量图/DeutschlandMaps.jpg" height="650" width="500"/></div>
 
-                                </div>
+
                             </div>
-                        </a>
-                    </div>
+
+
+
+
+
+
+
+                            <!--
+                            <div class="row sub-feature-tiles-wrapper">
+
+                                <div class="sub-features-tiles-container">
+
+
+                                    <a class="sub-feature-tile orange "
+                                       href="menu.html"
+                                       data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/swag-shop.jpg"
+                                       style="background-image: url(../../yxj/unnamed1.png);background-size: contain;background-repeat:no-repeat ">
+                                        <div class="tile-wrapper">
+                                            <div class="tile-container">
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="sub-feature-tile red "
+                                       href="lieferService.html"
+                                       data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/Careers.jpg"
+                                       style="background-image: url(../../菜谱图片JPEG小容量图/外卖车广告图.jpg);background-color: #3C2424; background-size: contain;background-repeat: no-repeat">
+                                        <div class="tile-wrapper">
+                                            <div class="tile-container">
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="sub-feature-tile black "
+                                       href="lieferService.html"
+                                       data-bg-cover="https://s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/Catering.jpg"
+                                       style="background-image: url(../../yxj/unnamed.jpg);;background-size: contain;background-repeat:no-repeat ">
+                                        <div class="tile-wrapper">
+                                            <div class="tile-container">
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                -->
+
+
+
                     <div class="botmenu-container">
                         <div class="botmenu">
                             <div class="columnn">
