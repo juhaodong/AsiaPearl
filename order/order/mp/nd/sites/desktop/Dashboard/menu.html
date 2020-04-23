@@ -157,47 +157,107 @@
     <script src="common.js"></script>
     <script src="order.js"></script>
     <script src="js/dist/jquery.validate.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta content='width=device-width, height=device-height' name='viewport'>
+
+
+
 </head>
 <body>
-<div class="floatlayers" id="float" onclick="toggleFloat()" style="display: none">
-    <div class="Container" style="background: whitesmoke;margin-top:200px ;display: block">
-        <div class="titleText" id="addonTitle">Vorspeisen</div>
-        <div class="addonContainer" id="addon">
-            <div class="item"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div style="width: 100%">
+        <div class="floatlayers" id="float" onclick="toggleFloat()" style="display: none">
+            <div style="width: 640px; display: contents">
+                <div class="Container" style="background: whitesmoke;margin-top:250px ;display: block">
+                    <div class="titleText" id="addonTitle">Vorspeisen</div>
+                    <div class="addonContainer" id="addon">
+                        <div class="item"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-</div>
-<header id="panda-header" style="width: 100%">
 
     <div class="contain" style="width: 100%">
 
-        <nav id="progress" onclick="">
-            <ul>
+      <nav class="main-nav" data-mobile-active="false" aria-label="Main Navigation">
+            <a class="logo" href="http://www.asia-pearl-express.de/html/root/lieferService.html" aria-label="Panda Express Logo, Click to go home."></a>
+
+
+
+
+
+          <nav id="progress" onclick="">
+              <ul>
+
+
                 <!-- Each of these Progress <li>'s can have a class of "on" (for
                      current step, which is colored orange) or "done" (for completed
                      steps, displaying a check mark in place of step number. -->
+
+
                 <li data-order-step="1">
                     <!-- a href="/mp/nd/sites/desktop/StoreLocator/" -->
-                    <span class="icon">
-              <span>1</span>
-            </span>
+                    <span class="icon"><span>1</span></span>
                     <span class="title">StandOrt</span>
                     <!-- /a -->
                 </li>
+
+
                 <li data-order-step="2">
                     <!-- a href="/mp/nd/sites/desktop/OrderWizard/" -->
-                    <span class="icon">
-              <span>2</span>
-            </span>
+                    <span class="icon"><span>2</span></span>
                     <span class="title">Zeit</span>
                     <!-- /a -->
                 </li>
+
+
+
                 <li data-order-step="3">
                     <!-- a href="/mp/patrons/ordering" -->
-                    <span class="icon">
-              <span>3</span>
-            </span>
+                    <span class="icon"><span>3</span></span>
                     <span class="title">Bestellen</span>
                     <!-- /a -->
                 </li>
@@ -205,50 +265,57 @@
                     <!-- a href="/mp/patrons/cart" -->
                     <span class="icon">
               <span>4</span>
-            </span>
+              </span>
                     <span class="title">Zahlung</span>
                     <!-- /a -->
                 </li>
-            </ul>
-        </nav>
-
-        <h1 id="logo">
-
-            <img alt="Panda Express Logo" height="141" src="../../../../../local/siteFiles/images/header-logo.png"
-                 usemap="#home-logo" width="230">
-            <map name="home-logo">
-                <area alt="Logo" coords="60.7,60.2,60.5"
-                      href="http://www.asia-pearl-express.de/html/root/lieferService.html" shape="circle">
-            </map>
-        </h1>
+                </ul>
+          </nav>
 
 
-        <nav id="auxNav">
-            <ul>
-                <li class="home">
-                    <a href="menu.html">
+
+
+              <nav id="auxNav">
+                 <ul>
+                    <li class="home">
+                       <a href="menu.html">
                         <span>&bull;</span>
                         Home
-                    </a>
-                </li>
-                <li class="signIn" id="cartShow" onclick="showCartOnMobile()" style="">
+                       </a>
+                    </li>
+                    <li class="signIn" id="cartShow" onclick="showCartOnMobile()" style="">
 
-                    <span>&bull;</span>
-                    Sign In
+                        <span>&bull;</span>
+                        Sign In
 
-                </li>
-                <li class="account" style="">
-                    <a href="http://asia-pearl-express.de/UserpageVue/index.html?action=#bestellung">
+                    </li>
+                   <li class="account" style="">
+                        <a href="http://asia-pearl-express.de/UserpageVue/index.html?action=#bestellung">
                         <span>&bull;</span>
                         Account
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-
+                        </a>
+                   </li>
+                 </ul>
+              </nav>
+         </div>
+      </nav>
     </div>
 </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <main id="main" style="">
 
@@ -262,39 +329,136 @@
                 loggen Sie sich bitten ein, um auf Ihre gespeicherten Informationen zuzugreifen</span>
             </div>
         </div>
-        <div class="container2 " style="padding:30px">
+        <div class="container2 " style="margin-left: 10px; padding-left: 10px">
             <div class="long " style="display:flex;justify-content: space-between">
-                <div class="long" style="padding-top: 150px">
-                    <h3 class="page-title characters">Alle Produkte</h3>
-                    <div class="jhMenuItemContainer" style="background: url('../yxj/Menu1-1Haupt-1Beilage1.jpg');">
+                <div class="long">
+                    <h3 style="width: 100%;text-align: center" class="page-title characters">Neu Produkte</h3>
+                    <div class="jhMenuItemContainer" style="height: 300px;background-position-x: -20px; background-size: 680px; background-image: url('../yxj/haibao2.jpg');">
                         <div class="jhItemDetail red">
                             <div class="upperLine">
                                 <span data-name="NeueTakeaway" style="display: inline-block">Die neuen Produkte</span>
                             </div>
                             <div class="lowerLine">
-                                ab sofort in kühlregal
+                                Frische Authentische Produkte
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-                <!--========================================这是隐藏的套餐选项==========================================================
-                <h3 class="page-title characters">Unsere Favoriten</h3>
-                <div class="jhMenuItemContainer" style="background: url('../yxj/menu/unsere-favoriten.jpg');">
+            </div>
+            <div class="container2">
+                <div class="jhMenuItemContainer short"
+                     style="background-image: url('../yxj/salat/salat-haibao.jpg'); background-size: 211px; margin-right: 15px;">
                     <div class="jhItemDetail red">
-                        <div class="upperLine">
-                            <span data-name="Unsere Favoriten" style="display: inline-block">Unsere Favoriten</span>
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="salat" style="display: inline-block">Salat</span>
                         </div>
                         <div class="lowerLine">
-                            Wählen Sie aus einigen unserer Lieblings-kombinationen.
+
                         </div>
                     </div>
                 </div>
-                ========================================这是隐藏的套餐选项==========================================================-->
+                <div class="jhMenuItemContainer short"
+                     style="background-image: url('../yxj/sushi/sushi (1).jpg'); background-size: 203px; margin-right: 15px;">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="sushi" style="display: inline-block">SuShi</span>
+                        </div>
+                        <div class="lowerLine">
 
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jhMenuItemContainer short"
+                     style="background-image: url('../yxj/cola.fanta.sprit1.jpg');background-size: 199px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="Getränke" style="display: inline-block">Getränke</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="container2">
+                <div class="jhMenuItemContainer short"
+                     style="background: url('../yxj/menu/ala-karte.jpg'); background-size: 250px; margin-right: 15px;">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="aaaaa" style="display: inline-block">aaaaa</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="jhMenuItemContainer short"
+                     style="background: url('../yxj/sushi/sushi (1).jpg'); background-size: 250px; margin-right: 15px;">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="bbbbb" style="display: inline-block">bbbbb</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jhMenuItemContainer short"
+                     style="background-image: url('../yxj/cola.fanta.sprit1.jpg');background-size: 250px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="ccccc" style="display: inline-block">ccccc</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container2">
+                <div class="jhMenuItemContainer short"
+                     style="background: url('../yxj/menu/ala-karte.jpg'); background-size: 250px; margin-right: 15px;">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="ddddd" style="display: inline-block">ddddd</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="jhMenuItemContainer short"
+                     style="background: url('../yxj/sushi/sushi (1).jpg'); background-size: 250px; margin-right: 15px;">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="eeeee" style="display: inline-block">eeeee</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jhMenuItemContainer short"
+                     style="background-image: url('../yxj/cola.fanta.sprit1.jpg');background-size: 250px">
+                    <div class="jhItemDetail red">
+                        <div class="upperLine" style="height: 40px">
+                            <span data-name="fffff" style="display: inline-block">fffff</span>
+                        </div>
+                        <div class="lowerLine">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
 
 
             <!--========================================这是隐藏的套餐选项==========================================================
@@ -429,61 +593,21 @@
                     </div>
                 </div>
             </div>
-            <h3 class="page-title characters">Mehr hinzufügen</h3>
-            <div class="container2">
-                <div class="jhMenuItemContainer short" style="background: url('../yxj/Menu1-1Haupt-1Beilage1.jpg');">
-                    <div class="jhItemDetail red">
-                        <div class="upperLine">
-                            <span data-name="NeueTakeaway" style="display: inline-block">Die neuen Takeaways</span>
-                        </div>
-                        <div class="lowerLine">
-                            ab sofort in kühlregal
-                        </div>
-                    </div>
-                </div>
-                <div class="jhMenuItemContainer short"
-                     style="background: url('../yxj/menu/Vorspeisen.jpg'); background-size: 250px">
-                    <div class="jhItemDetail red">
-                        <div class="upperLine" style="height: 40px">
-                            <span data-name="Vorspeisen" style="display: inline-block">Vorspeisen</span>
-                        </div>
-                        <div class="lowerLine">
+            -->
 
-                        </div>
-                    </div>
-                </div>
-                <div class="jhMenuItemContainer short"
-                     style="background: url('../yxj/menu/ala-karte.jpg'); background-size: 250px">
-                    <div class="jhItemDetail red">
-                        <div class="upperLine" style="height: 40px">
-                            <span data-name="A LA Carte" style="display: inline-block">A LA Carte</span>
-                        </div>
-                        <div class="lowerLine">
 
-                        </div>
-                    </div>
-                </div>
-                <div class="jhMenuItemContainer short"
-                     style="background: url('../yxj/menu/getranke.jpg');background-size: 250px">
-                    <div class="jhItemDetail red">
-                        <div class="upperLine" style="height: 40px">
-                            <span data-name="Getränke" style="display: inline-block">Getränke</span>
-                        </div>
-                        <div class="lowerLine">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ========================================这是隐藏的套餐选项==========================================================-->
+
+            <!--========================================这是隐藏的套餐选项==========================================================-->
         </div>
 
     </div>
     <div class="Container" id="addressPage" style="">
-        <h1 style="width: 100%">Auf geht's!</h1>
+      <div style="margin-left: 10px;margin-right: 10px; padding-left: 10px; padding-right: 10px ">
+        <h1 style="width: 100%; margin-bottom: 16px; font-size: 38px">Auf geht's!</h1>
         <h2>Wohin soll Deine Bestellung geliefert werden?</h2>
         <div class="formC">
-            <form name="address">
+            <form name="address" style="width: 640px">
                 <div class="line">
                     <div class="halfline">
                         <label>Straße <input class="TextArea" id="autocomplete" name="StrasseName" required
@@ -514,14 +638,12 @@
                     <div class="quadline">
                         <label>Postleitzahl <input class="TextArea" name="Plz" required type="text"/></label>
                     </div>
-
-
-                </div>
-                <div class="line">
                     <div class="halfline">
                         <label>Stadt <input class="TextArea" name="Stadt" required type="text"/></label>
                     </div>
+
                 </div>
+
                 <div class="line">
                     <h2>Wie können wir Dich erreichen?</h2>
 
@@ -581,12 +703,16 @@
             </form>
 
         </div>
+        </div>
 
     </div>
     <div class="Container" id="LoginPage" style="display: none">
 
         <div class="formContainer">
-            <h2 class="page-title characters">Mein Account</h2>
+
+
+
+            <h2 class="page-title characters" style="margin-left: 70px">Mein Account</h2>
             <div class="choice-container" id="choiceBlock">
                 <div class="block">
                     <div class="  demo-card-wide mdl-card mdl-shadow--2dp" onclick="popLogin()">
@@ -594,7 +720,7 @@
                              style="background:url('../yxj/jpg/log.png')  center 30px no-repeat">
                             <h2 class="mdl-card__title-text">Anmeldung</h2>
                         </div>
-                        <div class="mdl-card__supporting-text">
+                        <div class="mdl-card__supporting-text" style="font-size: 1.3rem;">
                             Anmeldung Sie mit Email und passwort
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
@@ -615,7 +741,7 @@
                              style="background:url('../yxj/jpg/rej.png')  center 30px no-repeat">
                             <h2 class="mdl-card__title-text">Account Erstellung</h2>
                         </div>
-                        <div class="mdl-card__supporting-text">
+                        <div class="mdl-card__supporting-text" style="font-size: 1.3rem;">
                             Erstellen Sie inhr Account so einfach.
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
@@ -629,8 +755,6 @@
                             </button>
                         </div>
                     </div>
-
-
                 </div>
                 <div class="block">
                     <div class="  demo-card-wide mdl-card mdl-shadow--2dp" onclick="gast()">
@@ -638,7 +762,7 @@
                              style="background:url('../yxj/jpg/gast.png')  center 30px no-repeat">
                             <h2 class="mdl-card__title-text">Als Gast</h2>
                         </div>
-                        <div class="mdl-card__supporting-text">
+                        <div class="mdl-card__supporting-text" style="font-size: 1.3rem;" >
                             Bestellen Sie als Gast so schnell wie möglich<br>
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
@@ -654,9 +778,10 @@
                     </div>
                 </div>
             </div>
-            <div id="log" style="display: none">
+            <div id="log" style="display: none; width: auto; height: 1300px; margin-top: 50px; margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px; ">
+                <div style="margin-left: 190px;">
                 <h3 class="" style="width: 300px;text-align: center">Einlogen</h3>
-                <div>
+                <div style="margin-bottom: 30px">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
                             onclick="popMainmenu(event)">
                         <i class="material-icons">arrow_back</i>
@@ -665,20 +790,22 @@
                 <form name="userInfo" onsubmit="return sendUserinfo()">
 
                     <div id="login">
-                        <label>E-mail<input class="TextArea" name="Username" placeholder="E-mail" required
+                        <label style="padding-left: 10px">E-mail<input class="TextArea" name="Username" placeholder="E-mail" required
                                             type="text"/></label>
-                        <label>Password<input class="TextArea" name="Password" placeholder="Passwort" required
+                        <label style="padding-left: 10px">Password<input class="TextArea" name="Password" placeholder="Passwort" required
                                               type="password"/></label>
 
                         <input class="TextArea" name="sub" type="submit" value="Anmelden"/>
 
                     </div>
                 </form>
-                <a style="color:dimgrey;font-size: 10px">passwort vorgessen?</a>
+                <a style="color:dimgrey;font-size: 10px; margin-left: 10px">passwort vorgessen?</a>
+                </div>
             </div>
-            <div class="form1" id="regs" style="display: none">
+            <div class="form1" id="regs" style="display: none; width: auto; height: 1600px; margin-top: 50px; margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px; ">
+                <div style="margin-left: 190px;">
                 <h3 class="" style="width: 300px;text-align: center">Account Erstellen</h3>
-                <div>
+                <div style="margin-bottom: 30px">
                     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
                             onclick="popMainmenu(event)">
                         <i class="material-icons">arrow_back</i>
@@ -687,21 +814,18 @@
                 <form name="reg">
 
                     <div id="regss">
-                        <label>Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
+                        <label style="padding-left: 10px">Email<input class="TextArea" name="Emailaddress" placeholder="Email-address"
                                            type="text"/></label>
 
-                        <label>Password</label><input class="TextArea" name="Password" placeholder="Passwort"
+                        <label style="padding-left: 10px">Password</label><input class="TextArea" name="Password" placeholder="Passwort"
                                                       required="required" type="text"/>
-                        <label>Password Bestätigungs</label>
+                        <label style="padding-left: 10px">Password Bestätigungs</label>
                         <input class="TextArea" name="Password2" placeholder="Passwort Bestätigungs"
                                required="required" type="text"/>
                         <input class="TextArea" onclick="return sendUserAddress(event)" type="submit" value="Anmeldung">
-
-
                     </div>
-
-
                 </form>
+                </div>
             </div>
         </div>
 
@@ -715,30 +839,28 @@
                         id="username"></span></span>
             </div>
         </div>
-        <h4 class="characters titleSmall titleRed">Bestelloptionen</h4>
-        <div class="left whiteBackgroud" style="height:420px;width: 91%;">
+
+        <div class="left whiteBackgroud">
+
+            <h4 class="characters titleSmall titleRed">Bestelloptionen</h4>
+
             <div class="js-ready-time">
-                <h4 class="titleRed" style="font-size: x-large;">Wählen Sie Bestellzeit aus</h4>
 
                 <div class="important-instruction">
+                    <h4 class="titleRed" style="font-size: 21px;">Wählen Sie Lieferzeit aus</h4>
                     <div>
                         Die end gültige Bestell dauer kann sich je nach Auftragsumfang
                     </div>
-
-                    <div style="display: flex;justify-content: space-evenly">
+                    <div style="display: flex;margin-top: 15px;margin-bottom: 26px;text-align: center;font-size: 15px;line-height: 21px;letter-spacing: -0.06em;text-transform: lowercase;justify-content: space-evenly">
                         <div class="titleRed">
                             Bestellens Zeit:
                         </div>
                         <div class="titleRed">
-                            Wir machen zuzeit kein Lieferservice <br>Resteurand bis Ende April zu <br> Bitte Verstehen
+                            Wir machen zuzeit kein Lieferservice <br>in anfang Mai wieder<br> Bitte Verstehen
                         </div>
-
                     </div>
-
                 </div>
                 <script>
-
-
                 </script>
                 <form class="panda-form left" name="time" target="jack">
                     <div class="form-row">
@@ -750,7 +872,6 @@
                         <span class="js-asap-time-display" id="timeNow"></span>
                         <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe>
                     </div>
-
                     <div class="form-row">
                         <label for="sdu" style="display: inline">
                             <input id="sdu" name="ready_time_type" onclick="change()" type="radio"
@@ -759,27 +880,22 @@
                         </label>
                         <script>
                             function change() {
-
                                 $('.sdu').css("display", document.getElementById("sbwm").checked ? "none" : "inline");
-
                             }
-
                             jQuery(function () {
                                 $('input.timepicker').timepicker({
                                     timeFormat: 'HH:mm',
                                     interval: 60,
-                                    minTime: '12',
+                                    minTime: '11:30am',
                                     maxTime: '8:00pm',
                                     defaultTime: '12',
-                                    startTime: '12:00',
+                                    startTime: '11:30',
                                     dynamic: false,
                                     dropdown: true,
                                     scrollbar: true
 
 
                                 });
-
-
                                 $("#datepicker").datepicker(
                                     {
                                         dateFormat: 'dd.mm.yy'
@@ -788,12 +904,9 @@
                                 );
                             });
                         </script>
-
                         <input aria-labelledby="ready_time_type" class="sdu" id="datepicker" name="date" placeholder="DD/MM/YYYY" required
                                size="15" style="display: none; width: auto"
                                type="text">
-
-
                         <!--
                         <button type="button" class="js-show-datepicker btn">
                           <i class="icon-calendar">C</i>
@@ -802,8 +915,6 @@
                         <input aria-labelledby="ready_time_type" autocomplete="off" class="timepicker sdu" name="times" placeholder="HH:MM"
                                required size="15"
                                style="display: none; width: auto" type="text">
-
-
                         <!--
                         <button type="button" class="js-show-timepicker btn">
                           <i class="icon-time">T</i>
@@ -812,45 +923,42 @@
                     </div>
                     <div class="form-row">
                         <input class="TextArea"
-                               onclick="return sendOrdertime()" style="color:white;width:200px;background:#ee9730; margin-top: 10px; margin-left: 35px; margin-bottom: 300px" type="submit"
-                               value="Bestellung Starten"/>
+                               onclick="return sendOrdertime()" style="color:white;width:200px;background:#ee9730; margin-top: 10px; margin-left: 35px; margin-bottom: 500px" type="submit"
+                        value="Bestellung Starten"/>
                     </div>
-
                 </form>
             </div>
-
-
         </div>
-
     </div>
-    <div class="Container" id="dankePage">
-        <div style="text-align:center;width: 100%">
-            <h1>Vielen Danke</h1>
-        </div>
-        <div>
-            Danke für ihre bestellung, ihre Essen, werden 30 Minuten bis 1 Stunde bei Ihnen. .
+    <div class="Container" id="dankePage" style="display: block">
+        <div style=" height: 1500px; width: 665px; padding-top: 150px; padding-left: 30px; padding-right: 30px; margin-left: 30px; margin-right: 30px;padding-bottom: 0px">
+            <div style="text-align:center; width: 640px; padding-right: 50px;">
+                <h1>Vielen Danke </h1>
+            </div>
+            <div style="text-align:center; width: 640px; padding-right: 50px;">
+                <h4>Danke für ihre bestellung,</h4>
+                <h4>Wir werden Ihre Bestellung-</h4>
+                <h4>so schnell wie moglich an Sie liefern. </h4>
+            </div>
+
         </div>
     </div>
 
 
     <div class="Container" id="menuPage">
-        <div class="whiteBase" style="">
-            <div class="headLine">
-                <h2 class="page-title smallFont" id="menuName">Menü 1</h2>
-                <h2 class="page-title smallFont" id="menuPrice">9.90€</h2>
+        <div style="width: 740px; padding-right: 10px ">
+            <div class="whiteBase" style="">
+                <div class="headLine">
+                    <h2 class="page-title smallFont" id="menuName">Menü 1</h2>
+                    <h2 class="page-title smallFont" id="menuPrice">9.90€</h2>
+                </div>
+                <div class="descriptions " id="menuDescribe">
+                    Wälen Sie 1 Beilage & 1 HauptGericht.
+                </div>
+                <div class="step-Info" id="steps">
+                </div>
             </div>
-            <div class="descriptions " id="menuDescribe">
-                Wälen Sie 1 Beilage & 1 HauptGericht.
-            </div>
-
-            <div class="step-Info" id="steps">
-
-
-            </div>
-
-
         </div>
-
         <div class="headLine">
             <h3 class="smallFont page-title " id="currentType" style="padding: 0;">Beilage</h3>
             <div class="descriptions" id="currentInfo" style="padding-top: 9.5px;display: none">
@@ -861,70 +969,66 @@
             <div class="rowContent">
                 Add ons
             </div>
-
         </div>
-        <div class="jhG" id="resultPage" style="display: none;justify-content: space-between">
-
-            <div>
-                <img height="120px" src="../yxj/Menu.jpg" width="120px"/>
+        <div style="width: 740px; height: auto; padding-left: 20px; margin-bottom: 1000px">
+            <div class="jhG" id="resultPage" style="display: none;justify-content: space-between ; width: 580px">
+                <div>
+                    <img height="80px" src="../yxj/Menu.jpg" width="60px"/>
+                </div>
+                <div style="width: 520px;display: flex;justify-content: flex-end">
+                    <div class="colu">
+                        <div style="height: 40px; width: 100%;display: flex;">
+                            <button class="roundButton" onclick="showAddOn('sauce')" style=""></button>
+                            <span class="descriptions padd left titleRed" onclick="showAddOn('sauce')" style="cursor: pointer; height: 60px">ZUSETZT SAUCE</span></div>
+                        <div class="listRow" id="addonSauce" style="padding: 0px">
+                            <div class="listContext"></div>
+                        </div>
+                    </div>
+                    <div class="colu">
+                        <div style="height:40px;width: 100%;display: flex;">
+                            <button class="roundButton" onclick="showAddOn('vorspeisen')" style=""></button>
+                            <span
+                                    class="descriptions padd left titleRed" onclick="showAddOn('vorspeisen')"
+                                    style="cursor: pointer; height: 60px">ZUSETZT VORSPEISE
+                            </span>
+                        </div>
+                        <div class="listRow" id="addonVorspeise" style="padding: 0px">
+                            <div class="listContext">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="colu">
+                        <div style="height:40px;width: 100%;display: flex;">
+                            <button class="roundButton" onclick="showAddOn('getranke')" style=""></button>
+                            <span
+                                    class="descriptions padd left titleRed" onclick="showAddOn('getranke')"
+                                    style="cursor: pointer; height: 60px">ZUSETZT GETÄNKE
+                            </span>
+                        </div>
+                        <div class="listRow" id="addOngetranke">
+                            <div class="listContext"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width:580px;border-top:1px solid lightgrey;display: flex;justify-content: flex-end">
+                    <div class="menuBar flex">
+                        <div class="menuBarTitle">Gast Name</div>
+                        <input class="menuBarItem" id="gastName" name="gastName" placeholder="Gast Name" type="text" value=""/>
+                    </div>
+                    <div class="menuBar flex">
+                        <div class="menuBarTitle">Menge</div>
+                        <input class="menuBarItem" id="menge" name="menge" placeholder="menge" type="text" value="1"/>
+                    </div>
+                </div>
             </div>
-            <div style="width: 600px;display: flex;justify-content: flex-end">
-                <div class="colu">
-                    <div style="height: 40px; width: 100%;display: flex;">
-                        <button class="roundButton" onclick="showAddOn('sauce')" style=""></button>
-                        <span class="descriptions padd left titleRed" onclick="showAddOn('sauce')"
-                              style="cursor: pointer">ZUSETZT SAUCE</span></div>
-                    <div class="listRow" id="addonSauce" style="padding: 0px">
-                        <div class="listContext"></div>
-                    </div>
-                </div>
-                <div class="colu">
-                    <div style="height:40px;width: 100%;display: flex;">
-                        <button class="roundButton" onclick="showAddOn('vorspeisen')" style=""></button>
-                        <span
-                                class="descriptions padd left titleRed" onclick="showAddOn('vorspeisen')"
-                                style="cursor: pointer">ZUSETZT VORSPEISE</span>
-                    </div>
-                    <div class="listRow" id="addonVorspeise" style="padding: 0px">
-                        <div class="listContext"></div>
-                    </div>
-                </div>
-                <div class="colu">
-                    <div style="height:40px;width: 100%;display: flex;">
-                        <button class="roundButton" onclick="showAddOn('getranke')" style=""></button>
-                        <span
-                                class="descriptions padd left titleRed" onclick="showAddOn('getranke')"
-                                style="cursor: pointer">ZUSETZT GETÄNKE</span>
-                    </div>
-                    <div class="listRow" id="addOngetranke">
-                        <div class="listContext"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="" style="width:100%;border-top:1px solid lightgrey;display: flex;justify-content: flex-end">
-                <div class="menuBar flex">
-
-                    <div class="menuBarTitle">Gast Name</div>
-                    <input class="menuBarItem" id="gastName" name="gastName" placeholder="Gast Name" type="text"
-                           value=""/>
-                </div>
-                <div class="menuBar flex">
-                    <div class="menuBarTitle">Menge</div>
-                    <input class="menuBarItem" id="menge" name="menge" placeholder="menge" type="text" value="1"/>
-
-                </div>
-            </div>
+            <div class="container2" id="menuItems" style="justify-content: space-between"></div>
         </div>
-        <div class="container2" id="menuItems" style="padding-left: 40px;justify-content: space-between">
-
-
-        </div>
-
-
     </div>
 
+
+
     <div class="Container" id="BestellungDetailPage">
-        <div style="width: 100%">
+        <div style="width: 640px; margin-top: 50px; padding-left: 80px; padding-right: 80px; margin-left: 80px; margin-right: 80px;">
             <h2>Überprüfen sie bitte</h2>
             <table class="wagen" id="wagens" style="border-bottom: 1px solid gray">
                 <tr>
@@ -932,8 +1036,6 @@
                     <th>Menge</th>
                     <th>Preis</th>
                 </tr>
-
-
             </table>
             <div style="padding: 30px">
                 <div>
@@ -956,7 +1058,7 @@
     </div>
 
     <div class="OrderDetailContainer" id="cart" style="display: none">
-        <h2 class="page-title characters smallFont" style="text-align: center;width: 120%">Bestelldetails</h2>
+        <h2 class="page-title characters smallFont" style="text-align: center;width: 100%; margin-left: 33px; margin-bottom: 20px">Warenkorb</h2>
         <table class="wagen" id="wagen" style="display: none;border-bottom: 1px solid gray">
             <tr>
                 <th>Artikel</th>
@@ -972,8 +1074,7 @@
 
         <div id="ends" style="display: flex">
             <button class="btn waves-effect waves-light" disabled="disabled" id="kasseButton" onclick="kasse()"
-                    style="width: 200px">Zu
-                Kasse
+                    style="width: 200px; color: white; background: #1574f5">Bestellen
             </button>
         </div>
         <div class="wagen" style="font-size: small;line-height:13px;padding: 5px;text-align: center;color: #bebeb7;">
@@ -985,7 +1086,7 @@
 
         <div class="wagen" style="font-size: small;line-height:13px;padding: 5px;text-align: center;color: #b40000;">
            <span id="hint">
-               Wir machen zuzeit kin Lieferservice, <br> nur Selbst abholen mit 10% Rabatt <br> Bittte Verstehen
+               Wir machen zuzeit kin Lieferservice, <br> in anfang Mei wieder <br> Bittte Verstehen
            </span>
         </div>
 
@@ -996,7 +1097,7 @@
     </script>
 </main>
 <footer id="panda-footer" style="">
-    <div id="controls" style="width: 100%;background: whitesmoke; display:none;justify-content: center;">
+    <div id="controls" style="width: 100%;background: ; display:none;justify-content: center;">
         <div class="buttonContainer">
 
             <button class="controlButton" id="buttonF" onclick="window.location.href='menu.html'">Vorne Anfang</button>

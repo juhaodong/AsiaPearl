@@ -7979,7 +7979,7 @@ var widgetsMenu = $.widget( "ui.menu", {
 			.find( this.options.items )
 
 				// Only match on items, not dividers or other content (#10571)
-				.filter( ".ui-menu-item" )
+				.filter(  ".ui-menu-item" )
 					.filter( function() {
 						return regex.test(
 							$.trim( $( this ).children( ".ui-menu-item-wrapper" ).text() ) );

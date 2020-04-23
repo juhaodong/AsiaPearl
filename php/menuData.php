@@ -39,8 +39,7 @@ $response = array(
         array(
             'name' => 'hongkong chicken',
             'img' => '/主餐/甜子鸡.png',
-            'discibe' => 'unsere unterschrift gericht.
-süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
+            'discibe' => 'unsere unterschrift gericht.süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
             'type' => 'hauptgericht',
         ),
         array(
@@ -80,8 +79,7 @@ süße und würzige knuspriges huhn beißt unsere  pikanten-sauce.',
         array(
             'name' => 'hähnchen streifen',
             'img' => '/主餐/炸鸡条.png',
-            'discibe' => 'knusprige-goldene hähnchen streifen.
-mit eine ausgewählt soße.',
+            'discibe' => 'knusprige-goldene hähnchen streifen.mit eine ausgewählt soße.',
             'type' => 'hauptgericht',
         ),
 
@@ -112,7 +110,7 @@ mit eine ausgewählt soße.',
 
 
         array(
-            'name' => 'Peking Suppe',
+            'name' => 'PekingSuppe',
             'img' => '/前餐/pekingsuppe.png',
             'discibe' => 'crisp-golden butterflied garnelen.',
             'type' => 'vorspeisen',
@@ -455,8 +453,7 @@ mit eine ausgewählt soße.',
         array(
             'name' => 'hähnchen streifen',
             'img' => '/主餐/炸鸡条.png',
-            'discibe' => 'knusprige-goldene hähnchen streifen.
-mit eine ausgewählt soße.',
+            'discibe' => 'knusprige-goldene hähnchen streifen.mit eine ausgewählt soße.',
             'subtype' => 'h',
             'type' => 'carte',
             'sprice' => 3.5,
@@ -665,89 +662,155 @@ mit eine ausgewählt soße.',
             'bprice' => 2.5,
         ),
         array(
-            'name' => '8 kostbarkeiten',
-            'img' => '/外卖/8kostbarkeiten.jpg',
+            'name' => 'Peking Suppe',
+            'img' => '/外卖/Pekingsuppe.png',
+            'discibe' => 'Peking Suppe: Sauer-scharf Suppe ist eine traditionelle Chinesische Suppe mit Gemüsebrühe,Eiern,und Hühnerfleisch',
+            'type' => 'takeaway',
+            'sprice' => 2.50
+        ),
+        array(
+            'name' => 'Gebr.Nudeln mit Hühnerfleisch',
+            'img' => '/外卖/nudeln.png',
+            'discibe' => 'Gebratene Nudeln 
+                          mit Hühnerfleisch,Sojasauce,
+                          Eier,Zwiebeln,und Kohl.',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'Gebr.Reis mit Hühnerfleisch',
+            'img' => '/外卖/reis.png',
+            'discibe' => 'Gebratene Reis mit Hühnerfleisch,Sojasauce,Eier,Erbsen,Karotten.',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => '8 Kostbarkeiten
+                         mit Reis',
+            'img' => '/外卖/8kostbarkeiten.png',
+            'discibe' => 'Acht Kostbarkeiten: Versch.Fleisch mit Gemüse und Knoblauch (scharf) / mit gedämpfter reis.',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'GongBao Chicken
+                          mit Reis',
+            'img' => '/外卖/gongbaochicken.png',
+            'discibe' => 'GongBao Chicken: Ein Sichuan-inspiriertes Gericht mit Huhn, und Gemüse,verfeinert / mit gedämpfter reis.',
+            'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+        array(
+            'name' => 'HongKong Chicken
+                          mit Reis',
+            'img' => '/外卖/hongkongchicken.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'gongbaochicken',
-            'img' => '/外卖/gongbaochicken.jpg',
+            'name' => 'ShangHai Rindfleisch
+                            mit Reis',
+            'img' => '/外卖/rindfleisch.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'hongkongchicken',
-            'img' => '/外卖/hongkongchicken.jpg',
+            'name' => 'Rotes Curry Chicken
+                           mit Reis',
+            'img' => '/外卖/rotemchicken.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'hongkongchickenreis',
-            'img' => '/外卖/hongkongchickenreis.jpg',
+            'name' => 'schrimps
+                       mit Reis',
+            'img' => '/外卖/schrimps.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'hühnerfleisch',
-            'img' => '/外卖/hühnerfleisch.jpg',
+            'name' => 'Beijing Schweinefleisch
+                             mit Reis',
+            'img' => '/外卖/schweinefleisch.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'nudeln',
-            'img' => '/外卖/nudeln.jpg',
+            'name' => 'tofu
+                     mit Reis',
+            'img' => '/外卖/tofu.png',
             'discibe' => 'weißer gedünsteter reis',
             'type' => 'takeaway',
+            'sprice' => 6.90
+        ),
+
+
+
+
+
+        array(
+            'name' => 'salat mit Reis',
+            'img' => '/salat/Gemischter-Salat.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'salat',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'reis',
-            'img' => '/外卖/reis.jpg',
+            'name' => 'sushi mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'sushi',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'rindfleisch',
-            'img' => '/外卖/rindfleisch.jpg',
+            'name' => 'aaaaa mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'aaaaa',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'rotemchicken',
-            'img' => '/外卖/rotemchicken.jpg',
+            'name' => 'bbbbb mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'bbbbb',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'schrimps',
-            'img' => '/外卖/schrimps.jpg',
+            'name' => 'ccccc mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'ccccc',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'schweinefleisch',
-            'img' => '/外卖/schweinefleisch.jpg',
+            'name' => 'ddddd mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'ddddd',
             'sprice' => 6.90
         ),
         array(
-            'name' => 'tofu',
-            'img' => '/外卖/tofu.jpg',
+            'name' => 'eeeee mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
             'discibe' => 'weißer gedünsteter reis',
-            'type' => 'takeaway',
+            'type' => 'eeeee',
             'sprice' => 6.90
         ),
+        array(
+            'name' => 'fffff mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'fffff',
+            'sprice' => 6.90
+        ),
+
+
 
 
     ),

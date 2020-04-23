@@ -1,7 +1,7 @@
 
 
 let allPlz=['44532','44534','44536','44536','44563',
-'44329','44328','44339','44359','44357','44174','44145','44369','59368','59379','59192','59174','45731','59174'];
+    '44329','44328','44339','44359','44357','44174','44145','44369','59368','59379','59192','59174','45731','59174'];
 let lunen=['44532','44534','44536','44536','44563','44329','44328','44339','44359','44357','44174','44145',
     '44369','59368','59379','59192','59174','45731','59174'];
 
@@ -165,7 +165,7 @@ function getMenuData() {
         type: "POST",
         url: "../../../../../../../php/menuData.php",
         success: function(msg) {
-          //  console.log(msg);
+            //  console.log(msg);
             menuData=msg.data;
 
         }
@@ -259,8 +259,8 @@ function sendUserAddress(event) {
     console.log(reg);
     if(!(reg.Password.value===reg.Password2.value)){
 
-            alert('two Password not same');
-            return false;
+        alert('two Password not same');
+        return false;
 
     }
     jQuery.ajax({
@@ -299,7 +299,7 @@ function getUserAddress() {
             UserID:UserID},
         success: function(msg) {
 
-           // console.log(msg);
+            // console.log(msg);
             msg=JSON.parse(msg);
 
 
@@ -348,7 +348,7 @@ function newRow(title,word) {
 }//账单中生成新行
 function detialShowItems(target) {
     var wagen=document.getElementById(target);
-  //  console.log("this is detialshowitem");
+    //  console.log("this is detialshowitem");
     //console.log(orderInfo);
     $("#wagen").empty();
     wagen.innerHTML=" <tr>\n" +
@@ -418,7 +418,7 @@ function detialShowItems(target) {
             wagen.appendChild(row1);
         }
     }
-   // console.log(priceAll);
+    // console.log(priceAll);
     return priceAll;
 }
 
@@ -517,7 +517,7 @@ function showItems(wagens) {
         end.removeAttribute("disabled");
         r.style.display="none";
         var x=document.getElementById("hint");
-       // console.log(x);
+        // console.log(x);
         x.innerHTML="Du hast den Mindesbestellwert von "+miniumPrice+",00€ " +
             "erreicht und kannst jetzt fortfahren."
     }else{
@@ -589,10 +589,6 @@ function processMenu(menuType) {
             return;
         }
         case "A LA Carte":{
-            singleOrderMenuProcess(menuType);
-            return;
-        }
-        case "chide":{
             singleOrderMenuProcess(menuType);
             return;
         }
@@ -869,8 +865,8 @@ function nextStep() {
         var a=document.createElement("button");
         a.setAttribute("class","Jh-button");
         a.setAttribute("onclick","bestellung()");
-        a.setAttribute("style","margin-top:30px;margin-left:330px;background:#ef9832;width:288px;color:white;")
-        a.innerText="In den Warenkorb";
+        a.setAttribute("style","margin-top:30px;position:absolute;right:250px;background:#ef9832;width:160px;color:white;")
+        a.innerText="Bestellen";
         document.getElementById("menuItems").appendChild(a);
         document.getElementById("resultPage").style.display="flex";
 
@@ -1013,7 +1009,7 @@ function bestellung() {
     tmp.info=orderMenu;
     tmp.price=menuPrice;
     orderInfo.orders.push(tmp);
-   // console.log(orderInfo);
+    // console.log(orderInfo);
     endOrder();
 }//Order流程结束
 
@@ -1093,15 +1089,15 @@ function initial() {
     });
     let d = new Date().getHours();
     let m= new Date().getMinutes();
-   // console.log(d);
+    // console.log(d);
 
     $('input.timepicker').timepicker({
         timeFormat: 'HH:mm',
         interval:30,
-        minTime: '12:00',
-        maxTime: '20:00',
+        minTime: '11:30',
+        maxTime: '22:00',
         defaultTime: '11',
-        startTime: '12:00',
+        startTime: '11:30',
         dynamic: true,
         dropdown: true,
         scrollbar: false
@@ -1146,7 +1142,7 @@ function startOrder(event) {
         OrderType=event.target.children[0].children[0].children[0].dataset.name;
         //OrderType=event.target.children[0].children[0].children[0].innerText;
         BeginOrder(OrderType);
-    //    console.log(OrderType);
+        //    console.log(OrderType);
     }else{
         document.getElementById('controls').style.display='flex';
         startLogin();
@@ -1222,21 +1218,21 @@ function sendOrdertime() {
     let target=new Date();
     target.setHours(hour);
     target.setMinutes(min);
-   // console.log(ordertime);
+    // console.log(ordertime);
     restaurantName=getQueryString("location")?getQueryString("location"):"lunen";
     console.log(restaurantName);
     if(restaurantName=="lunen"){
         let judge=new Date();
-        judge.setHours(8);
+        judge.setHours(11);
         judge.setMinutes(30);
         let end=new Date();
-        end.setHours(17);
-        end.setMinutes(0);
+        end.setHours(14);
+        end.setMinutes(30);
         let night=new Date();
         night.setHours(17);
         night.setMinutes(0);
         let close=new Date();
-        close.setHours(23);
+        close.setHours(21);
         close.setMinutes(30);
         if((target>=judge&&target<=end)||(target>=night&&target<=close)){
             console.log("good");
@@ -1290,12 +1286,7 @@ function sendOrdertime() {
         }
     }
 
-    alert("Bitte Wählens Sie Eine Gültig Zeit\n" +
-        "          lieferszeit:\n" +
-        "         Montag-Sontag\n" +
-        "       12:00 Uhr - 14:00 Uhr\n" +
-        "       17:30 Uhr - 20:00 Uhr");
-
+    alert("Bitte Wählens Sie Eine Gültig Zeit");
     return false;
 
 }//完成时间页并返回首页
@@ -1315,10 +1306,10 @@ function kasse() {
         showItems("wagen");
         return;
     }
-   // console.log(price);
+    // console.log(price);
     showPages("BestellungDetailPage");
     var kasse= document.getElementById("kasseButton");
-    kasse.innerText="Bestellen";
+    kasse.innerText="Bestätigen";
     kasse.setAttribute("onclick","zukasse()");
 
 
@@ -1338,7 +1329,7 @@ function zukasse() {
     var kasse= document.getElementById("kasseButton")
     kasse.nodeName="input";
 
-    kasse.innerText="Zahlungspflichtig bestellen";
+    kasse.innerText="Bestätigen";
     kasse.setAttribute("type","submit");
     kasse.setAttribute("onclick","sendOrder()");
     kasse.setAttribute("form","address");
@@ -1381,7 +1372,7 @@ function sendOrder(){
     //console.log("run");
     let form=document.address;
     let children=form.getElementsByTagName("input");
-   // console.log(orderInfo);
+    // console.log(orderInfo);
     if(orderInfo.time.type=="SBWM"){
         orderInfo.time.time=timeNow();
     }else{
@@ -1390,13 +1381,13 @@ function sendOrder(){
 
     for(let i in children ){
         let value=children[i];
-       if(value.required){
-           if(!value.value){
-               alert("Bitte füllen Sie die vollständigen Formular aus");
-               document.getElementById("kasseButton").disabled=false;
-               return;
-           }
-       }
+        if(value.required){
+            if(!value.value){
+                alert("Bitte füllen Sie die vollständigen Formular aus");
+                document.getElementById("kasseButton").disabled=false;
+                return;
+            }
+        }
     }
     orderInfo.payment=document.getElementById("payment").value;
     orderInfo.orders=orderInfo.orders.sort(compare("name"));

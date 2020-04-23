@@ -1690,7 +1690,9 @@ ul.subnav ul li a:active {
 footer {
   text-align: center;
   height: 50px;
+  /**
   border-bottom: 20px solid #eeeee6;
+  **/
   position: fixed;
   left: 0;
   bottom: 0;

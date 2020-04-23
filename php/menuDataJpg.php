@@ -647,65 +647,138 @@ mit eine ausgewählt soße.',
             'bprice' => 2.5,
         ),
         array(
+            'name' => 'Peking Suppe',
+            'img' => '/外卖/Pekingsuppe.png',
+            'discibe' => 'Peking Suppe: Sauer Scharf Suppe ist eine traditionelle Chinesische Suppe, mit Gemüsebrühe Eiern und Hühnerfleisch',
+            'type' => 'takeaway',
+        ),
+        array(
             'name' => 'Nudeln mit Chicken',
-            'img' => '/外卖/nudeln.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'img' => '/外卖/nudeln.png',
+            'discibe' => 'Gebratene Nudeln mit Hühnerfleisch, Sojasauce Eier Zwiebeln und Kohl',
             'type' => 'takeaway',
         ),
         array(
             'name' => 'Reis mit Chicken',
-            'img' => '/外卖/reis.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'img' => '/外卖/reis.png',
+            'discibe' => 'Gebratene Reis mit Hühnerfleisch, Sojasauce Eier Erbsen Karotten',
             'type' => 'takeaway',
         ),
         array(
-            'name' => '8 Kostbarkeiten',
-            'img' => '/外卖/8Kostbarkeiten.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => '8 Kostbarkeiten
+                          mit Reis',
+            'img' => '/外卖/8Kostbarkeiten.png',
+            'discibe' => 'Acht Kostbarkeiten: Verschidene Fleisch mit Gemüse und Knoblauch (scharf). mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'Gongbao Chicken',
-            'img' => '/外卖/gongbaochicken.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'GongBao Chicken
+                          mit Reis',
+            'img' => '/外卖/gongbaochicken.png',
+            'discibe' => 'GongBao Chicken: Ein Sichuan-inspiriertes Gericht mit Huhn und Gemüse verfeinert. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'HongKong Chicken',
-            'img' => '/外卖/hongkongchicken.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'HongKong Chicken
+                          mit Reis',
+            'img' => '/外卖/hongkongchicken.png',
+            'discibe' => 'HongKong Chicken: Unsere Unterschrift Gericht. Süße und würzige Knuspriges Huhn, beißt unsere Pikanten-Sauce. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'Shanghai Rindfleisch',
-            'img' => '/外卖/rindfleisch.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'ShangHai Rindfleisch
+                            mit Reis',
+            'img' => '/外卖/rindfleisch.png',
+            'discibe' => 'ShangHai Rindfleisch: Rindfleisch mit Zwiebeln und Champignons Paprika in einer würzigen Sauce. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'Chicken in rotem Curry',
-            'img' => '/外卖/rotemchicken.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'Rotes Curry Chicken
+                           mit Reis',
+            'img' => '/外卖/rotemchicken.png',
+            'discibe' => 'Rotes Curry Chicken: Gebr. Hühnerfleisch mit scharf rotem Curry und Kokosnussmilch, Gemüse. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'Schrimps',
-            'img' => '/外卖/schrimps.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'Schrimps
+                       mit Reis',
+            'img' => '/外卖/schrimps.png',
+            'discibe' => 'Schrimps mit Lange Bohne Zwiebeln Paprika und in einer würzige Sauce. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'Beijing Schweinefleisch',
-            'img' => '/外卖/schweinefleisch.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'Beijing Schweinefleisch
+                             mit Reis',
+            'img' => '/外卖/schweinefleisch.png',
+            'discibe' => 'BeiJing Schweinefleisch: Knusprige mariniertes Schweinfleisch. mit Zwiebeln Paprika und einem berühmte Sauce. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
         array(
-            'name' => 'ToFu',
-            'img' => '/外卖/tofu.jpg',
-            'discibe' => 'weißer gedünsteter reis',
+            'name' => 'ToFu
+                     mit Reis',
+            'img' => '/外卖/tofu.png',
+            'discibe' => 'Tofu gebraten mit Gemüse in Austernsoße. mit gedämpfter Reis',
             'type' => 'takeaway',
         ),
+
+
+
+
+
+
+
+
+        array(
+            'name' => 'salat mit Reis',
+            'img' => '/salat/Gemischter-Salat.jpg',
+            'discibe' => 'Tofu gebraten mit Gemüse in Austernsoße. mit gedämpfter Reis',
+            'type' => 'salat',
+        ),
+        array(
+            'name' => 'sushi mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'sushi',
+        ),
+        array(
+            'name' => 'aaaaa mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'aaaaa',
+        ),
+        array(
+            'name' => 'bbbbb mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'bbbbb',
+        ),
+        array(
+            'name' => 'ccccc mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'ccccc',
+        ),
+        array(
+            'name' => 'ddddd mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'ddddd',
+        ),
+        array(
+            'name' => 'eeeee mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'eeeee',
+        ),
+        array(
+            'name' => 'fffff mit Reis',
+            'img' => '/sushi/sushi-rolls.jpg',
+            'discibe' => 'weißer gedünsteter reis',
+            'type' => 'fffff',
+        ),
+
+
+
 
 
 

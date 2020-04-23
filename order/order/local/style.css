@@ -69,7 +69,10 @@ h4 {
   position: absolute;
   top: 15px;
   left: 150px;
+  width: 410px;
+  /*=============================================================================================================================
   width: auto;
+  */
 }
 #progress ul {
   width: 100%;
@@ -254,11 +257,11 @@ h4 {
 /* ==== Main Content ==== */
 .page-title {
   color: #d02c30;
-  font: bold 48px "Montserrat Panda", sans-serif;
+  font: bold 38px "Montserrat Panda", sans-serif;
   text-transform: uppercase;
   background: #f8f7ee;
   text-align: center;
-  margin: 20px 0 10px;
+  margin: 20px 0 0px;
   padding: 0 60px;
 }
 .page-title.characters {
@@ -488,7 +491,7 @@ h4 {
   padding: 10px 8px;
   background-image: none;
   background-repeat: repeat-y;
-  width: 800px;
+  width: 600px;
   margin: auto;
   text-align: center;
   display: block;
@@ -1690,10 +1693,12 @@ ul.subnav ul li a:active {
 footer {
   text-align: center;
   height: 50px;
+  /**
   border-bottom: 20px solid #eeeee6;
+  **/
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 90px;
   width: 100%;
   z-index: 98;
 }
@@ -3263,7 +3268,7 @@ nav#menu-nav a.prev {
   margin: 20px auto;
 }
 .important-instruction {
-  margin: 10px 20px 15px;
+  margin: 0px 20px 15px;
   color: #779e91;
 }
 .final-price-disclaimer {
@@ -4002,7 +4007,7 @@ div.mapoverlay div.bottominfo .non-favorite {
   display: none;
 }
 .panda-form div.form-row {
-  margin: 15px 0 10px;
+  margin: 5px 0 0px;
 }
 .service-type-block p {
   text-align: center;
@@ -5482,7 +5487,7 @@ footer div.copy {
   color: #fff;
   font-family: "Montserrat Panda", sans-serif;
   font-size: 16px;
-  line-height: 26px;
+  line-height: center;
   text-align: center;
   text-indent: 0;
   text-transform: uppercase;
@@ -5574,8 +5579,8 @@ footer nav a:visited {
 }
 #progress ul li .icon {
   font-family: "Montserrat", sans-serif;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 25px;
+  line-height: center;
 }
 ul#findresults li address {
   color: #595959;

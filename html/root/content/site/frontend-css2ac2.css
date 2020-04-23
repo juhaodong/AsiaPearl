@@ -1355,7 +1355,7 @@ body, input, button {
 }
 
 h1, h2, h3, h4, h5, h6, hgroup, ul, ol, dd, p, figure, pre, table, fieldset, hr, .legal, .caption {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     margin-top: 0
 }
 
@@ -8979,7 +8979,7 @@ nav.footer-sub-menu a + a:before {
         font-size: 3rem;
         display: block;
         float: none;
-        padding: 10px 0 15px
+        padding: 0px 0 px
     }
 
     .page-description {

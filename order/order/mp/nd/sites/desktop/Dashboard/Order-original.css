@@ -1,6 +1,5 @@
 .formContainer{
-    width: auto;
-    display: block;
+
 }
 .form-row{
     width: 100%;
@@ -26,24 +25,17 @@ h2{
 .container2{
 
     display: flex;
-    width: 650px;
+    width: 100%;
     flex-wrap: wrap;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    padding-left:0px;
-    padding-right: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-bottom: 46px;
 
 }
 .Container{
-    width: 100%;
-    max-width: 640px;
+    width: 72%;
+    max-width: 840px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 60px;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin-top: 40px;
     justify-content: left;
 }
 
@@ -57,8 +49,6 @@ h2{
     justify-content: left;
 }
 header{
-
-
     height: 120px;
 }
 main{
@@ -74,15 +64,12 @@ main{
     height: 30px;
     padding: 5px;
     border-radius:5px;
-    margin-top: 20px;
-    background: #ef9832;
 
 }
 form{
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-    width: 504px;
 }
 .reg{
     display: flex;
@@ -91,21 +78,17 @@ form{
 }
 .left{
     text-align: left;
-    width: 640px;
-    height: 401px;
 }
 .choice-container{
-    width: 694px;
-    height: 1300px;
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-top: 50px;
+    width: 100%;
+
+
     display: flex;
     justify-content: space-between;
 }
 .block{
     padding: 10px;
-    width: auto;
+    width: 32%;
 
     margin-top: 40px;
     background: #eeeee6;
@@ -139,8 +122,8 @@ h3{
     flex-wrap: wrap;
 }
 .js-ready-time{
-    width: 100%;
-    padding-left: 10px;
+    width: 95%;
+    padding: 30px;
 }
 
 .base-container{
@@ -232,7 +215,6 @@ h3{
     height: 40px;
     margin-top: 50px;
     margin-bottom: 50px;
-
 }
 
 .partyButton{
@@ -249,23 +231,19 @@ h3{
     background: red;
     display: flex;
     align-items: flex-end;
-    border: 0px solid silver;
+    border: 1px solid silver;
     height: 175px;
 }
 .long{
-    width: 670px;
-    padding-top: 0px;
-    padding-right: 10px;
-    margin-right: 10px;
-
+    width: 650px;
 }
 .halfLong{
     width: 49%;
 }
 .short{
-    margin-top: 0px;
-    margin-right: 0px;
-    width: 203px;
+    margin-top: 8px;
+    margin-right: 10px;
+    width: 210px;
 
 }
 .jhItemDetail{
@@ -298,11 +276,10 @@ body{
 }
 .OrderDetailContainer{
     height: 100%;
-    margin-top: 156px;
-    margin-right: 40px;
+    margin-top: 150px;
     background: white;
     min-height: 400px;
-    width: auto;
+    width: 300px;
 }
 .smallFont{
     text-transform: none;
@@ -324,12 +301,12 @@ body{
 }
 .headLine{
 
-    width: 580px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 .step-Info{
-    width: 580px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -344,19 +321,18 @@ span.title{
     background: transparent;
 }
 .smallImg{
-    width: 360px;
-    height: 290px;
+    height: 150px;
 }
 .itemDescribe{
     width: 100%;
     text-align: center;
 }
 .makeUpImg{
-    height: 300px;
+    height: 90px;
 }
 .leftImg{
-    margin-left: -170px;
-    width: 300px;
+    margin-left: -65px;
+    width: 125px;
 
 }
 .leftImg img{
@@ -364,8 +340,8 @@ span.title{
 
 }
 .itemImg{
-    height: 310px;
-    margin-bottom: -51px;
+    height: 150px;
+    margin-bottom: -18px;
 }
 .hiddenx{
     display: none;
@@ -373,8 +349,8 @@ span.title{
 .rightImg{
 
     overflow: hidden;
-    margin-left: -300px;
-    width: 150px;
+    margin-left: -128px;
+    width: 70px;
 
 
 }
@@ -387,8 +363,8 @@ span.title{
 }
 .step{
 
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -398,8 +374,8 @@ span.title{
     background-repeat: no-repeat;
 }
 .itemContainer{
-    margin-right: 0px;
-    width: 310px;
+    margin-right: 50px;
+    width: 180px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -407,15 +383,14 @@ span.title{
 .littleButtons{
     color: #fff;
     border-radius: 10px;
-    height: 26px;
-    font-size: small;
-    width: 56px;
+    height: 22px;
+    font-size: x-small;
+    width: 46px;
+
     background: #d39e00;
 }
 .wagen{
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 260px;
+    margin-left: 24px;
 }
 .wagen th{
     padding: 5px;
@@ -430,7 +405,7 @@ span.title{
     overflow: hidden;
     padding-left: 5px;
     font-size: small;
-   font-style: normal;
+    font-style: normal;
 }
 .wagen tr{
     width: 270px;
@@ -440,9 +415,8 @@ span.title{
 .jhG{
     border-top: 1px solid lightgrey;
     border-bottom: 1px solid lightgrey;
-    width: 100%;
-    padding-top: 20px;
-    padding: 0px;
+    width: 900px;
+    padding: 20px;
     flex-wrap: wrap;
     display: flex;
 }
@@ -477,41 +451,34 @@ span.title{
     padding: 5px;
     display: flex;
     justify-content: space-between;
-    max-width: 640px;
+    max-width: 1240px;
     width: 100%;
 
     background: transparent;
 }
 .controlButton{
     font-size: small;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 15px;
-    height: 26px;
+    padding:3px;
+    border-radius: 5px;
+
+    height: 35px;
     color:white;
     background: #ef9832;
 }
 .whiteBase{
     background: white;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 644px;
+    padding:40px;
+    width: 100%;
 }
 .floatlayers{
     align-items: normal;
-    margin-top: -260px;
-    height: auto;
+    margin-top: -200px;
+    height: 150%;
     display: flex;
-
 }
 .addonContainer{
-    padding: 0px;
-    width: 710px;
-    padding-left: 50px;
-    background: black;
-    padding-bottom: 770px;
+    padding: 40px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -519,28 +486,27 @@ h2{
     color:#605f56 !important;
 }
 .topWord{
-    width: 640px;
-    margin-bottom: 3 0px;
+    width: 100%;
+    margin-bottom: 40px;
     text-align: center;
 }
 .welcomeblock{
     margin-top: -10px;
 }
 .descriptions{
-    margin-top: -6px;
+    margin-top: -10px;
     text-align: center;
     font-size: smaller;
     line-height: 15px;
 }
 h3{
-    font-size: x-large !important;
+    font-size: xx-large !important;
 }
 .titleSmall{
     color: red;
     text-align: center;
     font: bold 48px "Montserrat Panda", sans-serif;
-    width: 100%;
-    padding: 10px;
+    width: 80%;
     font-size: xx-large;
 }
 .titleRed{
@@ -548,9 +514,6 @@ h3{
 }
 .whiteBackgroud{
     background: white;
-    padding-top: 10px;
-    padding-left: 20px;
-    margin-left: 20px;
 }
 span.title{
 
@@ -611,7 +574,7 @@ span.title{
 }
 @media only screen and (max-width:48em){
     main{
-       margin: 10px;
+        margin-left: 10px;
 
         flex-wrap: wrap;
     }
@@ -619,18 +582,10 @@ span.title{
         display: block;
     }
     #cart{
-        /*  ===================客户下单详情目录页控制层的浮动=====
         display: none;
         position: fixed;
-        */
         top: 0;
         right: 0;
-        margin-top: 50px;
-        margin-left: 305px;
-        margin-right: 0px;
-        padding-left: 212px;
-        padding-right: 215px;
-        margin-bottom: 500px;
     }
     .Container{
 
@@ -648,55 +603,14 @@ span.title{
     overflow:hidden;
 }
 .demo-card-wide.mdl-card {
-    height: 360px;
-    width: 191px;
+    height: 300px;
+    width: 100%;
 }
 .demo-card-wide > .mdl-card__title {
     color: #fff;
-    height: 219px;
+    height: 176px;
 
 }
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

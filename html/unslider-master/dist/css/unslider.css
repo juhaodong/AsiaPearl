@@ -44,7 +44,7 @@
 
 }
 .titleText{
-    height: 58px;background: indianred;padding: 12px;color: snow;font-size: 20px;
+    height: 58px;background: indianred;padding: 12px;color: snow;font-size: 20px; width: 710px;
 
 }
 .items{
@@ -265,7 +265,7 @@ width: 40px;background: #2b542c;
     position: fixed;
     width: 360px;
     height: 360px;
-    background: #2e6da4;
+    background: #eeeee6;
     flex-wrap: wrap;
     opacity: 1;
 }
@@ -348,7 +348,7 @@ width: 40px;background: #2b542c;
         position: fixed;
         width: 600px;
         height: 360px;
-        background: #2e6da4;
+        background: #eeeee6;
         flex-wrap: wrap;
         opacity: 1;
     }
@@ -420,7 +420,7 @@ width: 40px;background: #2b542c;
     width: 100%;
     background: black;
     opacity: 0.9;
-    position: fixed;
+    position: absolute;
     justify-content: center;
     align-items: center;
 }
