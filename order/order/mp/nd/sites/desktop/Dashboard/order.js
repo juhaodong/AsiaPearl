@@ -115,8 +115,8 @@ function showAddOns(father) {
             var c=tmp.name+" | "+tmp.amount+" | "+tmp.price;
             switch (tmp.type){
                 case "vorspeisen":father="addonVorspeise";break;
-                case "getranke":father="addOngetranke";break;
                 case "sauce":father="addonSauce";break;
+                case "getranke":father="addOngetranke";break;
 
             }
 
@@ -225,10 +225,47 @@ function singleOrderMenuProcess(type) {
             menuPrice=0;
             SinglemenuProcess('menu');
         }break;
-        case "NeueTakeaway":{
-            SinglemenuProcess('takeaway');
 
+        case "NeueTakeaway":{
+            menuPrice=0;
+            SinglemenuProcess('takeaway');
         }break;
+
+        case "nudel-reis":{
+            menuPrice=0;
+            SinglemenuProcess('nudel-reis');
+        }break;
+
+        case "sushi":{
+            menuPrice=0;
+            SinglemenuProcess('sushi');
+        }break;
+
+        case "aaaaa":{
+            menuPrice=0;
+            SinglemenuProcess('aaaaa');
+        }break;
+
+        case "nachspeisen-soße":{
+            menuPrice=0;
+            SinglemenuProcess('nachspeisen-soße');
+        }break;
+
+        case "ccccc":{
+            menuPrice=0;
+            SinglemenuProcess('ccccc');
+        }break;
+
+        case "eeeee":{
+            menuPrice=0;
+            SinglemenuProcess('eeeee');
+        }break;
+
+        case "fffff":{
+            menuPrice=0;
+            SinglemenuProcess('fffff');
+        }break;
+
         case "Vorspeisen":{
             menuPrice=0;
             SinglemenuProcess('vorspeisen');
@@ -318,15 +355,6 @@ function SinglemenuProcess(Type) {
             ti3.setAttribute("style","width:100%");
             v.appendChild(ti3);
             f.appendChild(v);
-            var g=document.createElement("div");
-            g.setAttribute("class","container2");
-            g.setAttribute("style","justify-content: space-between");
-            g.setAttribute("id","g");
-            var ti4=document.createElement("h4");
-            ti4.innerText="Getränk";
-            ti4.setAttribute("style","width:100%");
-            g.appendChild(ti4);
-            f.appendChild(g);
             var s=document.createElement("div");
             s.setAttribute("class","container2");
             s.setAttribute("style","justify-content: space-between");
@@ -336,6 +364,15 @@ function SinglemenuProcess(Type) {
             ti5.setAttribute("style","width:100%");
             s.appendChild(ti5);
             f.appendChild(s);
+            var g=document.createElement("div");
+            g.setAttribute("class","container2");
+            g.setAttribute("style","justify-content: space-between");
+            g.setAttribute("id","g");
+            var ti4=document.createElement("h4");
+            ti4.innerText="Getränk";
+            ti4.setAttribute("style","width:100%");
+            g.appendChild(ti4);
+            f.appendChild(g);
         }
         if(Type!="end"){
             for(k in menuData){

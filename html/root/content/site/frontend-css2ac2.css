@@ -244,6 +244,14 @@ audio:not([controls]) {
 a {
     background-color: transparent
 }
+a1 {
+    background-color: transparent;
+    color: gray;
+    font-size: smaller;
+    text-transform: lowercase;
+    font-weight: 100;
+    font-family: initial;
+}
 
 a:active, a:hover {
     outline: 0
@@ -1580,9 +1588,8 @@ hr, .hr {
 }
 
 .content-container {
-    max-width: 1300px;
+    max-width: 1024px;
     margin: 0 auto;
-    padding: 52px 20px 130px
 }
 
 .content-container:focus {
@@ -4477,22 +4484,24 @@ body.not-ie8 .sub-feature-tile.round:after {
     right: 0;
     height: 100%;
     width: 100%;
-    display: block
+    display: block;
+    cursor: pointer;
+    border: 1px solid #e7e7e7;
 }
 
 .menu-block .tile .title {
     font-family: "Montserrat Panda", "Sans Serif";
-    font-size: 20px;
-    font-size: 2rem;
+    font-size: small;
+    font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.2;
     letter-spacing: 0;
-    color: #fff;
+    color: #333;
     text-transform: none;
     text-shadow: 0 2px 0 rgba(0, 0, 0, .1);
-    bottom: 20px;
+    bottom: 3px;
     display: block;
-    font-size: 1.5vw;
+    font-size: 1vw;
     position: absolute;
     text-align: center;
     width: 100%
@@ -7395,6 +7404,22 @@ nav.footer-sub-menu a + a:before {
     filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .2));
     z-index: 10
 }
+.main-nav .logo2 {
+    background-image: url("../../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/logo.png");
+    text-indent: 100%;
+    white-space: nowrap;
+    -webkit-filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .2));
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, .2));
+    z-index: 10;
+    background-size: 120px 120px;
+    position: absolute;
+    top: -10px;
+    bottom: auto;
+    left: 30px;
+    height: 120px;
+    overflow: visible;
+    width: 120px
+}
 
 .main-links {
     *zoom: 1;
@@ -8063,7 +8088,8 @@ nav.footer-sub-menu a + a:before {
     }
 
     .c6-m, .c6-m.c-left {
-        float: left
+        float: left;
+        border: 1px solid #e7e7e7;
     }
 
     .c6-m.c-center {
@@ -8921,7 +8947,8 @@ nav.footer-sub-menu a + a:before {
     }
 
     .c12-s, .c12-s.c-left {
-        float: left
+        float: left;
+        width: 49%;
     }
 
     .c12-s.c-center {
@@ -8977,7 +9004,7 @@ nav.footer-sub-menu a + a:before {
     .page-title {
         font-size: 30px;
         font-size: 3rem;
-        display: block;
+        display: flex;
         float: none;
         padding: 0px 0 px
     }
@@ -9197,8 +9224,7 @@ nav.footer-sub-menu a + a:before {
     .menu-block .tile .title {
         font-size: 30px;
         font-size: 3rem;
-        font-size: 5vw;
-        bottom: 50px
+        font-size: 2vw;
     }
 
     .menu-block .details .button, .menu-block .details .nutrition-calculator .calc-nutrition-details-button, .nutrition-calculator .menu-block .details .calc-nutrition-details-button, .menu-block .details .nutrition-calculator .calc-clear-button, .nutrition-calculator .menu-block .details .calc-clear-button, .menu-block .details .nutrition-calculator .calc-print-button, .nutrition-calculator .menu-block .details .calc-print-button {
@@ -9679,7 +9705,7 @@ nav.footer-sub-menu a + a:before {
 
     .main-nav {
         position: fixed;
-        height: 110px;
+        height: 80px;
         -webkit-transition: height 200ms cubic-bezier(.42, .81, .15, 1);
         transition: height 200ms cubic-bezier(.42, .81, .15, 1);
         -webkit-transform: translateZ(0);
@@ -9688,7 +9714,7 @@ nav.footer-sub-menu a + a:before {
         bottom: 0;
         left: 0;
         right: 0;
-        padding-top: 110px
+        padding-top: 79px
     }
 
     .main-nav:after {
@@ -9745,22 +9771,33 @@ nav.footer-sub-menu a + a:before {
     }
 
     .main-nav .logo {
-        background-size: 82px 82px;
+        background-size: 61px 61px;
         position: absolute;
-        top: 28px;
+        top: 18px;
         bottom: auto;
         left: 5px;
-        height: 82px;
+        height: 61px;
         overflow: visible;
-        width: 82px
+        width: 61px
+    }
+    .main-nav .logo2 {
+        background-size: 116px 116px;
+        position: absolute;
+        top: -12px;
+        bottom: auto;
+        left: 26px;
+        height: 116px;
+        overflow: visible;
+        width: 116px
     }
 
     .main-links {
         text-align: left;
-        padding: 0 5px 0 95px;
+        padding: 0 25px 0 25px;
+        margin-left: 50px;
         display: table;
         position: relative;
-        top: -75px
+        top: -58px
     }
 
     .main-links .link-block {
@@ -9783,7 +9820,7 @@ nav.footer-sub-menu a + a:before {
     .main-links .link-block .anchor {
         font-size: 9.5px;
         font-size: .95rem;
-        padding: 0 7px;
+        padding: -1 8px;
         height: 75px;
         line-height: 75px;
         letter-spacing: .025em;
@@ -11576,6 +11613,37 @@ nav.footer-sub-menu a + a:before {
     }
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(-webkit-min-device-pixel-ratio: 192),(min-resolution: 192dppx) {
+    .hide-retina {
+        display: block;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+        display: none !important;
+        visibility: hidden;
+        padding: 0 !important;
+        margin: 0 !important
+    }
+
+    .footer-low {
+        background-image: url("../../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/bamboo%402x.png")
+    }
+
+    .footer-app-links .apple-appstore {
+        background-image: url("../../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/appstore%402x.png")
+    }
+
+    .footer-app-links .google-playstore {
+        background-image: url("../../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/playstore%402x.png")
+    }
+
+    .main-nav .logo2 {
+        background-image: url("../../../s3.amazonaws.com/PandaExpressWebsite/Responsive/img/home/logo%402x.png")
+    }
+}
+
 @media screen and (-ms-high-contrast: active),(-ms-high-contrast: none) {
     .select-box select::-ms-expand {
         display: none
@@ -11957,3 +12025,42 @@ nav.footer-sub-menu a + a:before {
     top: 10%;
     z-index: 9000
 }
+.stadten-liefern {
+    font-size: small;
+    text-align: left;
+    height: 38px;
+    display: grid;
+}
+.stadten-liefern.zeit {
+    width: 200px;
+    line-height: 1.5;
+    font-size: x-small;
+    text-align: center;
+    height: 156px;
+    color:grey;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.stadten-liefern.zeit2 {
+    width: 200px;
+    line-height: 0.5;
+    font-size: small;
+    text-align: center;
+    color:red;
+    margin-bottom: 30px;
+}
+.zeit.wert {
+    width: 198px;
+    height: 16px;
+    margin-top: -11px;
+    margin-left: 11px;
+}
+
+
+
+
+
+
+
+
+

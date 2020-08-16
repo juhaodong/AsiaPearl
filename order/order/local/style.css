@@ -555,6 +555,7 @@ h4 {
   text-transform: none;
   margin: 15px 0 10px;
   padding: 0 10px;
+    cursor: pointer;
 }
 .panda-form input[type="text"],
 .panda-form input[type="password"],
@@ -3185,7 +3186,8 @@ nav#menu-nav a.prev {
 .red:visited,
 .red:hover,
 .red:active {
-  color: #c71141;
+  color: #333;
+  font-size: medium;
 }
 .legal-page {
   width: 676px;
@@ -3268,7 +3270,7 @@ nav#menu-nav a.prev {
   margin: 20px auto;
 }
 .important-instruction {
-  margin: 0px 20px 15px;
+  margin: 0px 20px 0px;
   color: #779e91;
 }
 .final-price-disclaimer {

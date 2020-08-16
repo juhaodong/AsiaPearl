@@ -24,7 +24,6 @@ h2{
     width: 24%;
 }
 .container2{
-
     display: flex;
     width: 650px;
     flex-wrap: wrap;
@@ -34,7 +33,17 @@ h2{
     padding-right: 0px;
     margin-left: 0px;
     margin-right: 0px;
-
+}
+.container3{
+    display: flex;
+    width: 650px;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-left:0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 .Container{
     width: 100%;
@@ -241,16 +250,25 @@ h3{
     display: flex;
     align-items: flex-end;
     border: 1px solid silver;
-    height: 175px;
+    height: 150px;
 }
-.jhMenuItemContainer{
-    width: 100%;
+.AsiaGourmetButton{
     cursor: pointer;
     background: red;
     display: flex;
     align-items: flex-end;
-    border: 0px solid silver;
+    border: 1px solid silver;
     height: 175px;
+}
+
+.jhMenuItemContainer{
+    width: 100%;
+    cursor: pointer;
+    background:;
+    display: flex;
+    align-items: flex-end;
+    border: 0px solid silver;
+    height: 150px;
 }
 .long{
     width: 670px;
@@ -263,31 +281,38 @@ h3{
     width: 49%;
 }
 .short{
-    margin-top: 0px;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 210px;
+}
+.short1{
+    margin-top: 5px;
     margin-right: 0px;
-    width: 203px;
-
+    width: 640px;
+}
+.asiagourmetshort{
+    margin-top: 5px;
+    margin-right: 0px;
+    width: 210px;
 }
 .jhItemDetail{
-
-    height: 65px;
-    padding: 5px;
-    background: whitesmoke;
+    height: 50px;
+    background: #c2f5d9;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    cursor: pointer;
 }
 .upperLine{
-
-
     width: 100%;
-    display: flex;
+    margin-top: -5px;
+    height: 27px;
     justify-content: space-between;
 }
 .lowerLine{
-
     line-height: 13px;
-    font-size: small;
+    font-size: xx-small;
+    margin-top: -8px;
 }
 .page-title{
     background: none !important;
@@ -307,6 +332,8 @@ body{
 .smallFont{
     text-transform: none;
     font-size: large;
+    margin-left: 10px;
+    cursor: pointer;
 }
 .listRow{
     padding:0 30px;
@@ -329,7 +356,7 @@ body{
     justify-content: space-between;
 }
 .step-Info{
-    width: 580px;
+    /*width: 580px;*/
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -352,11 +379,11 @@ span.title{
     text-align: center;
 }
 .makeUpImg{
-    height: 300px;
+    height: 150px;
 }
 .leftImg{
-    margin-left: -170px;
-    width: 300px;
+    margin-left: -114px;
+    width: 150px;
 
 }
 .leftImg img{
@@ -373,8 +400,8 @@ span.title{
 .rightImg{
 
     overflow: hidden;
-    margin-left: -300px;
-    width: 150px;
+    margin-left: -150px;
+    width: 125px;
 
 
 }
@@ -387,8 +414,8 @@ span.title{
 }
 .step{
 
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -396,6 +423,7 @@ span.title{
     background: url("../yxj/menu/emptyforeground.png");
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .itemContainer{
     margin-right: 0px;
@@ -403,6 +431,7 @@ span.title{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    cursor: pointer;
 }
 .littleButtons{
     color: #fff;
@@ -423,7 +452,7 @@ span.title{
     width: 100px;
 }
 .wagen td{
-    max-width: 125px;
+    max-width: 180px;
     width: 70px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -650,6 +679,7 @@ span.title{
 .demo-card-wide.mdl-card {
     height: 360px;
     width: 191px;
+    cursor: pointer;
 }
 .demo-card-wide > .mdl-card__title {
     color: #fff;
@@ -664,17 +694,80 @@ span.title{
 
 
 
+.upperLine1{
+    display: inline-block;
+    height: 26px;
+    color: #333;
+    line-height: 14px;
+    font-size: small;
+    overflow: hidden;
+    margin: 5px 8px 1px 8px;
+    letter-spacing: 0.1em;
+}
+.lowerLine1{
+    font-size: 14px;
+    color: #ff0036;
+    line-height: 15px;
+    margin: 1px auto
+}
+.red1{
+    height: 60px;
+    background: #fff;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap
+}
+.short2{
+    background-size: 85px;
+    background-position-x: center;
+    background-position-y: 12px;
+    background-repeat: no-repeat;
+    height: 161px;
+    width: 124px;
+    text-align: center;
+    float: left;
+    display: flex;
+    border-bottom: 5px solid #f5f5f5;
+    position: relative;
+    background-color: #fff;
+    margin-top: 0;
+    margin-left: 5px;
+}
 
 
+.new-floor-con{margin:0px auto 0;width:640px;padding-right:0px}
 
 
+.new-floor-con .floor-line-con{margin-top:10px;width:100%;height:318px;position:relative}
+
+.new-floor-con .floor-line-con .line-body{width:100%;height:318px;margin-top:10px;overflow:hidden}
 
 
+.floor-line-con.color-type-orange .grid .sub-title,.floor-line-con.color-type-orange .tab-item-title{color:#F7A945}@media (max-width:1260px){.new-floor-con{width:640px;padding-right:0}
 
 
+.new-floor-con .floor-line-con .line-body .big-banner-con-2{float:left;position:relative;width:124px;height:318px}
 
 
+145
+    .new-floor-con .floor-line-con .floor-item-tag{width:68px;height:10px;color:#fff;line-height:10px;font-size:1px;margin:0 auto}
+146
+    .new-floor-con .floor-line-con .floor-price{font-size:14px;color:#FF0036;line-height:15px;margin:8px auto}
+149
+    .new-floor-con .floor-line-con .floor-item-title{width:90px;height:28px;font-size:xx-small;color:#333;line-height:14px;overflow:hidden;margin:1px auto;letter-spacing: 0.1em}
 
+181
+.new-floor-con .floor-line-con .line-body .grid{float:left;display:block;border-bottom:5px solid #f5f5f5;position:relative;background-color:#fff}
+
+184
+    .new-floor-con .floor-line-con .line-body .grid img{z-index:1;-o-transition:right .3s;-moz-transition:right .3s;-webkit-transition:right .3s;-ms-transition:right .3s;transition:right .3s}
+
+193
+.new-floor-con .floor-line-con .line-body .grid.one-grid-price{width:124px;height:161px;margin-left:5px;text-align:center}
+194
+    .new-floor-con .floor-line-con .line-body .grid.one-grid-price img{width:85px;height:85px}
+213
+.new-floor-con .floor-line-con .line-body .middle-column-con{width:995px;height:618px;float:left;overflow:hidden}
 
 
 

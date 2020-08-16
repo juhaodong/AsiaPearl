@@ -288,7 +288,7 @@ function bulidMail($method,$order){
         $s=generateOrderInfo($method,$order);
         $payment="=============================\n"
             ."Netto Betrag = " .round($order->finalPrice*0.93,2)."€"."\n"
-            ."mit 7% MWST = " .round($order->finalPrice*0.07,2)."€"."\n"
+            ."mit 5% MWST = " .round($order->finalPrice*0.05,2)."€"."\n"
             ."\bBetrag:".$order->finalPrice."€\n";
         $payment.="zahlung:".$order->payment."\n";
         $message.=$time.$s.$address.$payment;
@@ -372,10 +372,10 @@ function getPrintInfo($conn,$limit){
     (new SqlInsert($conn,"Datas",$insertParam))->execute_sql();
     $message.=MessageHead(str_pad($Days,4,"0",STR_PAD_LEFT),$limit);
     $message.=str_repeat("=",24)."\nUmsaetze\n\\b Tagesumsatz        €".$total."\n".str_repeat("*",24)."\n"
-        . "7% Umsaetzesatz netto \t     :    €".($total-$drink-($total-$drink)*0.07).
-        "\nUmSt. 7% ist                      :    €".($total-$drink)*0.07.
+        . "5% Umsaetzesatz netto \t     :    €".($total-$drink-($total-$drink)*0.05).
+        "\nUmSt. 5% ist                      :    €".($total-$drink)*0.05.
         "\n19% Umsaetzesatz netto   :    €".$drink*0.81.
-        "\nUmSt. 19% ist                    :    €".$drink*0.19."\n\nGetränke      ".round(($drink/$total)*100,2)."%      €".$drink.
+        "\nUmSt. 16% ist                    :    €".$drink*0.16."\n\nGetränke      ".round(($drink/$total)*100,2)."%      €".$drink.
         "\nKüche      ".round((1-$drink/$total)*100,2)."%      €".($total-$drink);
     $message.="\n\nUmsatz beinhaltet\n alle STORNO und RABATT summen!\n"."\n\n".
         "\\bBAR----------------".$bar.

@@ -74,7 +74,7 @@ function bulidMail($method,$order,$head){
         $s=generateOrderInfo($method,$order);
         $payment="=============================\n"
             ."Netto Betrag = " .round($order->finalPrice*0.93,2)."€"."\n"
-            ."mit 7% MWST = " .round($order->finalPrice*0.07,2)."€"."\n"
+            ."mit 5% MWST = " .round($order->finalPrice*0.05,2)."€"."\n"
             ."\bBetrag:".$order->finalPrice."€\n";
         $payment.="zahlung:".$order->payment."\n";
         $message.=$time.$s.$address.$payment;
